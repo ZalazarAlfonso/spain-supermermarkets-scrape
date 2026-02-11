@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.vscode/
+.idea/
+.git/
+files/
+*.csv
+*.parquet
+converter.py
