@@ -3,14 +3,14 @@
 Scrapes product data from Carrefour Spain (`carrefour.es`) for the supermarket groups **Frescos**, **La Despensa**, and **Bebidas**. Output is a daily CSV with product data and category/subcategory labels.
 
 ## Files
-- Orchestrator: `/Users/alfonsozalazaae/Documents/Codex/main.py`
-- Script: `/Users/alfonsozalazaae/Documents/Codex/scrape_carrefour_food.py`
-- Requirements: `/Users/alfonsozalazaae/Documents/Codex/requirements.txt`
-- Output folder (default): `/Users/alfonsozalazaae/Documents/Codex/files`
+- Orchestrator: `main.py`
+- Script: `scrape_carrefour_food.py`
+- Requirements: `requirements.txt`
+- Output folder (default): `files`
 
 ## Output
 A daily CSV is created at:
-- `/Users/alfonsozalazaae/Documents/Codex/files/carrefour_supermercado_YYYY-MM-DD.csv`
+- `files/carrefour_supermercado_YYYY-MM-DD.csv`
 
 Columns:
 - `date`
@@ -52,7 +52,7 @@ If a category page has no subcategories, the scraper falls back to:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r /Users/alfonsozalazaae/Documents/Codex/requirements.txt
+pip install -r requirements.txt
 ```
 
 Optional (only if needed):
@@ -63,12 +63,12 @@ playwright install
 
 ## Run
 ```bash
-python /Users/alfonsozalazaae/Documents/Codex/main.py
+python main.py
 ```
 
 Useful options:
 ```bash
-python /Users/alfonsozalazaae/Documents/Codex/main.py \
+python main.py \
   --max-categories 5 \
   --max-pages 2 \
   --max-products 200 \
