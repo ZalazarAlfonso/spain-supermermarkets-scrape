@@ -5,11 +5,12 @@ Scrapes product data from Carrefour Spain (`carrefour.es`) for the supermarket g
 ## Files
 - Orchestrator: `main.py`
 - Script: `scrape_carrefour_food.py`
+- Uploader: `utils/gcp_bucket_upoloader.py`
 - Requirements: `requirements.txt`
 - Output folder (default): `files`
 
 ## Output
-A daily CSV is created at:
+A daily CSV is created at (or uploaded to gcp based on config):
 - `files/carrefour_supermercado_YYYY-MM-DD.csv`
 
 Columns:
@@ -72,6 +73,7 @@ python main.py \
   --max-categories 5 \
   --max-pages 2 \
   --max-products 200 \
+  --upload-to-gcs \
   --sleep 1.0
 ```
 

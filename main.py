@@ -11,7 +11,7 @@ from typing import List
 def run_carrefour(args: argparse.Namespace) -> None:
     cmd: List[str] = [
         sys.executable,
-        "scrape_carrefour_food.py",
+        "scraper_carrefour.py",
         "--out-dir",
         args.out_dir,
         "--sleep",
@@ -26,6 +26,8 @@ def run_carrefour(args: argparse.Namespace) -> None:
         cmd += ["--max-products", str(args.max_products)]
     if args.allow_duplicates:
         cmd += ["--allow-duplicates"]
+    if args.upload_to_gcs:
+        cmd += ["--upload-to-gcs"]
 
     print("[RUN] carrefour")
     subprocess.run(cmd, check=True, env=os.environ.copy())
@@ -39,6 +41,7 @@ def main() -> int:
     parser.add_argument("--max-pages", type=int, default=None)
     parser.add_argument("--max-products", type=int, default=None)
     parser.add_argument("--allow-duplicates", action="store_true")
+    parser.add_argument("--upload-to-gcs", action="store_true", help="Upload to Google Cloud Bucket")
     parser.add_argument(
         "--only",
         default="",

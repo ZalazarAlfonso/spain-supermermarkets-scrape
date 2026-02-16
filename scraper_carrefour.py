@@ -25,10 +25,29 @@ import sys
 import time
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 from urllib.parse import urlparse
-import time
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 import random
+from utils import gcp_bucket_uploader
+from pathlib import Path
+
+
+GCS_BUCKET = os.getenv("GCS_BUCKET", "azal-smarkets-raw-eu")
+GCS_PREFIX = os.getenv("GCS_PREFIX", "")
+GCS_PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT", "lab-spanish-smarkts-scraper")
+
+def validate_gcs_upload_config(local_path: str, bucket_name: str, object_name: str) -> None:
+    if not bucket_name or not bucket_name.strip():
+        raise ValueError("Upload enabled but `GCS_BUCKET` is not set.")
+
+    if not object_name or not object_name.strip():
+        raise ValueError("Upload enabled but generated `object_name` is empty.")
+
+    if not Path(local_path).is_file():
+        raise FileNotFoundError(f"Local CSV not found: {local_path}")
+
 
 try:
     from playwright.sync_api import sync_playwright  # type: ignore
@@ -101,7 +120,6 @@ def fetch_with_playwright(url: str, timeout: int = 40) -> str:
         browser.close()
         return html
 
-
 def fetch(session: requests.Session, url: str, timeout: int = 30) -> str:
     """Fetch HTML; fall back to Playwright on 403 or if HTML looks incomplete."""
     resp = session.get(url, timeout=timeout, allow_redirects=True)
@@ -119,7 +137,6 @@ def fetch(session: requests.Session, url: str, timeout: int = 30) -> str:
         return fetch_with_playwright(url, timeout=max(timeout, 40))
 
     return html
-
 
 def soup_from_html(html: str) -> BeautifulSoup:
     return BeautifulSoup(html, "html.parser")
@@ -482,13 +499,15 @@ def main() -> int:
     parser.add_argument("--max-pages", type=int, default=None)
     parser.add_argument("--max-products", type=int, default=None)
     parser.add_argument("--allow-duplicates", action="store_true", help="Allow duplicates across categories")
+    parser.add_argument("--upload-to-gcs", action="store_true", help="Upload to Google Cloud Bucket")
     args = parser.parse_args()
 
     out_dir = os.path.abspath(args.out_dir)
     os.makedirs(out_dir, exist_ok=True)
 
     today = dt.date.today().isoformat()
-    out_path = os.path.join(out_dir, f"carrefour_supermercado_{today}.csv")
+    filename = f"carrefour_supermercado_{today}.csv"
+    out_path = os.path.join(out_dir, filename)
 
     session = requests.Session()
     session.headers.update(
@@ -498,6 +517,15 @@ def main() -> int:
             "Accept-Language": "es-ES,es;q=0.9,en;q=0.8",
         }
     )
+    
+    retries = Retry(
+        total=3,
+        backoff_factor=0.5,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods={'GET'},
+    )
+    session.mount('http://', HTTPAdapter(max_retries=retries))
+    session.mount('https://', HTTPAdapter(max_retries=retries))
 
     rows: List[Dict[str, str]] = []
     seen_products: Set[str] = set()
@@ -517,11 +545,13 @@ def main() -> int:
         subcats = discover_subcategories(session, group_slug, group_url, args.sleep)
         all_categories.extend(subcats)
     
-    print(all_categories)
-    
     print(f"[TARGETS] {len(all_categories)} category targets discovered")
     if args.max_categories is not None:
         all_categories = all_categories[: args.max_categories]
+    
+    # Error variables initialization.
+    error_count = 0
+    error_samples = []
 
     for category_label, subcategory_label, cat_url in all_categories:
         if args.max_products is not None and len(rows) >= args.max_products:
@@ -534,7 +564,9 @@ def main() -> int:
             cat_rows = scrape_category(
                 session, category_label, subcategory_label, cat_url, args.sleep, args.max_pages
             )
-        except Exception:
+        except Exception as e:
+            error_count += 1
+            print(f"[ERROR] scrape_category failed url={cat_url} category={category_label}: {e}")
             continue
 
         print(f"Scraping {category_label} with {len(cat_rows)} products")
@@ -566,6 +598,31 @@ def main() -> int:
         writer.writeheader()
         for row in rows:
             writer.writerow(row)
+
+    # after CSV is written
+    filename = os.path.basename(out_path)
+    object_name = f"carrefour/{today}/{filename}"
+
+    if args.upload_to_gcs:
+        validate_gcs_upload_config(out_path, GCS_BUCKET, object_name)
+        try:
+            uri = gcp_bucket_uploader.upload_csv_file(
+                local_path=out_path,
+                bucket_name=GCS_BUCKET,
+                object_name=object_name,
+            )
+            print(f"[UPLOAD] OK -> {uri}")
+        except Exception as exc:
+            raise RuntimeError(
+                f"GCS upload failed (bucket={GCS_BUCKET}, object={object_name}, file={out_path})"
+            ) from exc
+
+    # Clean up of the files
+    if args.upload_to_gcs and os.getenv("KEEP_LOCAL_FILES", "false").lower() != "true":
+        os.remove(out_path)
+        print(f"[CLEANUP] deleted {out_path}")
+    else:
+        print('[CLEANUP] KEEP_LOCAL_FILES=true, skipping delete')
 
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time

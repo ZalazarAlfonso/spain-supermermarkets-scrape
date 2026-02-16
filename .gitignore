@@ -5,7 +5,12 @@ __pycache__/
 .venv/
 .vscode/
 .idea/
+.env
+*.env
+*.json
+*key*.json
 files/
 *.csv
 *.parquet
 converter.py
+tests/
