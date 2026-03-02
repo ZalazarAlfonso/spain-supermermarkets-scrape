@@ -29,9 +29,9 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import random
-from jobs.carrefour.common import config as cfg
-from jobs.carrefour.common import gcs, parsing, http
-from jobs.carrefour.common.models import ProductRow
+from scrapers.carrefour.common import config as cfg
+from scrapers.carrefour.common import gcs, parsing, http
+from scrapers.carrefour.common.models import ProductRow
 import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
@@ -192,7 +192,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--targets-local-path",
-        default="jobs/carrefour/scrape_daily/files/carrefour_categories.json",
+        default="scrapers/carrefour/scrape_daily/files/carrefour_categories.json",
     )
     parser.add_argument(
         "--targets-gcs-bucket",

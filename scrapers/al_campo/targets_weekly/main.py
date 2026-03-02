@@ -14,9 +14,9 @@ from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from jobs.al_campo.common import config as cfg
-from jobs.al_campo.common import gcs, parsing, http
-from jobs.al_campo.common.models import CategoryTarget
+from scrapers.al_campo.common import config as cfg
+from scrapers.al_campo.common import gcs, parsing, http
+from scrapers.al_campo.common.models import CategoryTarget
 
 
 def discover_subcategories(
@@ -63,7 +63,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--out",
-        default="jobs/al_campo/targets_weekly/files/al_campo_categories.json",
+        default="scrapers/al_campo/targets_weekly/files/al_campo_categories.json",
     )
     parser.add_argument("--sleep", type=float, default=1.0, help="Sleep between requests")
     parser.add_argument("--timeout", type=int, default=20, help="HTTP timeout in seconds")

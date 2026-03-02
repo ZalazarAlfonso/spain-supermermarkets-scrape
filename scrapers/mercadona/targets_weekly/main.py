@@ -9,9 +9,9 @@ import time
 from pathlib import Path
 from typing import Dict, List, Set, Tuple
 
-from jobs.mercadona.common import config as cfg
-from jobs.mercadona.common import gcs, http, parsing
-from jobs.mercadona.common.models import CategoryTarget
+from scrapers.mercadona.common import config as cfg
+from scrapers.mercadona.common import gcs, http, parsing
+from scrapers.mercadona.common.models import CategoryTarget
 
 
 def discover_targets() -> List[CategoryTarget]:

@@ -13,9 +13,9 @@ import requests
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from jobs.carrefour.common import config as cfg
-from jobs.carrefour.common import gcs, parsing, http
-from jobs.carrefour.common.models import CategoryTarget
+from scrapers.carrefour.common import config as cfg
+from scrapers.carrefour.common import gcs, parsing, http
+from scrapers.carrefour.common.models import CategoryTarget
 
 def discover_subcategories(
     session: requests.Session,

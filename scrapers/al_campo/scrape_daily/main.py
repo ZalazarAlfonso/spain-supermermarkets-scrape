@@ -25,9 +25,9 @@ from typing import Dict, List, Optional, Set
 
 from jsonschema import validate
 
-from jobs.al_campo.common import config as cfg
-from jobs.al_campo.common import gcs, parsing, http
-from jobs.al_campo.common.models import ProductRow
+from scrapers.al_campo.common import config as cfg
+from scrapers.al_campo.common import gcs, parsing, http
+from scrapers.al_campo.common.models import ProductRow
 
 import pandas as pd
 import pyarrow as pa

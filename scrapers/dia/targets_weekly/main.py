@@ -10,9 +10,9 @@ from pathlib import Path
 from typing import Dict, List, Set, Tuple
 from urllib.parse import unquote, urlparse, urlunparse
 import os
-from jobs.dia.common import config as cfg
-from jobs.dia.common import gcs, http, parsing
-from jobs.dia.common.models import CategoryTarget
+from scrapers.dia.common import config as cfg
+from scrapers.dia.common import gcs, http, parsing
+from scrapers.dia.common.models import CategoryTarget
 
 
 DESKTOP_MENU_BUTTON_SELECTOR = "button[data-test-id='desktop-category-button']"

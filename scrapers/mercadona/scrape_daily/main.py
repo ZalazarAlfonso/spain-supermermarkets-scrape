@@ -19,8 +19,8 @@ from typing import Dict, List, Optional, Set
 
 from jsonschema import validate
 
-from jobs.mercadona.common import config as cfg
-from jobs.mercadona.common import gcs, http, parsing
+from scrapers.mercadona.common import config as cfg
+from scrapers.mercadona.common import gcs, http, parsing
 
 import pandas as pd
 import pyarrow as pa
