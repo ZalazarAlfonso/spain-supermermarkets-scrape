@@ -3,7 +3,7 @@ steps:
     args:
       - build
       - -f
-      - jobs/carrefour/scrape_daily/Dockerfile
+      - scrapers/al_campo/scrape_daily/Dockerfile
       - -t
       - $_IMAGE_URI
       - .

@@ -32,6 +32,9 @@ import random
 from jobs.carrefour.common import config as cfg
 from jobs.carrefour.common import gcs, parsing, http
 from jobs.carrefour.common.models import ProductRow
+import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
 
 def load_targets(args) -> dict:
     """
@@ -184,7 +187,7 @@ def main() -> int:
     parser.add_argument(
         "--targets-source",
         choices=["local", "gcs"],
-        default="local",
+        default="gcs",
         help="Where to read category targets from",
     )
     parser.add_argument(
@@ -208,8 +211,9 @@ def main() -> int:
     os.makedirs(out_dir, exist_ok=True)
 
     today = dt.date.today().isoformat()
-    filename = f"carrefour_supermercado_{today}.csv"
-    out_path = os.path.join(out_dir, filename)
+    csv_filename = f"carrefour_supermercado_{today}.csv"
+    parquet_filename = f"carrefour_supermercado_{today}.parquet"
+    out_path = os.path.join(out_dir, csv_filename)
 
     session = requests.Session()
     session.headers.update(
@@ -284,7 +288,7 @@ def main() -> int:
                 continue
             if not args.allow_duplicates and p_url:
                 seen_products.add(p_url)
-            row["date"] = today
+            row["date"] = dt.date.today()
             rows.append(row)
 
     # Write CSV
@@ -305,30 +309,41 @@ def main() -> int:
         for row in rows:
             writer.writerow(row)
 
-    # after CSV is written
-    filename = os.path.basename(out_path)
-    object_name = f"carrefour/{today}/{filename}"
+    # Loading into pandas dataframe
+    df = pd.read_csv(out_path)
+    
+    # Date formating.
+    df["date"] = pd.to_datetime(df["date"]).dt.date
+
+    # converting to parquet
+    table = pa.Table.from_pandas(df)
+
+    # saving to parquet
+    parquet_file_path = os.path.join(out_dir,parquet_filename)
+    pq.write_table(table,parquet_file_path)
+    object_name = f"carrefour/{today}/{parquet_filename}"
 
     # Upload to GCS.
     if args.upload_to_gcs:
-        gcs.validate_gcs_upload_config(out_path, cfg.GCS_BUCKET, object_name)
+        gcs.validate_gcs_upload_config(parquet_file_path, cfg.GCS_BUCKET, object_name)
         try:
             uri = gcs.upload_file(
-                local_path=out_path,
+                local_path=parquet_file_path,
                 bucket_name=cfg.GCS_BUCKET,
                 object_name=object_name,
-                object_type="text/csv"
+                object_type="application/octet-stream"
             )
             print(f"[UPLOAD] OK -> {uri}")
         except Exception as exc:
             raise RuntimeError(
-                f"GCS upload failed (bucket={cfg.GCS_BUCKET}, object={object_name}, file={out_path})"
+                f"GCS upload failed (bucket={cfg.GCS_BUCKET}, object={object_name}, file={parquet_file_path})"
             ) from exc
 
     # Clean up of the files
     if args.upload_to_gcs and cfg.KEEP_LOCAL_FILES != "true":
         os.remove(out_path)
-        print(f"[CLEANUP] deleted {out_path}")
+        os.remove(parquet_file_path)
+        print(f"[CLEANUP] deleted {out_path} and {parquet_file_path}")
     else:
         print('[CLEANUP] KEEP_LOCAL_FILES=true, skipping delete')
 

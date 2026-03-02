@@ -3,3 +3,5 @@ beautifulsoup4>=4.12.0
 playwright==1.58.0
 google-cloud-storage
 jsonschema
+pandas
+pyarrow
