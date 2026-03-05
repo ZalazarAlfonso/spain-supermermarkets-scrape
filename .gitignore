@@ -16,3 +16,5 @@ converter.py
 tests/
 cleansing/
 convert/
+CLAUDE.md
+product_analysis/

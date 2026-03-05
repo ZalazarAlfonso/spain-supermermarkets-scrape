@@ -228,7 +228,7 @@ def main() -> int:
         default=os.getenv("TARGETS_SOURCE", "gcs"),
         help="Where to read category targets from",
     )
-    parser.add_argument("--targets-local-path", default="jobs/dia/targets_weekly/files/dia_categories.json")
+    parser.add_argument("--targets-local-path", default="scrapers/dia/targets_weekly/files/dia_categories.json")
     parser.add_argument(
         "--targets-gcs-bucket",
         default=os.getenv("TARGETS_GCS_BUCKET", cfg.GCS_BUCKET),

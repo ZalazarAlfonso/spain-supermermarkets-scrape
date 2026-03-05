@@ -3,7 +3,7 @@ Configuration settings and environment variables for Al Campo scraper.
 """
 import os
 
-GCS_BUCKET = os.getenv("GCS_BUCKET", "azal-smarkets-raw-dev-eu")
+GCS_BUCKET = os.getenv("GCS_BUCKET", "azal-smarkets-raw-dev")
 GCS_PREFIX = os.getenv("GCS_PREFIX", "")
 GCS_PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT", "lab-spanish-smarkts-scraper")
 

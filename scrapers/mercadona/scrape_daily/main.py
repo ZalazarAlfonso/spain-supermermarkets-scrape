@@ -197,7 +197,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--targets-local-path",
-        default="jobs/mercadona/targets_weekly/files/mercadona_categories.json",
+        default="scrapers/mercadona/targets_weekly/files/mercadona_categories.json",
     )
     parser.add_argument(
         "--targets-gcs-bucket",

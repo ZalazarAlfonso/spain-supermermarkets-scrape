@@ -178,7 +178,7 @@ def scrape_category(
 def main() -> int:
     start_time = time.perf_counter()
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out-dir", default="jobs/al_campo/scrape_daily/files", help="Output directory")
+    parser.add_argument("--out-dir", default="scrapers/al_campo/scrape_daily/files", help="Output directory")
     parser.add_argument("--sleep", type=float, default=1.0, help="Sleep between category requests (seconds)")
     parser.add_argument("--max-products", type=int, default=None)
     parser.add_argument("--max-categories", type=int, default=None)
@@ -192,7 +192,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--targets-local-path",
-        default="jobs/al_campo/targets_weekly/files/al_campo_categories.json",
+        default="scrapers/al_campo/targets_weekly/files/al_campo_categories.json",
     )
     parser.add_argument(
         "--targets-gcs-bucket",

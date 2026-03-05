@@ -1,4 +1,4 @@
-# jobs/mercadona/common/models.py
+# scrapers/mercadona/common/models.py
 
 from typing import TypedDict
 

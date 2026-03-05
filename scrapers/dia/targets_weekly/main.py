@@ -215,7 +215,7 @@ def discover_targets(timeout_s: int, sleep_s: float) -> List[CategoryTarget]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default="jobs/dia/targets_weekly/files/dia_categories.json")
+    parser.add_argument("--out", default="scrapers/dia/targets_weekly/files/dia_categories.json")
     parser.add_argument("--sleep", type=float, default=1.0, help="Sleep between requests")
     parser.add_argument("--timeout", type=int, default=20, help="HTTP timeout in seconds")
     parser.add_argument("--max-groups", type=int, default=None, help="Unused for DIA; kept for CLI compatibility")

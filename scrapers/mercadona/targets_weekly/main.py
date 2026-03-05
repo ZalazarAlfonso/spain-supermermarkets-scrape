@@ -58,7 +58,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--out",
-        default="jobs/mercadona/targets_weekly/files/mercadona_categories.json",
+        default="scrapers/mercadona/targets_weekly/files/mercadona_categories.json",
     )
     parser.add_argument("--sleep", type=float, default=cfg.REQUEST_SLEEP_S, help="Sleep between API calls")
     parser.add_argument("--max-groups", type=int, default=None, help="Limit to first N top-level groups")
