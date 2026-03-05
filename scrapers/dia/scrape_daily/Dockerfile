@@ -48,4 +48,4 @@ RUN python -m playwright install chromium
 
 COPY jobs /app/jobs
 
-CMD ["python", "-m", "jobs.dia.scrape_daily.main"]
+CMD ["python", "-m", "scrapers.dia.scrape_daily.main"]

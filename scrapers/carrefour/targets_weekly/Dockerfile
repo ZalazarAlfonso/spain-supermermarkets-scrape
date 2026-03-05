@@ -9,7 +9,7 @@ ENV PLAYWRIGHT_MAX_RETRIES=1
 ENV PLAYWRIGHT_NAV_TIMEOUT_S=18
 ENV PLAYWRIGHT_SELECTOR_TIMEOUT_MS=3000
 
-COPY requirements.txt /app/requirements.txt
+COPY scrapers/carrefour/targets_weekly/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 COPY . /app

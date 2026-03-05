@@ -11,10 +11,10 @@ ENV PLAYWRIGHT_MAX_RETRIES=1
 ENV PLAYWRIGHT_NAV_TIMEOUT_S=18
 ENV PLAYWRIGHT_SELECTOR_TIMEOUT_MS=3000
 
-COPY jobs/carrefour/scrape_daily/requirements.txt /app/requirements.txt
+COPY scrapers/carrefour/scrape_daily/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 COPY jobs /app/jobs
 
 # Default entrypoint runs all scrapers once
-CMD ["python", "-m","jobs.carrefour.scrape_daily.main"]
+CMD ["python", "-m","scrapers.carrefour.scrape_daily.main"]

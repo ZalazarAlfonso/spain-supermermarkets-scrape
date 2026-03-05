@@ -11,10 +11,10 @@ ENV PLAYWRIGHT_MAX_RETRIES=1
 ENV PLAYWRIGHT_NAV_TIMEOUT_S=18
 ENV PLAYWRIGHT_SELECTOR_TIMEOUT_MS=3000
 
-COPY jobs/dia/targets_weekly/requirements.txt /app/requirements.txt
+COPY scrapers/dia/targets_weekly/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 COPY jobs /app/jobs
 
 # Default entrypoint runs category discovery once
-CMD ["python", "-m", "jobs.dia.targets_weekly.main"]
+CMD ["python", "-m", "scrapers.dia.targets_weekly.main"]
