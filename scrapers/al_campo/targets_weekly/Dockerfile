@@ -1,5 +1,5 @@
 # Playwright image includes Chromium + deps for pages that require JS rendering
-FROM mcr.microsoft.com/playwright/python:v1.58.0-jammy
+FROM mcr.microsoft.com/playwright/python:v1.58.0-noble
 
 WORKDIR /app
 
@@ -17,4 +17,4 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 COPY scrapers /app/scrapers
 
 # Default entrypoint runs category discovery once
-CMD ["python", "-m", "scrapers.al_campo.targets_weekly.main"]
+CMD ["python", "-m", "scrapers.al_campo.targets_weekly.main", "--upload-to-gcs"]

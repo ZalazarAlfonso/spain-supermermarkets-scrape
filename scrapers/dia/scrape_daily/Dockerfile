@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM mcr.microsoft.com/playwright/python:v1.58.0-noble
 
 WORKDIR /app
 ENV PYTHONUNBUFFERED=1
@@ -50,4 +50,4 @@ RUN python -m playwright install chromium
 
 COPY scrapers /app/scrapers
 
-CMD ["python", "-m", "scrapers.dia.scrape_daily.main"]
+CMD ["python", "-m", "scrapers.dia.scrape_daily.main", "--upload-to-gcs"]

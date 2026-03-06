@@ -1,5 +1,5 @@
 # Playwright image includes Chromium + deps for pages that require JS rendering
-FROM mcr.microsoft.com/playwright/python:v1.58.0-jammy
+FROM mcr.microsoft.com/playwright/python:v1.58.0-noble
 
 WORKDIR /app
 
@@ -18,4 +18,4 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 COPY scrapers /app/scrapers
 
 # Default entrypoint runs all scrapers once
-CMD ["python", "-m","scrapers.carrefour.scrape_daily.main"]
+CMD ["python", "-m","scrapers.carrefour.scrape_daily.main","--upload-to-gcs"]
