@@ -14,7 +14,7 @@ ENV PLAYWRIGHT_SELECTOR_TIMEOUT_MS=3000
 COPY scrapers/dia/targets_weekly/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
-COPY jobs /app/jobs
+COPY scrapers /app/scrapers
 
 # Default entrypoint runs category discovery once
 CMD ["python", "-m", "scrapers.dia.targets_weekly.main"]

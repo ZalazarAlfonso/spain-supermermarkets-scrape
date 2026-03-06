@@ -177,7 +177,7 @@ def scrape_category(
 def main() -> int:
     start_time = time.perf_counter()
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out-dir", default="files", help="Output directory")
+    parser.add_argument("--out-dir", default="/tmp/carrefour", help="Output directory")
     parser.add_argument("--sleep", type=float, default=1.0, help="Sleep between requests (seconds)")
     parser.add_argument("--max-pages", type=int, default=None)
     parser.add_argument("--max-products", type=int, default=None)
@@ -187,7 +187,7 @@ def main() -> int:
     parser.add_argument(
         "--targets-source",
         choices=["local", "gcs"],
-        default="gcs",
+        default=os.getenv("TARGETS_SOURCE", "gcs"),
         help="Where to read category targets from",
     )
     parser.add_argument(
@@ -196,12 +196,12 @@ def main() -> int:
     )
     parser.add_argument(
         "--targets-gcs-bucket",
-        default="",
+        default=os.getenv("TARGETS_GCS_BUCKET", cfg.GCS_BUCKET),
         help="Bucket where the categories lives.",
     )
     parser.add_argument(
         "--targets-gcs-object-name",
-        default="",
+        default=os.getenv("TARGETS_GCS_OBJECT_NAME", "carrefour/carrefour_categories.json"),
         help="Object Name.",
     )
 

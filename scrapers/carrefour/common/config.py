@@ -14,6 +14,12 @@ DEFAULT_GROUP_URLS = [
     f"{BASE_URL}/supermercado/frescos/cat20002/c",
     f"{BASE_URL}/supermercado/la-despensa/cat20001/c",
     f"{BASE_URL}/supermercado/bebidas/cat20003/c",
+    f"{BASE_URL}/supermercado/drogueria-y-limpieza/cat20005/c",
+    f"{BASE_URL}/supermercado/perfumeria-e-higiene/cat20004/c",
+    f"{BASE_URL}/supermercado/congelados/cat21449123/c",
+    f"{BASE_URL}/supermercado/bebe/cat20006/c",
+    f"{BASE_URL}/supermercado/mascotas/cat20007/c",
+    f"{BASE_URL}/supermercado/parafarmacia/cat20008/c",
 ]
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"

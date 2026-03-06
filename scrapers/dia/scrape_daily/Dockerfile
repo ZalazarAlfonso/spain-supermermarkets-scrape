@@ -3,6 +3,8 @@ FROM python:3.12-slim
 WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
+ENV TARGETS_GCS_OBJECT_NAME=dia/dia_categories.json
+
 
 # OS deps for Playwright/Chromium
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -46,6 +48,6 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 # Install browser binaries
 RUN python -m playwright install chromium
 
-COPY jobs /app/jobs
+COPY scrapers /app/scrapers
 
 CMD ["python", "-m", "scrapers.dia.scrape_daily.main"]
