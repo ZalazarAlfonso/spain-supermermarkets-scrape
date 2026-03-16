@@ -112,19 +112,23 @@ def parse_product_card(card: BeautifulSoup) -> Tuple[str, str, str, str, bool]:
 
     # Price + PPU (prefer data attributes on parent wrapper, then fall back to spans)
     parent = card.find_parent("div", class_="product-card__parent")
-    if parent:
-        price = (parent.get("app_price") or "").strip()
-        price_per_unit = (parent.get("app_price_per_unit") or "").strip()
+    # if parent:
+    #     price = (parent.get("app_price") or "").strip()
+    #     price_per_unit = (parent.get("app_price_per_unit") or "").strip()
 
     if not price:
         price_el = card.select_one(".product-card__price")
         if price_el:
             price = price_el.get_text(" ", strip=True)
+        else:
+            price = (parent.get("app_price") or "").strip()
 
     if not price_per_unit:
         ppu_el = card.select_one(".product-card__price-per-unit")
         if ppu_el:
             price_per_unit = ppu_el.get_text(" ", strip=True)
+        else:
+            price_per_unit = (parent.get("app_price_per_unit") or "").strip()
 
     # Brand: Carrefour cards often omit explicit brand; try common spots if present
     brand_el = card.select_one(".product-card__brand, .product-card__brand-name, [data-testid='brand']")

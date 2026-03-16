@@ -4,10 +4,10 @@ steps:
       [
         'build',
         '-f',
-        'scrapers/mercadona/scrape_daily/Dockerfile',
+        'scrapers/mercadona/scrape_daily/Dockerfile', # Path from the ROOT of the project
         '-t',
         '${_IMAGE_URI}',
-        '.'
+        '.' # The context stays as dot (the root) so it can see the /scrapers folder
       ]
 
 images:

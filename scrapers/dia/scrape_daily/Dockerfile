@@ -3,50 +3,15 @@ FROM mcr.microsoft.com/playwright/python:v1.58.0-noble
 WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
+ENV PLAYWRIGHT_ENGINES=firefox,chromium
+ENV PLAYWRIGHT_MAX_RETRIES=1
+ENV PLAYWRIGHT_NAV_TIMEOUT_S=18
+ENV PLAYWRIGHT_SELECTOR_TIMEOUT_MS=3000
 ENV TARGETS_GCS_OBJECT_NAME=dia/dia_categories.json
 
-
-# OS deps for Playwright/Chromium
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    ca-certificates \
-    fonts-liberation \
-    libasound2 \
-    libatk-bridge2.0-0 \
-    libatk1.0-0 \
-    libc6 \
-    libcairo2 \
-    libcups2 \
-    libdbus-1-3 \
-    libdrm2 \
-    libexpat1 \
-    libgbm1 \
-    libglib2.0-0 \
-    libgtk-3-0 \
-    libnspr4 \
-    libnss3 \
-    libpango-1.0-0 \
-    libpangocairo-1.0-0 \
-    libx11-6 \
-    libx11-xcb1 \
-    libxcb1 \
-    libxcomposite1 \
-    libxdamage1 \
-    libxext6 \
-    libxfixes3 \
-    libxrandr2 \
-    libxrender1 \
-    libxshmfence1 \
-    libxss1 \
-    libxtst6 \
-    wget \
-  && rm -rf /var/lib/apt/lists/*
-
-COPY requirements.txt /app/requirements.txt
+COPY scrapers/dia/scrape_daily/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# Install browser binaries
-RUN python -m playwright install chromium
 
 COPY scrapers /app/scrapers
 
