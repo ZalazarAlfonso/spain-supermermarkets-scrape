@@ -18,3 +18,13 @@ cleansing/
 convert/
 CLAUDE.md
 product_analysis/
+
+# dbt
+dbt/**/target/
+dbt/**/logs/
+dbt/**/dbt_packages/
+dbt/**/.user.yml
+
+# secrets
+*.json
+!.vscode/settings.json
