@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: dwh_bronze_dev
+    database: lab-spanish-smarkts-scraper
+    schema: dwh_bronze_dev
+    tables:
+      - name: bronze_alcampo_products_p
+      - name: bronze_carrefour_products_p
+      - name: bronze_dia_products_p
+      - name: bronze_mercadona_products_p
