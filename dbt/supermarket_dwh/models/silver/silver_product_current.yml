@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: silver_product_current
+    description: "Latest valid product row per supermarket and source product."
+    columns:
+      - name: source_product_id
+        description: "Stable source-side product identifier."
+        data_tests:
+          - not_null
+
+      - name: supermarket
+        description: "Supermarket source."
+        data_tests:
+          - not_null
+
+      - name: product_snapshot_id
+        description: "Snapshot identifier inherited from silver_product_snapshots."
+        data_tests:
+          - not_null
+
+      - name: product_url
+        description: "Latest known product URL."
+        data_tests:
+          - not_null
