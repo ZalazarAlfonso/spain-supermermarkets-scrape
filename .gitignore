@@ -24,6 +24,7 @@ dbt/**/target/
 dbt/**/logs/
 dbt/**/dbt_packages/
 dbt/**/.user.yml
+dbt/jaffle_shop/
 
 # secrets
 *.json

@@ -1,32 +1,57 @@
 name: 'supermarket_dwh'
+
 version: '1.0.0'
+
 config-version: 2
 
 profile: 'supermarket_dwh'
 
 model-paths: ["models"]
+
 seed-paths: ["seeds"]
+
 macro-paths: ["macros"]
+
 test-paths: ["tests"]
+
 analysis-paths: ["analyses"]
+
 snapshot-paths: ["snapshots"]
 
 clean-targets:
+
   - "target"
+
   - "dbt_packages"
 
 models:
+
   supermarket_dwh:
+
     +materialized: table
 
+    +database: lab-spanish-smarkts-scraper
+
     staging:
+
       +materialized: view
 
+      +schema: dwh_silver_dev
+
     intermediate:
+
       +materialized: table
+
+      +schema: dwh_silver_dev
 
     silver:
+
       +materialized: table
 
+      +schema: dwh_silver_dev
+
     gold:
+
       +materialized: table
+
+      +schema: dwh_gold_dev
