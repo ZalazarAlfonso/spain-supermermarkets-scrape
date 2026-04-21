@@ -33,3 +33,16 @@ models:
     gold:
       +materialized: table
       +schema: dwh_gold_dev
+
+seeds:
+  supermarket_dwh:
+    standard_rules_v1:
+      +column_types:
+        rule_id: int64
+        level: string
+        target: string
+        field: string
+        match_type: string
+        pattern: string
+        supermarket: string
+        priority: int64

@@ -1,0 +1,49 @@
+version: 2
+
+seeds:
+  - name: standard_rules_v1
+    description: "Rule table used to map raw product category fields into standardized category and subcategory values."
+    columns:
+      - name: rule_id
+        description: "Identifier for a rule group. Rows with the same rule_id are combined with AND logic."
+        data_tests:
+          - not_null
+
+      - name: level
+        description: "Standardized output level controlled by the rule."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['category', 'subcategory','brand', 'product_name']
+
+      - name: target
+        description: "Standardized value assigned when the rule matches."
+        data_tests:
+          - not_null
+
+      - name: field
+        description: "Normalized product field evaluated by this rule row."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['category_norm', 'subcategory_norm', 'product_norm']
+
+      - name: match_type
+        description: "Matching strategy used against the normalized field."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['contains', 'equals', 'regex']
+
+      - name: pattern
+        description: "Literal or regex pattern to match."
+        data_tests:
+          - not_null
+
+      - name: priority
+        description: "Rule priority. Higher priority wins when multiple rules match."
+        data_tests:
+          - not_null

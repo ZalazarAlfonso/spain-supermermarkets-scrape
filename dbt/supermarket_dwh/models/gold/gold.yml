@@ -1,37 +1,25 @@
 version: 2
 
 models:
-  - name: silver_product_snapshots
-    description: "Trusted historical product snapshots across supermarkets."
+  - name: fact_products_today
+    description: "Products prices for today, latest date in the data."
     columns:
-      - name: product_snapshot_id
-        data_tests:
-          - not_null
-          - unique
-
       - name: source_product_id
         data_tests:
           - not_null
-
+          - unique
       - name: supermarket
         data_tests:
           - not_null
           - accepted_values:
               arguments: 
                 values: ['alcampo', 'carrefour', 'dia', 'mercadona']
-
-      - name: scrape_date
-        data_tests:
-          - not_null
-
       - name: product_url
         data_tests:
           - not_null
-
       - name: product_name
         data_tests:
           - not_null
-
       - name: price_value
         data_tests:
           - not_null

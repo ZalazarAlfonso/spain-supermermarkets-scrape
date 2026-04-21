@@ -1,0 +1,109 @@
+version: 2
+
+models:
+  - name: silver_product_current
+    description: "Latest valid product row per supermarket and source product."
+    columns:
+      - name: source_product_id
+        description: "Stable source-side product identifier."
+        data_tests:
+          - not_null
+
+      - name: supermarket
+        description: "Supermarket source."
+        data_tests:
+          - not_null
+
+      - name: product_snapshot_id
+        description: "Snapshot identifier inherited from silver_product_snapshots."
+        data_tests:
+          - not_null
+
+      - name: product_url
+        description: "Latest known product URL."
+        data_tests:
+          - not_null
+  - name: silver_product_snapshots
+    description: "Trusted historical product snapshots across supermarkets."
+    columns:
+      - name: product_snapshot_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: source_product_id
+        data_tests:
+          - not_null
+
+      - name: supermarket
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments: 
+                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+
+      - name: scrape_date
+        data_tests:
+          - not_null
+
+      - name: product_url
+        data_tests:
+          - not_null
+
+      - name: product_name
+        data_tests:
+          - not_null
+
+      - name: price_value
+        data_tests:
+          - not_null
+
+  - name: silver_product_standardized
+    description: "Latest valid product rows enriched with normalized text helpers and standardized category mappings from seed-based rules."
+    columns:
+      - name: product_snapshot_id
+        description: "Snapshot identifier inherited from silver_product_current."
+        data_tests:
+          - not_null
+
+      - name: source_product_id
+        description: "Stable source-side product identifier."
+        data_tests:
+          - not_null
+
+      - name: supermarket
+        description: "Supermarket source."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+
+      - name: product_url
+        description: "Latest known product URL."
+        data_tests:
+          - not_null
+
+      - name: product_name
+        description: "Raw product name inherited from silver_product_current."
+        data_tests:
+          - not_null
+
+      - name: category_norm
+        description: "Normalized category text used for rule matching."
+
+      - name: subcategory_norm
+        description: "Normalized subcategory text used for rule matching."
+
+      - name: product_norm
+        description: "Normalized product name used for rule matching."
+
+      - name: category_std
+        description: "Standardized category assigned from the rules seed."
+        data_tests:
+          - not_null
+
+      - name: subcategory_std
+        description: "Standardized subcategory assigned from the rules seed."
+        data_tests:
+          - not_null
