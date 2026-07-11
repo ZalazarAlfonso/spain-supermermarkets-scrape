@@ -8,9 +8,6 @@ sources:
       - name: bronze_alcampo_products_p
         description: "Raw bronze table for Alcampo supermarket products."
         columns:
-          - name: product_url
-            tests:
-              - not_null
           - name: date
             tests:
               - not_null
@@ -18,9 +15,6 @@ sources:
       - name: bronze_carrefour_products_p
         description: "Raw bronze table for Carrefour supermarket products."
         columns:
-          - name: product_url
-            tests:
-              - not_null
           - name: date
             tests:
               - not_null
@@ -28,9 +22,6 @@ sources:
       - name: bronze_dia_products_p
         description: "Raw bronze table for Dia supermarket products."
         columns:
-          - name: product_url
-            tests:
-              - not_null
           - name: date
             tests:
               - not_null
@@ -38,9 +29,6 @@ sources:
       - name: bronze_mercadona_products_p
         description: "Raw bronze table for Mercadona supermarket products."
         columns:
-          - name: product_url
-            tests:
-              - not_null
           - name: date
             tests:
               - not_null

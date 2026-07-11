@@ -98,6 +98,11 @@ models:
       - name: product_norm
         description: "Normalized product name used for rule matching."
 
+      - name: group_std
+        description: "Standardized top-level group assigned from the taxonomy seed."
+        data_tests:
+          - not_null
+
       - name: category_std
         description: "Standardized category assigned from the rules seed."
         data_tests:

@@ -20,6 +20,90 @@ models:
       - name: product_name
         data_tests:
           - not_null
+      - name: group_std
+        data_tests:
+          - not_null
+      - name: category_std
+        data_tests:
+          - not_null
+      - name: subcategory_std
+        data_tests:
+          - not_null
       - name: price_value
+        data_tests:
+          - not_null
+  - name: fact_product_price_snapshots
+    description: "Standardise products' price snapshots for historical analysis."
+    columns:
+      - name: product_snapshot_id
+        data_tests:
+          - not_null
+          - unique
+      - name: source_product_id
+        data_tests:
+          - not_null
+      - name: supermarket
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments: 
+                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+      - name: product_url
+        data_tests:
+          - not_null
+      - name: product_name
+        data_tests:
+          - not_null
+      - name: group_std
+        data_tests:
+          - not_null
+      - name: category_std
+        data_tests:
+          - not_null
+      - name: subcategory_std
+        data_tests:
+          - not_null
+      - name: price_value
+        data_tests:
+          - not_null
+  - name: dim_products
+    description: "Dimension table with product data."
+    columns:
+      - name: source_product_id
+        data_tests:
+          - not_null
+          - unique
+      - name: supermarket
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments: 
+                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+      - name: product_url
+        data_tests:
+          - not_null
+      - name: product_name
+        data_tests:
+          - not_null
+      - name: group_std
+        data_tests:
+          - not_null
+      - name: category_std
+        data_tests:
+          - not_null
+      - name: subcategory_std
+        data_tests:
+          - not_null
+
+  - name: dim_taxonomy
+    description: "Table with standard group, category and subcategory values."
+    columns:
+      - name: product_group
+        data_tests:
+          - not_null
+      - name: category
+        data_tests:
+          - not_null
+      - name: subcategory
         data_tests:
           - not_null

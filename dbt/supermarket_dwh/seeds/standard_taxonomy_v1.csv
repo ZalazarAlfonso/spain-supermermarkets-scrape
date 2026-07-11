@@ -1,0 +1,55 @@
+group_order,category_order,subcategory_order,group_std,category_std,subcategory_std,category_norm,subcategory_norm
+1,1,1,Frescos y Perecederos,Frutas y Verduras,Hortalizas,frutas y verduras,hortalizas
+1,1,2,Frescos y Perecederos,Frutas y Verduras,Frutas,frutas y verduras,frutas
+1,1,3,Frescos y Perecederos,Frutas y Verduras,Hierbas frescas,frutas y verduras,hierbas frescas
+1,2,1,Frescos y Perecederos,Lácteos y Huevos,Leches y Bebidas lácteas,lacteos y huevos,leches y bebidas lacteas
+1,2,2,Frescos y Perecederos,Lácteos y Huevos,Quesos y Cremas,lacteos y huevos,quesos y cremas
+1,2,3,Frescos y Perecederos,Lácteos y Huevos,Yogures,lacteos y huevos,yogures
+1,2,4,Frescos y Perecederos,Lácteos y Huevos,Huevos,lacteos y huevos,huevos
+1,3,1,Frescos y Perecederos,Carnes y Pescados,Ternera / Res,carnes y pescados,ternera / res
+1,3,2,Frescos y Perecederos,Carnes y Pescados,Pollo y Aves,carnes y pescados,pollo y aves
+1,3,3,Frescos y Perecederos,Carnes y Pescados,Cerdo y otros,carnes y pescados,cerdo y otros
+1,3,4,Frescos y Perecederos,Carnes y Pescados,Pescados y Mariscos,carnes y pescados,pescados y mariscos
+1,3,5,Frescos y Perecederos,Carnes y Pescados,Charcutería y Fiambres,carnes y pescados,charcuteria y fiambres
+1,4,1,Frescos y Perecederos,Panadería,Pan artesanal,panaderia,pan artesanal
+1,4,2,Frescos y Perecederos,Panadería,Bollería y Pastelería,panaderia,bolleria y pasteleria
+1,5,1,Frescos y Perecederos,Comidas preparadas,Comidas preparadas,comidas preparadas,comidas preparadas
+2,1,1,Despensa y Abarrotes,Granos y Pastas,Arroz y Legumbres,granos y pastas,arroz y legumbres
+2,1,2,Despensa y Abarrotes,Granos y Pastas,Pasta seca,granos y pastas,pasta seca
+2,2,1,Despensa y Abarrotes,Aceites y Condimentos,Aceites y Vinagres,aceites y condimentos,aceites y vinagres
+2,2,2,Despensa y Abarrotes,Aceites y Condimentos,Especias y Sal,aceites y condimentos,especias y sal
+2,2,3,Despensa y Abarrotes,Aceites y Condimentos,Salsas y Aderezos,aceites y condimentos,salsas y aderezos
+2,3,1,Despensa y Abarrotes,Conservas,Atún y Pescados en lata,conservas,atun y pescados en lata
+2,3,2,Despensa y Abarrotes,Conservas,Vegetales y Frutas en lata,conservas,vegetales y frutas en lata
+2,3,3,Despensa y Abarrotes,Conservas,Sopas,conservas,sopas
+2,3,4,Despensa y Abarrotes,Conservas,Platos Preparados en Conserva,conservas,platos preparados en conserva
+2,3,5,Despensa y Abarrotes,Conservas,Encurtidos y Aceitunas,conservas,encurtidos y aceitunas
+2,4,1,Despensa y Abarrotes,Desayuno y Merienda,"Café, Té y Cacao",desayuno y merienda,"cafe, te y cacao"
+2,4,2,Despensa y Abarrotes,Desayuno y Merienda,Cereales y Galletas,desayuno y merienda,cereales y galletas
+2,4,3,Despensa y Abarrotes,Desayuno y Merienda,Mermeladas y Miel,desayuno y merienda,mermeladas y miel
+2,5,1,Despensa y Abarrotes,Panadería y Sustitutos,Pan de Molde y Tortillas,panaderia y sustitutos,pan de molde y tortillas
+2,6,1,Despensa y Abarrotes,Repostería y Masas,Harinas y Levaduras,reposteria y masas,harinas y levaduras
+3,1,1,Congelados,Platos Listos,Pizzas y Lasañas,platos listos,pizzas y lasanas
+3,1,2,Congelados,Platos Listos,Comida preparada,platos listos,comida preparada
+3,1,3,Congelados,Platos Listos,Patatas y Precocinados,platos listos,patatas y precocinados
+3,2,1,Congelados,Ingredientes,Verduras y Frutas congeladas,ingredientes,verduras y frutas congeladas
+3,2,2,Congelados,Ingredientes,"Carne, Pescado, Pollo",ingredientes,"carne, pescado, pollo"
+3,3,1,Congelados,Postres,Helados y Postres fríos,postres,helados y postres frios
+4,1,1,Bebidas,Sin Alcohol,Agua mineral,sin alcohol,agua mineral
+4,1,2,Bebidas,Sin Alcohol,Refrescos y Gaseosas,sin alcohol,refrescos y gaseosas
+4,1,3,Bebidas,Sin Alcohol,Jugos y Zumos,sin alcohol,jugos y zumos
+4,2,1,Bebidas,Con Alcohol,Cervezas,con alcohol,cervezas
+4,2,2,Bebidas,Con Alcohol,Vinos y Espumosos,con alcohol,vinos y espumosos
+4,2,3,Bebidas,Con Alcohol,Licores y Destilados,con alcohol,licores y destilados
+5,1,1,Snacks y Dulces,Aperitivos,Papas y Snacks salados,aperitivos,papas y snacks salados
+5,1,2,Snacks y Dulces,Aperitivos,Frutos secos y Semillas,aperitivos,frutos secos y semillas
+5,2,1,Snacks y Dulces,Dulces,Chocolates y Bombones,dulces,chocolates y bombones
+5,2,2,Snacks y Dulces,Dulces,Caramelos y Golosinas,dulces,caramelos y golosinas
+6,1,1,Hogar y Personal,Limpieza y Hogar,Detergentes y Suavizantes,limpieza y hogar,detergentes y suavizantes
+6,1,2,Hogar y Personal,Limpieza y Hogar,Papel Higiénico y Servilletas,limpieza y hogar,papel higienico y servilletas
+6,1,3,Hogar y Personal,Limpieza y Hogar,Hogar,limpieza y hogar,hogar
+6,2,1,Hogar y Personal,Cuidado Personal,Higiene Bucal,cuidado personal,higiene bucal
+6,2,2,Hogar y Personal,Cuidado Personal,"Champú, Jabón y Cremas",cuidado personal,"champu, jabon y cremas"
+6,2,3,Hogar y Personal,Cuidado Personal,Salud y Bienestar,cuidado personal,salud y bienestar
+6,3,1,Hogar y Personal,Bebés y Mascotas,Mascotas,bebes y mascotas,mascotas
+6,3,2,Hogar y Personal,Bebés y Mascotas,Bebés,bebes y mascotas,bebes

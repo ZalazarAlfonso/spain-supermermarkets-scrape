@@ -1,0 +1,1576 @@
+rule_id,level,target,field,match_type,pattern,supermarket,priority
+1,category,Frutas y Verduras,category_norm,regex,\bfrutas?\b,,10
+2,category,Frutas y Verduras,subcategory_norm,contains,\bfrutas?\b,,10
+3,subcategory,Frutas,category_norm,contains,\bfrutas?\b,,10
+4,subcategory,Frutas,subcategory_norm,contains,\bfrutas?\b,,10
+5,category,Frutas y Verduras,category_norm,contains,\bverduras?\b,,10
+6,category,Frutas y Verduras,subcategory_norm,contains,\bverduras?\b,,10
+7,subcategory,Hortalizas,category_norm,contains,\bverduras?\b,,10
+8,subcategory,Hortalizas,subcategory_norm,contains,\bverduras?\b,,10
+9,category,Lácteos y Huevos,category_norm,contains,lacteos,,10
+10,category,Lácteos y Huevos,category_norm,contains,huevo,,10
+11,category,Lácteos y Huevos,category_norm,contains,quesos,,10
+12,category,Lácteos y Huevos,subcategory_norm,contains,quesos,,10
+13,category,Lácteos y Huevos,subcategory_norm,contains,yogur,,10
+14,subcategory,Leches y Bebidas lácteas,category_norm,contains,leche,,10
+15,subcategory,Huevos,category_norm,contains,huevo,,10
+16,subcategory,Huevos,subcategory_norm,contains,huevo,,10
+17,subcategory,Quesos y Cremas,category_norm,contains,quesos,,10
+18,subcategory,Quesos y Cremas,subcategory_norm,regex,\b(quesos?|nata|cremas?|bechamel)\b,,10
+19,subcategory,Yogures,subcategory_norm,contains,yogur,,10
+20,category,Carnes y Pescados,category_norm,regex,\b(charcuteria|fiambres?|embutidos?)\b,,10
+21,category,Carnes y Pescados,subcategory_norm,regex,\b(charcuteria|fiambres?|embutidos?)\b,,10
+22,category,Carnes y Pescados,category_norm,contains,carne,,10
+23,category,Carnes y Pescados,subcategory_norm,contains,carne,,10
+24,category,Carnes y Pescados,category_norm,contains,pescado,,10
+25,category,Carnes y Pescados,subcategory_norm,contains,pescado,,10
+26,subcategory,Charcutería y Fiambres,category_norm,regex,\b(charcuteria|fiambres?|embutidos?)\b,,10
+27,subcategory,Charcutería y Fiambres,subcategory_norm,regex,\b(charcuteria|fiambres?|embutidos?)\b,,10
+28,category,Carnes y Pescados,subcategory_norm,equals,jamones y paletas,,100
+29,subcategory,Charcutería y Fiambres,subcategory_norm,equals,jamones y paletas,,100
+30,category,Carnes y Pescados,category_norm,contains,carne,,10
+31,category,Carnes y Pescados,subcategory_norm,contains,carne,,10
+32,subcategory,Pescados y Mariscos,category_norm,contains,pescado,,10
+33,subcategory,Pescados y Mariscos,subcategory_norm,contains,pescado,,10
+34,category,Carnes y Pescados,subcategory_norm,equals,"ahumados, surimis, anchoas, pulpos y otros",,100
+35,subcategory,Pescados y Mariscos,subcategory_norm,equals,"ahumados, surimis, anchoas, pulpos y otros",,100
+36,category,Panadería,subcategory_norm,contains,bolleria,,100
+37,subcategory,Bollería y Pastelería,subcategory_norm,contains,bolleria,,100
+38,category,Comidas preparadas,category_norm,contains,comida preparada,,100
+39,subcategory,Comidas preparadas,category_norm,contains,comida preparada,,100
+40,category,Comidas preparadas,category_norm,contains,platos preparados,,100
+41,subcategory,Comidas preparadas,category_norm,contains,platos preparados,,100
+42,category,Comidas preparadas,subcategory_norm,contains,comida preparada,,100
+43,subcategory,Comidas preparadas,subcategory_norm,contains,comida preparada,,100
+44,category,Comidas preparadas,subcategory_norm,contains,platos preparados,,100
+45,subcategory,Comidas preparadas,subcategory_norm,contains,platos preparados,,100
+46,category,Granos y Pastas,category_norm,contains,pastas,,10
+47,category,Granos y Pastas,subcategory_norm,contains,pastas,,10
+48,category,Granos y Pastas,subcategory_norm,regex,\b(arroz|legumbres)\b,,10
+49,subcategory,Arroz y Legumbres,category_norm,regex,\b(arroz|legumbres)\b,,10
+50,subcategory,Pasta seca,category_norm,contains,pastas,,10
+51,subcategory,Pasta seca,subcategory_norm,contains,pastas,,10
+52,category,Aceites y Condimentos,category_norm,contains,aceite,,50
+53,subcategory,Aceites y Vinagres,subcategory_norm,contains,aceite,,50
+54,category,Aceites y Condimentos,subcategory_norm,equals,"mayonesa, ketchup y otras salsas",,100
+55,subcategory,Salsas y Aderezos,subcategory_norm,equals,"mayonesa, ketchup y otras salsas",,100
+58,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,80
+59,category,Conservas,category_norm,equals,"conservas, sopas y precocinados",,80
+60,subcategory,Atún y Pescados en lata,subcategory_norm,contains,atun,,30
+61,category,Desayuno y Merienda,subcategory_norm,contains,galletas,,10
+62,category,Desayuno y Merienda,subcategory_norm,contains,cafes,,10
+63,category,Desayuno y Merienda,subcategory_norm,contains,te,,10
+64,category,Desayuno y Merienda,subcategory_norm,contains,cereales,,10
+65,category,Desayuno y Merienda,subcategory_norm,contains,mermelada,,10
+66,category,Desayuno y Merienda,subcategory_norm,contains,infusiones,,10
+67,subcategory,"Café, Té y Cacao",subcategory_norm,contains,infusiones,,10
+68,category,Desayuno y Merienda,subcategory_norm,equals,cacaos solubles,,100
+69,subcategory,"Café, Té y Cacao",subcategory_norm,equals,cacaos solubles,,100
+70,subcategory,Mermeladas y Miel,subcategory_norm,contains,mermelada,,10
+71,subcategory,Cereales y Galletas,subcategory_norm,contains,cereales,,10
+72,subcategory,Cereales y Galletas,subcategory_norm,contains,galletas,,10
+73,subcategory,"Café, Té y Cacao",subcategory_norm,contains,te,,10
+74,subcategory,"Café, Té y Cacao",subcategory_norm,contains,cafe,,10
+75,category,Postres,subcategory_norm,contains,postres,,20
+76,subcategory,Helados y Postres fríos,subcategory_norm,contains,postres,,20
+77,category,Postres,subcategory_norm,contains,helados,,20
+78,subcategory,Helados y Postres fríos,subcategory_norm,contains,helados,,20
+79,category,Postres,subcategory_norm,equals,helados,,100
+80,subcategory,Helados y Postres fríos,subcategory_norm,equals,helados,,100
+81,category,Sin Alcohol,subcategory_norm,equals,"agua, soda y gaseosas",,30
+82,subcategory,Refrescos y Gaseosas,subcategory_norm,equals,"agua, soda y gaseosas",,30
+83,category,Sin Alcohol,product_norm,contains,agua mineral,,50
+84,subcategory,Agua mineral,product_norm,contains,agua mineral,,50
+85,category,Sin Alcohol,category_norm,contains,refrescos,,50
+86,subcategory,Refrescos y Gaseosas,category_norm,contains,refrescos,,50
+87,category,Sin Alcohol,subcategory_norm,contains,refrescos,,50
+88,subcategory,Refrescos y Gaseosas,subcategory_norm,contains,refrescos,,50
+89,category,Sin Alcohol,category_norm,contains,zumos,,50
+90,subcategory,Jugos y Zumos,category_norm,contains,zumos,,50
+91,category,Sin Alcohol,subcategory_norm,contains,zumos,,50
+92,subcategory,Jugos y Zumos,subcategory_norm,contains,zumos,,50
+93,category,Con Alcohol,subcategory_norm,contains,vino,,50
+94,category,Con Alcohol,subcategory_norm,regex,\b(champagne|sidras?|cavas?)\b,,50
+95,subcategory,Vinos y Espumosos,subcategory_norm,regex,\b(champagne|sidras?|cavas?)\b,,50
+96,subcategory,Vinos y Espumosos,subcategory_norm,contains,vino,,50
+97,category,Con Alcohol,subcategory_norm,contains,cerveza,,50
+98,subcategory,Cervezas,subcategory_norm,contains,cerveza,,50
+99,category,Con Alcohol,subcategory_norm,contains,licor,,50
+100,subcategory,Licores y Destilados,subcategory_norm,contains,licor,,50
+101,category,Aperitivos,subcategory_norm,contains,snacks,,50
+102,subcategory,Papas y Snacks salados,subcategory_norm,contains,snacks,,50
+103,category,Aperitivos,subcategory_norm,regex,\b(frutos secos|semillas)\b,,50
+104,subcategory,Frutos secos y Semillas,subcategory_norm,regex,\b(frutos secos|semillas)\b,,50
+105,category,Dulces,subcategory_norm,equals,"chocolates, cremas untar y bombones",,100
+106,subcategory,Chocolates y Bombones,subcategory_norm,equals,"chocolates, cremas untar y bombones",,100
+107,category,Dulces,subcategory_norm,contains,golosinas,,50
+108,subcategory,Caramelos y Golosinas,subcategory_norm,contains,golosinas,,50
+109,category,Dulces,subcategory_norm,equals,"chocolates, cremas untar y bombones",,100
+110,subcategory,Chocolates y Bombones,subcategory_norm,equals,"chocolates, cremas untar y bombones",,100
+111,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,100
+112,category,Limpieza y Hogar,subcategory_norm,equals,limpieza y hogar,,100
+113,category,Cuidado Personal,category_norm,equals,\b(champu|perfume|colonias?|higiene facial|higiene intima|afeitado y cuidado para hombre|cuidado corporal|depilacion|gel y jabon de manos|hidratacion corporal|limpieza facial|cuidado intimo|gel de ducha|manicura y pedicura|)\b,,100
+115,category,Cuidado Personal,category_norm,equals,cuidado del cabello,,100
+116,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado del cabello,,100
+117,category,Cuidado Personal,category_norm,equals,cuidado facial y corporal,,100
+118,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,cuidado facial y corporal,,100
+119,category,Bebés y Mascotas,category_norm,equals,mascotas,,100
+120,subcategory,Mascotas,category_norm,equals,mascotas,,100
+121,category,Desayuno y Merienda,category_norm,regex,\b(cafes?|infusion(es)?|cacao)\b,,50
+121,category,Desayuno y Merienda,subcategory_norm,regex,\b(cafes?|infusion(es)?|capsulas?)\b,,50
+122,subcategory,"Café, Té y Cacao",category_norm,regex,\b(cafes?|infusion(es)?|cacao)\b,,50
+122,subcategory,"Café, Té y Cacao",subcategory_norm,regex,\b(cafes?|infusion(es)?|capsulas?)\b,,50
+123,category,Con Alcohol,subcategory_norm,contains,alcohol,,50
+124,category,Con Alcohol,category_norm,regex,"\b(cervezas, vinos y licores|bebidas)\b",,70
+125,category,Con Alcohol,subcategory_norm,regex,\b(bebidas alcoholicas|alcoholes|sidra|champagne)\b,,70
+126,category,Sin Alcohol,subcategory_norm,equals,bebidas ecologicas,,100
+126,subcategory,Jugos y Zumos,subcategory_norm,equals,bebidas ecologicas,,100
+127,category,Panadería,category_norm,equals,frescos,,100
+127,category,Panadería,subcategory_norm,equals,panaderia,,100
+128,subcategory,Pan artesanal,category_norm,equals,frescos,,100
+128,subcategory,Pan artesanal,subcategory_norm,equals,panaderia,,100
+129,category,Aceites y Condimentos,subcategory_norm,regex,\b(sal(es)|especias)\b,,50
+129,subcategory,Especias y Sal,subcategory_norm,regex,\b(sal(es)|especias)\b,,50
+130,category,Cuidado Personal,category_norm,equals,maquillaje,,100
+131,subcategory,"Champú, Jabón y Cremas",category_norm,equals,maquillaje,,100
+132,category,Platos Listos,category_norm,equals,congelados,,80
+132,category,Platos Listos,subcategory_norm,regex,\bpizza(s)\b,,80
+133,subcategory,Pizzas y Lasañas,category_norm,equals,congelados,,80
+133,subcategory,Pizzas y Lasañas,subcategory_norm,regex,\bpizza(s)\b,,80
+134,category,Platos Listos,subcategory_norm,equals,occonfreiaire,,80
+135,subcategory,Comida preparada,subcategory_norm,equals,occonfreiaire,,80
+136,category,Ingredientes,category_norm,equals,congelados,,80
+136,category,Ingredientes,subcategory_norm,regex,\b(verdura(s)?|vegetal(es)?|fruta(s)?)\b,,80
+137,subcategory,Verduras y Frutas congeladas,category_norm,equals,congelados,,80
+137,subcategory,Verduras y Frutas congeladas,subcategory_norm,regex,\b(verdura(s)?|vegetal(es)?|fruta(s)?)\b,,80
+138,subcategory,Pan artesanal,subcategory_norm,equals,pan recien horneado ,,100
+139,category,Panadería,subcategory_norm,equals,pan recien horneado ,,100
+140,subcategory,Pan artesanal,category_norm,equals,pan y bolleria del dia,,100
+141,category,Panadería,category_norm,equals,pan y bolleria del dia,,100
+142,subcategory,Pan artesanal,subcategory_norm,contains,pan de horno,,100
+143,category,Panadería,subcategory_norm,contains,pan de horno,,100
+144,category,Panadería y Sustitutos,category_norm,regex,"\b(panaderia|panaderia y pasteleria|panaderia, bolleria y pasteleria)\b",,20
+145,subcategory,Pan de Molde y Tortillas,category_norm,regex,"\b(panaderia|panaderia y pasteleria|panaderia, bolleria y pasteleria)\b",,20
+146,category,Lácteos y Huevos,category_norm,equals,yogures y postres,,80
+147,subcategory,Yogures,category_norm,equals,yogures y postres,,80
+148,category,Bebés y Mascotas,category_norm,equals,bebe,,100
+149,subcategory,Bebés,category_norm,equals,bebe,,100
+150,category,Conservas,subcategory_norm,regex,\b(aceituna(s)?|encurtido(s)?)\b,,80
+151,subcategory,Encurtidos y Aceitunas,subcategory_norm,regex,\b(aceituna(s)?|encurtido(s)?)\b,,80
+152,category,Aperitivos,category_norm,contains,aperitivos,,5
+153,subcategory,Papas y Snacks salados,category_norm,contains,aperitivos,,5
+154,category,Repostería y Masas,subcategory_norm,equals,harinas y levaduras,,100
+155,subcategory,Harinas y Levaduras,subcategory_norm,equals,harinas y levaduras,,100
+156,category,Cuidado Personal,subcategory_norm,regex,\b(nutricion deportiva|vitaminas y complementos)\b,,100
+157,subcategory,Salud y Bienestar,subcategory_norm,regex,\b(nutricion deportiva|vitaminas y complementos)\b,,100
+158,category,Granos y Pastas,subcategory_norm,contains,pasta y fideos,,80
+159,subcategory,Pasta seca,subcategory_norm,contains,pasta y fideos,,80
+160,category,Dulces,category_norm,contains,caramelos,,50
+161,subcategory,Caramelos y Golosinas,category_norm,contains,caramelos,,50
+162,category,Con Alcohol,category_norm,equals,bodega,,80
+163,subcategory,Vinos y Espumosos,subcategory_norm,equals,tinto de verano y sangria,,100
+164,category,Desayuno y Merienda,subcategory_norm,equals,tortitas,,100
+165,subcategory,Cereales y Galletas,subcategory_norm,equals,tortitas,,100
+166,category,Platos Listos,category_norm,equals,congelados,,100
+166,category,Platos Listos,subcategory_norm,regex,\b(patatas|croquetas|nuggets)\b,,100
+167,subcategory,Patatas y Precocinados,category_norm,equals,congelados,,100
+167,subcategory,Patatas y Precocinados,subcategory_norm,regex,\b(patatas|croquetas|nuggets)\b,,100
+168,category,Postres,subcategory_norm,equals,hielo,,100
+169,subcategory,Helados y Postres fríos,subcategory_norm,equals,hielo,,100
+170,category,Postres,subcategory_norm,contains,tartas,,20
+171,subcategory,Helados y Postres fríos,subcategory_norm,contains,tartas,,20
+172,subcategory,"Carne, Pescado, Pollo",subcategory_norm,contains,marisco,,50
+172,subcategory,"Carne, Pescado, Pollo",category_norm,equals,congelados,,50
+173,category,Ingredientes,subcategory_norm,contains,marisco,,50
+173,category,Ingredientes,category_norm,equals,congelados,,50
+174,category,Desayuno y Merienda,subcategory_norm,regex,\b(barritas|turron(es)?)\b,,70
+175,subcategory,Cereales y Galletas,subcategory_norm,regex,\b(barritas|turron(es)?)\b,,70
+176,category,Desayuno y Merienda,subcategory_norm,regex,\b(miel|siropes?)\b,,70
+177,subcategory,Mermeladas y Miel,subcategory_norm,regex,\b(miel|siropes?)\b,,70
+178,category,Lácteos y Huevos,category_norm,equals,postres y yogures,,80
+179,subcategory,Yogures,category_norm,equals,postres y yogures,,80
+180,category,Comidas preparadas,category_norm,equals,sushi del dia,,100
+181,subcategory,Comidas preparadas,category_norm,equals,sushi del dia,,100
+182,category,Cuidado Personal,category_norm,regex,farmacia$|^farmacia,,100
+183,category,Cuidado Personal,subcategory_norm,regex,farmacia$|^farmacia,,100
+184,subcategory,Salud y Bienestar,category_norm,regex,farmacia$|^farmacia,,100
+185,subcategory,Salud y Bienestar,subcategory_norm,regex,farmacia$|^farmacia,,100
+186,subcategory,Licores y Destilados,product_norm,regex,\b(whisk(e)?y|vodka|ron(es)?|ginebra|gin|tequila|brandy|coñac|cognac|licor(es)?|vermouth|vermut|verm(ú|u)t)\b,,100
+187,subcategory,Higiene Bucal,subcategory_norm,regex,\b(bucal|dental)\b,,100
+188,subcategory,"Champú, Jabón y Cremas",subcategory_norm,regex,\b(champu|perfume|colonias?|higiene facial|higiene intima|afeitado y cuidado para hombre|cuidado corporal|depilacion|gel y jabon de manos|hidratacion corporal|limpieza facial|cuidado intimo|manicura y pedicura|jabon de manos|acondicionadores y mascarillas|gel de ducha|afeitado|espumas y fijadores)\b,,100
+189,subcategory,Salud y Bienestar,subcategory_norm,regex,\b(complementos nutricionales|cremas solares)\b,,100
+190,subcategory,Ternera / Res,subcategory_norm,regex,\b(vacuno)\b,,80
+191,subcategory,Pollo y Aves,subcategory_norm,regex,\b(pollo|aves|pavo)\b,,80
+192,subcategory,Cerdo y otros,category_norm,regex,carnes?,,80
+192,subcategory,Cerdo y otros,subcategory_norm,regex,\b(cerdo|cordero|conejo|otras carnes|arreglos|despieces)\b,,80
+193,subcategory,Ternera / Res,product_norm,regex,\b(vacuno|vaca|ternera)\b,,100
+194,subcategory,Pollo y Aves,product_norm,regex,\b(pollo|aves|pavo|gallina|chicken)\b,,100
+195,subcategory,Cerdo y otros,product_norm,regex,\b(cerdo|cordero|conejo)\b,,100
+196,subcategory,Licores y Destilados,subcategory_norm,regex,\b(whisk(e)?y|vodka|ron(es)?|ginebra|gin|tequila|brandy|coñac|cognac|licor(es)?|vermouth|vermut|verm(ú|u)t)\b,,100
+197,subcategory,Arroz y Legumbres,subcategory_norm,regex,\b(arroz|legumbres)\b,,50
+198,subcategory,Licores y Destilados,subcategory_norm,regex,\b(alcoholes|bebidas alcoholicas)\b,,5
+199,subcategory,Vegetales y Frutas en lata,subcategory_norm,regex,\b(conservas vegetales|conservas de vegetales)\b,,100
+200,subcategory,Sopas,category_norm,regex,\b(conservas?)\b,,100
+200,subcategory,Sopas,subcategory_norm,regex,\b(caldos?|sopas?|pures?|gazpachos?)\b,,100
+201,subcategory,Sopas,category_norm,regex,\b(conservas?)\b,,100
+201,subcategory,Sopas,subcategory_norm,regex,\b(berberechos?|sardinas|mejillones)\b,,100
+202,subcategory,Platos Preparados en Conserva,subcategory_norm,regex,"\b(pizzas|conservas de carne|platos tradicionales|tortillas, empanadillas y sandwiches)\b",,100
+202,subcategory,Platos Preparados en Conserva,category_norm,regex,\b(conservas?)\b,,100
+203,subcategory,Ternera / Res,subcategory_norm,equals,carne,,50
+204,subcategory,Leches y Bebidas lácteas,subcategory_norm,contains,leche,,10
+205,subcategory,Detergentes y Suavizantes,subcategory_norm,regex,\b(cuidado de la ropa)\b,,100
+206,subcategory,Papel Higiénico y Servilletas,subcategory_norm,regex,\b(papel higienico)\b,,100
+207,subcategory,Hogar,subcategory_norm,regex,\b(utiles del hogar|pilas|bombillas|ambientador(es)?|lavavajillas|limpieza|limpia muebles|insecticidas|cristales|limpiacristales|limpiahogar|bolsas|quimicos|calzado|papel|menaje)\b,,100
+207,subcategory,Hogar,category_norm,equals,limpieza y hogar,,100
+208,subcategory,Leches y Bebidas lácteas,subcategory_norm,regex,\b(batidos y horchatas|bebida vegetal|listo para beber)\b,,50
+208,subcategory,Leches y Bebidas lácteas,category_norm,regex,\b(leches?|lacteos?)\b,,50
+209,subcategory,Salsas y Aderezos,subcategory_norm,regex,\b(mayonesa|ketchup|allioli|mostaza|otras salsas)\b,,100
+210,subcategory,Aceites y Vinagres,subcategory_norm,regex,\b(vinagres?)\b,,60
+211,subcategory,Ternera / Res,subcategory_norm,regex,\b(hamburguesas|carne picada|albondigas)\b,,30
+212,subcategory,Comidas preparadas,subcategory_norm,regex,\b(empanados|elaborados)\b,,30
+213,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,carne congelada,,100
+214,subcategory,"Carne, Pescado, Pollo",subcategory_norm,regex,carne,,100
+214,subcategory,"Carne, Pescado, Pollo",category_norm,regex,\bcongelados?\b,,100
+215,category,Limpieza y Hogar,subcategory_norm,contains,accesorios,,100
+215,category,Limpieza y Hogar,category_norm,equals,freidora de aire - airfryer,,100
+216,subcategory,Hogar,subcategory_norm,contains,accesorios,,100
+216,subcategory,Hogar,category_norm,equals,freidora de aire - airfryer,,100
+217,category,Cuidado Personal,subcategory_norm,regex,\b(complementos nutricionales|cremas solares)\b,,100
+218,category,Cuidado Personal,subcategory_norm,regex,\b(bucal|dental)\b,,100
+219,category,Cuidado Personal,subcategory_norm,regex,\b(champu|perfume|colonias?|higiene facial|higiene intima|afeitado y cuidado para hombre|cuidado corporal|depilacion|gel y jabon de manos|hidratacion corporal|limpieza facial|cuidado intimo|manicura y pedicura|jabon de manos|acondicionadores y mascarillas|gel de ducha|afeitado|espumas y fijadores)\b,,100
+220,category,Limpieza y Hogar,category_norm,regex,\b(insecticidas|ambientadores|bazar|conservacion de alimentos|menaje|utensilios de limpieza|limpieza del hogar|limpieza cocina|limpieza bano y wc|papel y celulosa|cuidado de la ropa|calzado)\b,,100
+221,category,Bebés y Mascotas,category_norm,regex,\b(gatos|perros|panales|alimentacion infantil|parafarmacia para el bebe|cuidado e higiene infantil)\b,,100
+222,category,Cuidado Personal,category_norm,regex,\b(cabello|bano e higiene corporal|boca y sonrisa|cuidado y proteccion corporal|cosmetica|cuidado e higiene facial|proteccion solar|botiquin|cuidado corporal|higiene intima|higiene bucal|bienestar sexual)\b,,100
+223,category,Postres,category_norm,equals,helados,,100
+224,category,Platos Listos,category_norm,equals,hielo,,100
+224,category,Platos Listos,subcategory_norm,equals,pizzas congeladas,,100
+225,category,Ingredientes,category_norm,equals,hielo,,100
+225,category,Ingredientes,subcategory_norm,equals,mariscos congelados,,100
+226,category,Platos Listos,category_norm,equals,pizzas congeladas,,100
+227,category,Platos Listos,category_norm,equals,hielo,,100
+227,category,Platos Listos,subcategory_norm,equals,patatas,,100
+228,subcategory,Hogar,category_norm,regex,\b(insecticidas|ambientadores|bazar|conservacion de alimentos|menaje|utensilios de limpieza|limpieza del hogar|limpieza cocina|limpieza bano y wc|calzado)\b,,100
+228,subcategory,Hogar,subcategory_norm,regex,"\b(menaje|limpieza del hogar|limpieza cocina|limpieza bano y wc|ambientadores|automaticos|decorativos y velas|pilas|hermetico|ollas, cazos y accesorios|menaje desechable|escobas, mopas y recogedores|limpiacristales y multiusos|estropajos|lavavajillas maquina|suelos|bayetas microfibra|plantillas de calzado|wc)\b",,100
+229,subcategory,Papel Higiénico y Servilletas,category_norm,regex,\b(insecticidas|papel y celulosa)\b,,100
+229,subcategory,Papel Higiénico y Servilletas,subcategory_norm,regex,\b(papel y celulosa|papel higienico|servilletas)\b,,100
+230,subcategory,Detergentes y Suavizantes,category_norm,regex,\b(insecticidas|cuidado de la ropa)\b,,100
+230,subcategory,Detergentes y Suavizantes,subcategory_norm,regex,\b(cuidado de la ropa|aditivos y manchas)\b,,100
+231,subcategory,Mascotas,category_norm,regex,\b(gatos|perros)\b,,100
+231,subcategory,Mascotas,subcategory_norm,regex,\bpienso para (gatos|perros)\b,,100
+232,subcategory,Bebés,category_norm,regex,\b(panales|alimentacion infantil|parafarmacia para el bebe|cuidado e higiene infantil)\b,,100
+232,subcategory,Bebés,subcategory_norm,regex,\b(alimentacion infantil|leches infantiles|panales|parafarmacia para el bebe|leche infantil|cuidado del bebe|bano y ducha)\b,,100
+233,subcategory,"Champú, Jabón y Cremas",category_norm,regex,\b(cabello|bano e higiene corporal|cuidado y proteccion corporal|cosmetica|cuidado e higiene facial|cuidado corporal)\b,,100
+233,subcategory,"Champú, Jabón y Cremas",subcategory_norm,regex,\b(champus?|acondicionadores|cuidado y tratamientos del cabello|geles? de bano|piel|rostro|cremas faciales|cremas y lociones)\b,,100
+234,subcategory,Higiene Bucal,category_norm,regex,\b(boca y sonrisa|higiene bucal)\b,,100
+234,subcategory,Higiene Bucal,subcategory_norm,regex,"\b(dentifricos|cepillos, recambios y accesorios|colutorio)\b",,100
+235,subcategory,Salud y Bienestar,category_norm,regex,\b(proteccion solar|botiquin|higiene intima|bienestar sexual)\b,,100
+235,subcategory,Salud y Bienestar,subcategory_norm,regex,\b(suplementos alimenticios|botiquin|cuidado de heridas|compresas|incontinencia|preservativos)\b,,100
+236,subcategory,Helados y Postres fríos,category_norm,equals,helados,,100
+236,subcategory,Helados y Postres fríos,subcategory_norm,regex,\b(bombon helado|tarrinas)\b,,100
+237,subcategory,Pizzas y Lasañas,category_norm,regex,\b(hielo|pizzas congeladas)\b,,100
+237,subcategory,Pizzas y Lasañas,subcategory_norm,regex,\b(pizzas congeladas|masa fina)\b,,100
+238,subcategory,"Carne, Pescado, Pollo",category_norm,equals,hielo,,100
+238,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,mariscos congelados,,100
+239,subcategory,Patatas y Precocinados,category_norm,equals,hielo,,100
+239,subcategory,Patatas y Precocinados,subcategory_norm,equals,patatas,,100
+240,subcategory,Especias y Sal,category_norm,equals,"aceites, salsas y especias",,100
+240,subcategory,Especias y Sal,subcategory_norm,regex,"\b(ajo, sal y pimienta|sazonadores)\b",,100
+241,subcategory,Refrescos y Gaseosas,category_norm,equals,bebidas,,100
+241,subcategory,Refrescos y Gaseosas,subcategory_norm,equals,energeticas,,100
+242,subcategory,"Champú, Jabón y Cremas",category_norm,regex,\b(cabello|cuidado y proteccion corporal|bano e higiene corporal|proteccion solar)\b,,100
+242,subcategory,"Champú, Jabón y Cremas",subcategory_norm,regex,"\b(cepillos, peines y accesorios|fijadores|body milk, hidratacion bajo la ducha|cuidado del cabello|esponjas, manoplas y cepillos de bano|ojos y oreja)\b",,100
+243,subcategory,Hogar,category_norm,regex,\b(insecticidas|bazar|ambientadores)\b,,100
+243,subcategory,Hogar,subcategory_norm,regex,\b(bazar|conservacion de alimentos|papeleria|insecticidas|barbacoas y accesorios|automovil|pegamentos y siliconas|absorbeolores y antihumedad|aerosol y pistola|electricos)\b,,100
+244,subcategory,Higiene Bucal,category_norm,equals,boca y sonrisa,,100
+244,subcategory,Higiene Bucal,subcategory_norm,equals,enjuagues bucales,,100
+245,subcategory,Helados y Postres fríos,category_norm,equals,helados,,100
+245,subcategory,Helados y Postres fríos,subcategory_norm,equals,conos,,100
+246,subcategory,Bebés,category_norm,equals,panales,,100
+246,subcategory,Bebés,subcategory_norm,regex,\b(toallitas|puericultura)\b,,100
+247,subcategory,Salud y Bienestar,category_norm,equals,botiquin,,100
+247,subcategory,Salud y Bienestar,subcategory_norm,regex,\b(suero fisiologico y lentillas|alivio del dolor)\b,,100
+248,subcategory,Hogar,category_norm,regex,\b(conservacion de alimentos|menaje|limpieza cocina|cuidado de la ropa|bazar|calzado)\b,,100
+248,subcategory,Hogar,subcategory_norm,regex,\b(bolsas|papel y moldes horno|vajillas y vasos|quitagrasas|jardineria|limpiador liquido)\b,,100
+249,subcategory,"Champú, Jabón y Cremas",category_norm,regex,\b(cosmetica|cuidado corporal)\b,,100
+249,subcategory,"Champú, Jabón y Cremas",subcategory_norm,regex,\b(ojos|unas|jabones y geles)\b,,100
+250,subcategory,Bebés,category_norm,equals,cuidado e higiene infantil,,100
+250,subcategory,Bebés,subcategory_norm,equals,hidratacion y cuidado de la piel,,100
+251,subcategory,Mascotas,category_norm,regex,\b(gatos|perros|pajaros|conejos y roedores)\b,,100
+251,subcategory,Mascotas,subcategory_norm,regex,\b(accesorios e higiene|pienso para pajaros|pienso para conejos y rodeores|champus para perro)\b,,100
+252,subcategory,Helados y Postres fríos,category_norm,equals,helados,,100
+252,subcategory,Helados y Postres fríos,subcategory_norm,regex,\b(polos|sandwiches)\b,,100
+253,subcategory,Salud y Bienestar,category_norm,regex,\b(higiene intima|suplementos alimenticios)\b,,100
+253,subcategory,Salud y Bienestar,subcategory_norm,regex,\b(tampones|toallitas y geles intimos|energia|complementos vitaminicos|vitaminas y minerales|colagenos|sueno y relajacion)\b,,100
+254,subcategory,Salud y Bienestar,category_norm,equals,botiquin,,100
+254,subcategory,Salud y Bienestar,subcategory_norm,equals,sprays y tiras nasales,,100
+255,category,Aceites y Condimentos,category_norm,equals,aceites y condimentos,,120
+256,category,Aperitivos,category_norm,equals,aperitivos,,120
+257,category,Bebés y Mascotas,category_norm,equals,bebes y mascotas,,120
+258,category,Carnes y Pescados,category_norm,equals,carnes y pescados,,120
+259,category,Comidas preparadas,category_norm,equals,comidas preparadas,,120
+260,category,Con Alcohol,category_norm,equals,con alcohol,,120
+261,category,Conservas,category_norm,equals,conservas,,120
+262,category,Cuidado Personal,category_norm,equals,cuidado personal,,120
+263,category,Desayuno y Merienda,category_norm,equals,desayuno y merienda,,120
+264,category,Dulces,category_norm,equals,dulces,,120
+265,category,Frutas y Verduras,category_norm,equals,frutas y verduras,,120
+266,category,Granos y Pastas,category_norm,equals,granos y pastas,,120
+267,category,Ingredientes,category_norm,equals,ingredientes,,120
+268,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,120
+269,category,Lácteos y Huevos,category_norm,equals,lacteos y huevos,,120
+270,category,Panadería,category_norm,equals,panaderia,,120
+271,category,Panadería y Sustitutos,category_norm,equals,panaderia y sustitutos,,120
+272,category,Platos Listos,category_norm,equals,platos listos,,120
+273,category,Postres,category_norm,equals,postres,,120
+274,category,Repostería y Masas,category_norm,equals,reposteria y masas,,120
+275,category,Sin Alcohol,category_norm,equals,sin alcohol,,120
+276,subcategory,Aceites y Vinagres,subcategory_norm,equals,aceites y vinagres,,120
+277,subcategory,Agua mineral,subcategory_norm,equals,agua mineral,,120
+278,subcategory,Arroz y Legumbres,subcategory_norm,equals,arroz y legumbres,,120
+279,subcategory,Atún y Pescados en lata,subcategory_norm,equals,atun y pescados en lata,,120
+280,subcategory,Bebés,subcategory_norm,equals,bebes,,120
+281,subcategory,Bollería y Pastelería,subcategory_norm,equals,bolleria y pasteleria,,120
+282,subcategory,"Café, Té y Cacao",subcategory_norm,equals,"cafe, te y cacao",,120
+283,subcategory,Caramelos y Golosinas,subcategory_norm,equals,caramelos y golosinas,,120
+284,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,"carne, pescado, pollo",,120
+285,subcategory,Cerdo y otros,subcategory_norm,equals,cerdo y otros,,120
+286,subcategory,Cereales y Galletas,subcategory_norm,equals,cereales y galletas,,120
+287,subcategory,Cervezas,subcategory_norm,equals,cervezas,,120
+288,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,"champu, jabon y cremas",,120
+289,subcategory,Charcutería y Fiambres,subcategory_norm,equals,charcuteria y fiambres,,120
+290,subcategory,Chocolates y Bombones,subcategory_norm,equals,chocolates y bombones,,120
+291,subcategory,Comida preparada,subcategory_norm,equals,comida preparada,,120
+292,subcategory,Comidas preparadas,subcategory_norm,equals,comidas preparadas,,120
+293,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergentes y suavizantes,,120
+294,subcategory,Encurtidos y Aceitunas,subcategory_norm,equals,encurtidos y aceitunas,,120
+295,subcategory,Especias y Sal,subcategory_norm,equals,especias y sal,,120
+296,subcategory,Frutas,subcategory_norm,equals,frutas,,120
+297,subcategory,Frutos secos y Semillas,subcategory_norm,equals,frutos secos y semillas,,120
+298,subcategory,Harinas y Levaduras,subcategory_norm,equals,harinas y levaduras,,120
+299,subcategory,Helados y Postres fríos,subcategory_norm,equals,helados y postres frios,,120
+300,subcategory,Hierbas frescas,subcategory_norm,equals,hierbas frescas,,120
+301,subcategory,Higiene Bucal,subcategory_norm,equals,higiene bucal,,120
+302,subcategory,Hogar,subcategory_norm,equals,hogar,,120
+303,subcategory,Hortalizas,subcategory_norm,equals,hortalizas,,120
+304,subcategory,Huevos,subcategory_norm,equals,huevos,,120
+305,subcategory,Jugos y Zumos,subcategory_norm,equals,jugos y zumos,,120
+306,subcategory,Leches y Bebidas lácteas,subcategory_norm,equals,leches y bebidas lacteas,,120
+307,subcategory,Licores y Destilados,subcategory_norm,equals,licores y destilados,,120
+308,subcategory,Mascotas,subcategory_norm,equals,mascotas,,120
+309,subcategory,Mermeladas y Miel,subcategory_norm,equals,mermeladas y miel,,120
+310,subcategory,Pan artesanal,subcategory_norm,equals,pan artesanal,,120
+311,subcategory,Pan de Molde y Tortillas,subcategory_norm,equals,pan de molde y tortillas,,120
+312,subcategory,Papas y Snacks salados,subcategory_norm,equals,papas y snacks salados,,120
+313,subcategory,Papel Higiénico y Servilletas,subcategory_norm,equals,papel higienico y servilletas,,120
+314,subcategory,Pasta seca,subcategory_norm,equals,pasta seca,,120
+315,subcategory,Patatas y Precocinados,subcategory_norm,equals,patatas y precocinados,,120
+316,subcategory,Pescados y Mariscos,subcategory_norm,equals,pescados y mariscos,,120
+317,subcategory,Pizzas y Lasañas,subcategory_norm,equals,pizzas y lasanas,,120
+318,subcategory,Platos Preparados en Conserva,subcategory_norm,equals,platos preparados en conserva,,120
+319,subcategory,Pollo y Aves,subcategory_norm,equals,pollo y aves,,120
+320,subcategory,Quesos y Cremas,subcategory_norm,equals,quesos y cremas,,120
+321,subcategory,Refrescos y Gaseosas,subcategory_norm,equals,refrescos y gaseosas,,120
+322,subcategory,Salsas y Aderezos,subcategory_norm,equals,salsas y aderezos,,120
+323,subcategory,Salud y Bienestar,subcategory_norm,equals,salud y bienestar,,120
+324,subcategory,Sopas,subcategory_norm,equals,sopas,,120
+325,subcategory,Ternera / Res,subcategory_norm,equals,ternera / res,,120
+326,subcategory,Vegetales y Frutas en lata,subcategory_norm,equals,vegetales y frutas en lata,,120
+327,subcategory,Verduras y Frutas congeladas,subcategory_norm,equals,verduras y frutas congeladas,,120
+328,subcategory,Vinos y Espumosos,subcategory_norm,equals,vinos y espumosos,,120
+329,subcategory,Yogures,subcategory_norm,equals,yogures,,120
+330,subcategory,Hierbas frescas,subcategory_norm,regex,\b(hierbas frescas?|aromaticas?|cilantro|perejil|albahaca|hierbabuena|menta)\b,,130
+331,category,Frutas y Verduras,subcategory_norm,regex,\b(hierbas frescas?|aromaticas?|cilantro|perejil|albahaca|hierbabuena|menta)\b,,130
+332,category,Aceites y Condimentos,category_norm,equals,"aceite, especias y salsas",,160
+332,category,Aceites y Condimentos,subcategory_norm,equals,especias / sazonadores,,160
+333,subcategory,Especias y Sal,category_norm,equals,"aceite, especias y salsas",,160
+333,subcategory,Especias y Sal,subcategory_norm,equals,especias / sazonadores,,160
+334,category,Aceites y Condimentos,category_norm,equals,"aceites, salsas y especias",,160
+334,category,Aceites y Condimentos,subcategory_norm,equals,salsas de tomate y pasta,,160
+335,subcategory,Salsas y Aderezos,category_norm,equals,"aceites, salsas y especias",,160
+335,subcategory,Salsas y Aderezos,subcategory_norm,equals,salsas de tomate y pasta,,160
+336,category,Aceites y Condimentos,category_norm,equals,"aceites, salsas y especias",,160
+336,category,Aceites y Condimentos,subcategory_norm,equals,salsas especiales y picantes,,160
+337,subcategory,Especias y Sal,category_norm,equals,"aceites, salsas y especias",,160
+337,subcategory,Especias y Sal,subcategory_norm,equals,salsas especiales y picantes,,160
+338,category,Aceites y Condimentos,category_norm,equals,"aceites, salsas y especias",,160
+338,category,Aceites y Condimentos,subcategory_norm,equals,sazonadores,,160
+339,subcategory,Especias y Sal,category_norm,equals,"aceites, salsas y especias",,160
+339,subcategory,Especias y Sal,subcategory_norm,equals,sazonadores,,160
+340,category,Limpieza y Hogar,category_norm,equals,air fryer,,160
+340,category,Limpieza y Hogar,subcategory_norm,equals,accesorios air fryer,,160
+341,subcategory,Hogar,category_norm,equals,air fryer,,160
+341,subcategory,Hogar,subcategory_norm,equals,accesorios air fryer,,160
+342,category,Ingredientes,category_norm,equals,air fryer,,160
+342,category,Ingredientes,subcategory_norm,equals,carne air fryer,,160
+343,subcategory,"Carne, Pescado, Pollo",category_norm,equals,air fryer,,160
+343,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,carne air fryer,,160
+344,category,Platos Listos,category_norm,equals,air fryer,,160
+344,category,Platos Listos,subcategory_norm,equals,patatas air fryer,,160
+345,subcategory,Patatas y Precocinados,category_norm,equals,air fryer,,160
+345,subcategory,Patatas y Precocinados,subcategory_norm,equals,patatas air fryer,,160
+346,category,Platos Listos,category_norm,equals,air fryer,,160
+346,category,Platos Listos,subcategory_norm,equals,rebozados air fryer,,160
+347,subcategory,Patatas y Precocinados,category_norm,equals,air fryer,,160
+347,subcategory,Patatas y Precocinados,subcategory_norm,equals,rebozados air fryer,,160
+348,category,Aceites y Condimentos,category_norm,equals,alimentacion,,160
+348,category,Aceites y Condimentos,subcategory_norm,equals,aceites y vinagres,,160
+349,subcategory,Aceites y Vinagres,category_norm,equals,alimentacion,,160
+349,subcategory,Aceites y Vinagres,subcategory_norm,equals,aceites y vinagres,,160
+350,category,Aceites y Condimentos,category_norm,equals,alimentacion,,160
+350,category,Aceites y Condimentos,subcategory_norm,equals,especias y sazonadores,,160
+351,subcategory,Especias y Sal,category_norm,equals,alimentacion,,160
+351,subcategory,Especias y Sal,subcategory_norm,equals,especias y sazonadores,,160
+352,category,Aceites y Condimentos,category_norm,equals,alimentacion,,160
+352,category,Aceites y Condimentos,subcategory_norm,equals,salsas y tomate frito,,160
+353,subcategory,Salsas y Aderezos,category_norm,equals,alimentacion,,160
+353,subcategory,Salsas y Aderezos,subcategory_norm,equals,salsas y tomate frito,,160
+354,category,Bebés y Mascotas,category_norm,equals,alimentacion infantil,,160
+354,category,Bebés y Mascotas,subcategory_norm,equals,complementos alimenticios e infusiones,,160
+355,subcategory,Bebés,category_norm,equals,alimentacion infantil,,160
+355,subcategory,Bebés,subcategory_norm,equals,complementos alimenticios e infusiones,,160
+356,category,Bebés y Mascotas,category_norm,equals,alimentacion infantil,,160
+356,category,Bebés y Mascotas,subcategory_norm,equals,papillas y cereales,,160
+357,subcategory,Bebés,category_norm,equals,alimentacion infantil,,160
+357,subcategory,Bebés,subcategory_norm,equals,papillas y cereales,,160
+358,category,Bebés y Mascotas,category_norm,equals,alimentacion infantil,,160
+358,category,Bebés y Mascotas,subcategory_norm,equals,"postres, bolsitas y yogures infantiles",,160
+359,subcategory,Bebés,category_norm,equals,alimentacion infantil,,160
+359,subcategory,Bebés,subcategory_norm,equals,"postres, bolsitas y yogures infantiles",,160
+360,category,Bebés y Mascotas,category_norm,equals,alimentacion infantil,,160
+360,category,Bebés y Mascotas,subcategory_norm,equals,snacks y galletas infantiles,,160
+361,subcategory,Bebés,category_norm,equals,alimentacion infantil,,160
+361,subcategory,Bebés,subcategory_norm,equals,snacks y galletas infantiles,,160
+362,category,Limpieza y Hogar,category_norm,equals,ambientadores,,160
+362,category,Limpieza y Hogar,subcategory_norm,equals,coche,,160
+363,subcategory,Hogar,category_norm,equals,ambientadores,,160
+363,subcategory,Hogar,subcategory_norm,equals,coche,,160
+364,category,Limpieza y Hogar,category_norm,equals,ambientadores,,160
+364,category,Limpieza y Hogar,subcategory_norm,equals,un toque,,160
+365,subcategory,Hogar,category_norm,equals,ambientadores,,160
+365,subcategory,Hogar,subcategory_norm,equals,un toque,,160
+366,category,Conservas,category_norm,equals,aperitivos,,160
+366,category,Conservas,subcategory_norm,equals,aceitunas y encurtidos,,160
+367,subcategory,Encurtidos y Aceitunas,category_norm,equals,aperitivos,,160
+367,subcategory,Encurtidos y Aceitunas,subcategory_norm,equals,aceitunas y encurtidos,,160
+368,category,Conservas,category_norm,equals,aperitivos,,160
+368,category,Conservas,subcategory_norm,equals,aceitunas y encurtidos / aceitunas negras,,160
+369,subcategory,Encurtidos y Aceitunas,category_norm,equals,aperitivos,,160
+369,subcategory,Encurtidos y Aceitunas,subcategory_norm,equals,aceitunas y encurtidos / aceitunas negras,,160
+370,category,Conservas,category_norm,equals,aperitivos,,160
+370,category,Conservas,subcategory_norm,equals,aceitunas y encurtidos / aceitunas verdes,,160
+371,subcategory,Encurtidos y Aceitunas,category_norm,equals,aperitivos,,160
+371,subcategory,Encurtidos y Aceitunas,subcategory_norm,equals,aceitunas y encurtidos / aceitunas verdes,,160
+372,category,Conservas,category_norm,equals,aperitivos,,160
+372,category,Conservas,subcategory_norm,equals,aceitunas y encurtidos / coctel y banderillas,,160
+373,subcategory,Encurtidos y Aceitunas,category_norm,equals,aperitivos,,160
+373,subcategory,Encurtidos y Aceitunas,subcategory_norm,equals,aceitunas y encurtidos / coctel y banderillas,,160
+374,category,Conservas,category_norm,equals,aperitivos,,160
+374,category,Conservas,subcategory_norm,equals,aceitunas y encurtidos / pepinillos y otros encurtidos,,160
+375,subcategory,Encurtidos y Aceitunas,category_norm,equals,aperitivos,,160
+375,subcategory,Encurtidos y Aceitunas,subcategory_norm,equals,aceitunas y encurtidos / pepinillos y otros encurtidos,,160
+376,category,Aperitivos,category_norm,equals,aperitivos,,160
+376,category,Aperitivos,subcategory_norm,equals,frutas desecadas,,160
+377,subcategory,Frutos secos y Semillas,category_norm,equals,aperitivos,,160
+377,subcategory,Frutos secos y Semillas,subcategory_norm,equals,frutas desecadas,,160
+378,category,Aperitivos,category_norm,equals,aperitivos,,160
+378,category,Aperitivos,subcategory_norm,equals,galletas saladas,,160
+379,subcategory,Papas y Snacks salados,category_norm,equals,aperitivos,,160
+379,subcategory,Papas y Snacks salados,subcategory_norm,equals,galletas saladas,,160
+380,category,Aperitivos,category_norm,equals,aperitivos,,160
+380,category,Aperitivos,subcategory_norm,equals,torreznos y cortezas,,160
+381,subcategory,Papas y Snacks salados,category_norm,equals,aperitivos,,160
+381,subcategory,Papas y Snacks salados,subcategory_norm,equals,torreznos y cortezas,,160
+382,category,Aperitivos,category_norm,equals,aperitivos,,160
+382,category,Aperitivos,subcategory_norm,equals,tortitas,,160
+383,subcategory,Papas y Snacks salados,category_norm,equals,aperitivos,,160
+383,subcategory,Papas y Snacks salados,subcategory_norm,equals,tortitas,,160
+384,category,Granos y Pastas,category_norm,equals,"arroz, legumbres y pasta",,160
+384,category,Granos y Pastas,subcategory_norm,equals,pasta y fideos / fideos orientales,,160
+385,subcategory,Pasta seca,category_norm,equals,"arroz, legumbres y pasta",,160
+385,subcategory,Pasta seca,subcategory_norm,equals,pasta y fideos / fideos orientales,,160
+386,category,Granos y Pastas,category_norm,equals,"arroz, legumbres y pasta",,160
+386,category,Granos y Pastas,subcategory_norm,equals,pasta y fideos / lasana y canelones,,160
+387,subcategory,Pasta seca,category_norm,equals,"arroz, legumbres y pasta",,160
+387,subcategory,Pasta seca,subcategory_norm,equals,pasta y fideos / lasana y canelones,,160
+388,category,Granos y Pastas,category_norm,equals,"arroz, pastas y legumbres",,160
+388,category,Granos y Pastas,subcategory_norm,equals,lasana y canelones,,160
+389,subcategory,Pasta seca,category_norm,equals,"arroz, pastas y legumbres",,160
+389,subcategory,Pasta seca,subcategory_norm,equals,lasana y canelones,,160
+390,category,Granos y Pastas,category_norm,equals,"arroz, pastas y legumbres",,160
+390,category,Granos y Pastas,subcategory_norm,equals,"macarrones, espaguetis y pastas secas",,160
+391,subcategory,Pasta seca,category_norm,equals,"arroz, pastas y legumbres",,160
+391,subcategory,Pasta seca,subcategory_norm,equals,"macarrones, espaguetis y pastas secas",,160
+392,category,Granos y Pastas,category_norm,equals,"arroz, pastas y legumbres",,160
+392,category,Granos y Pastas,subcategory_norm,equals,noodles,,160
+393,subcategory,Pasta seca,category_norm,equals,"arroz, pastas y legumbres",,160
+393,subcategory,Pasta seca,subcategory_norm,equals,noodles,,160
+394,category,Granos y Pastas,category_norm,equals,"arroz, pastas y legumbres",,160
+394,category,Granos y Pastas,subcategory_norm,equals,pastas rellenas,,160
+395,subcategory,Pasta seca,category_norm,equals,"arroz, pastas y legumbres",,160
+395,subcategory,Pasta seca,subcategory_norm,equals,pastas rellenas,,160
+396,category,Dulces,category_norm,equals,"azucar, caramelos y chocolate",,160
+396,category,Dulces,subcategory_norm,equals,chocolate / bombones,,160
+397,subcategory,Chocolates y Bombones,category_norm,equals,"azucar, caramelos y chocolate",,160
+397,subcategory,Chocolates y Bombones,subcategory_norm,equals,chocolate / bombones,,160
+398,category,Cuidado Personal,category_norm,equals,bano e higiene corporal,,160
+398,category,Cuidado Personal,subcategory_norm,equals,desodorantes,,160
+399,subcategory,"Champú, Jabón y Cremas",category_norm,equals,bano e higiene corporal,,160
+399,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,desodorantes,,160
+400,category,Cuidado Personal,category_norm,equals,bano e higiene corporal,,160
+400,category,Cuidado Personal,subcategory_norm,equals,perfumeria para regalar,,160
+401,subcategory,"Champú, Jabón y Cremas",category_norm,equals,bano e higiene corporal,,160
+401,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,perfumeria para regalar,,160
+402,category,Cuidado Personal,category_norm,equals,bano e higiene corporal,,160
+402,category,Cuidado Personal,subcategory_norm,equals,sales de bano,,160
+403,subcategory,"Champú, Jabón y Cremas",category_norm,equals,bano e higiene corporal,,160
+403,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,sales de bano,,160
+404,category,Limpieza y Hogar,category_norm,equals,bazar,,160
+404,category,Limpieza y Hogar,subcategory_norm,equals,accesorios de bano,,160
+405,subcategory,Hogar,category_norm,equals,bazar,,160
+405,subcategory,Hogar,subcategory_norm,equals,accesorios de bano,,160
+406,category,Limpieza y Hogar,category_norm,equals,bazar,,160
+406,category,Limpieza y Hogar,subcategory_norm,equals,burletes,,160
+407,subcategory,Hogar,category_norm,equals,bazar,,160
+407,subcategory,Hogar,subcategory_norm,equals,burletes,,160
+408,category,Limpieza y Hogar,category_norm,equals,bazar,,160
+408,category,Limpieza y Hogar,subcategory_norm,equals,herramientas,,160
+409,subcategory,Hogar,category_norm,equals,bazar,,160
+409,subcategory,Hogar,subcategory_norm,equals,herramientas,,160
+410,category,Sin Alcohol,category_norm,equals,bebidas,,160
+410,category,Sin Alcohol,subcategory_norm,equals,"agua, soda y gaseosas",,160
+411,subcategory,Agua mineral,category_norm,equals,bebidas,,160
+411,subcategory,Agua mineral,subcategory_norm,equals,"agua, soda y gaseosas",,160
+412,category,Sin Alcohol,category_norm,equals,bebidas,,160
+412,category,Sin Alcohol,subcategory_norm,equals,energeticas,,160
+413,subcategory,Refrescos y Gaseosas,category_norm,equals,bebidas,,160
+413,subcategory,Refrescos y Gaseosas,subcategory_norm,equals,energeticas,,160
+414,category,Sin Alcohol,category_norm,equals,bebidas,,160
+414,category,Sin Alcohol,subcategory_norm,equals,refrescos,,160
+415,subcategory,Refrescos y Gaseosas,category_norm,equals,bebidas,,160
+415,subcategory,Refrescos y Gaseosas,subcategory_norm,equals,refrescos,,160
+416,category,Sin Alcohol,category_norm,equals,bebidas,,160
+416,category,Sin Alcohol,subcategory_norm,equals,zumos de frutas,,160
+417,subcategory,Jugos y Zumos,category_norm,equals,bebidas,,160
+417,subcategory,Jugos y Zumos,subcategory_norm,equals,zumos de frutas,,160
+418,category,Cuidado Personal,category_norm,equals,bienestar sexual,,160
+418,category,Cuidado Personal,subcategory_norm,equals,estimuladores,,160
+419,subcategory,Salud y Bienestar,category_norm,equals,bienestar sexual,,160
+419,subcategory,Salud y Bienestar,subcategory_norm,equals,estimuladores,,160
+420,category,Cuidado Personal,category_norm,equals,bienestar sexual,,160
+420,category,Cuidado Personal,subcategory_norm,equals,lubricantes,,160
+421,subcategory,Salud y Bienestar,category_norm,equals,bienestar sexual,,160
+421,subcategory,Salud y Bienestar,subcategory_norm,equals,lubricantes,,160
+422,category,Cuidado Personal,category_norm,equals,boca y sonrisa,,160
+422,category,Cuidado Personal,subcategory_norm,equals,dentifricos,,160
+423,subcategory,Higiene Bucal,category_norm,equals,boca y sonrisa,,160
+423,subcategory,Higiene Bucal,subcategory_norm,equals,dentifricos,,160
+424,category,Cuidado Personal,category_norm,equals,boca y sonrisa,,160
+424,category,Cuidado Personal,subcategory_norm,equals,protector labial,,160
+425,subcategory,"Champú, Jabón y Cremas",category_norm,equals,boca y sonrisa,,160
+425,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,protector labial,,160
+426,category,Cuidado Personal,category_norm,equals,boca y sonrisa,,160
+426,category,Cuidado Personal,subcategory_norm,equals,protesis,,160
+427,subcategory,Higiene Bucal,category_norm,equals,boca y sonrisa,,160
+427,subcategory,Higiene Bucal,subcategory_norm,equals,protesis,,160
+428,category,Cuidado Personal,category_norm,equals,botiquin,,160
+428,category,Cuidado Personal,subcategory_norm,equals,antimosquitos,,160
+429,subcategory,Salud y Bienestar,category_norm,equals,botiquin,,160
+429,subcategory,Salud y Bienestar,subcategory_norm,equals,antimosquitos,,160
+430,category,Cuidado Personal,category_norm,equals,botiquin,,160
+430,category,Cuidado Personal,subcategory_norm,equals,cuidado del oido,,160
+431,subcategory,Salud y Bienestar,category_norm,equals,botiquin,,160
+431,subcategory,Salud y Bienestar,subcategory_norm,equals,cuidado del oido,,160
+432,category,Cuidado Personal,category_norm,equals,botiquin,,160
+432,category,Cuidado Personal,subcategory_norm,equals,geles hidroalcoholicos,,160
+433,subcategory,Salud y Bienestar,category_norm,equals,botiquin,,160
+433,subcategory,Salud y Bienestar,subcategory_norm,equals,geles hidroalcoholicos,,160
+434,category,Cuidado Personal,category_norm,equals,botiquin,,160
+434,category,Cuidado Personal,subcategory_norm,equals,mascarillas,,160
+435,subcategory,Salud y Bienestar,category_norm,equals,botiquin,,160
+435,subcategory,Salud y Bienestar,subcategory_norm,equals,mascarillas,,160
+436,category,Cuidado Personal,category_norm,equals,botiquin,,160
+436,category,Cuidado Personal,subcategory_norm,equals,tos y garganta,,160
+437,subcategory,Salud y Bienestar,category_norm,equals,botiquin,,160
+437,subcategory,Salud y Bienestar,subcategory_norm,equals,tos y garganta,,160
+438,category,Cuidado Personal,category_norm,equals,cabello,,160
+438,category,Cuidado Personal,subcategory_norm,equals,tinte,,160
+439,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cabello,,160
+439,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,tinte,,160
+440,category,Limpieza y Hogar,category_norm,equals,calzado,,160
+440,category,Limpieza y Hogar,subcategory_norm,equals,crema,,160
+441,subcategory,Hogar,category_norm,equals,calzado,,160
+441,subcategory,Hogar,subcategory_norm,equals,crema,,160
+442,category,Limpieza y Hogar,category_norm,equals,calzado,,160
+442,category,Limpieza y Hogar,subcategory_norm,equals,desodorantes para calzado,,160
+443,subcategory,Hogar,category_norm,equals,calzado,,160
+443,subcategory,Hogar,subcategory_norm,equals,desodorantes para calzado,,160
+444,category,Limpieza y Hogar,category_norm,equals,calzado,,160
+444,category,Limpieza y Hogar,subcategory_norm,equals,esponjas autobrillantes,,160
+445,subcategory,Hogar,category_norm,equals,calzado,,160
+445,subcategory,Hogar,subcategory_norm,equals,esponjas autobrillantes,,160
+446,category,Limpieza y Hogar,category_norm,equals,calzado,,160
+446,category,Limpieza y Hogar,subcategory_norm,equals,limpiador de piel y ante,,160
+447,subcategory,Hogar,category_norm,equals,calzado,,160
+447,subcategory,Hogar,subcategory_norm,equals,limpiador de piel y ante,,160
+448,category,Ingredientes,category_norm,equals,carne,,160
+448,category,Ingredientes,subcategory_norm,equals,carne congelada,,160
+449,subcategory,"Carne, Pescado, Pollo",category_norm,equals,carne,,160
+449,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,carne congelada,,160
+450,category,Platos Listos,category_norm,equals,carne,,160
+450,category,Platos Listos,subcategory_norm,equals,empanados,,160
+451,subcategory,Patatas y Precocinados,category_norm,equals,carne,,160
+451,subcategory,Patatas y Precocinados,subcategory_norm,equals,empanados,,160
+452,category,Ingredientes,category_norm,equals,carne,,160
+452,category,Ingredientes,subcategory_norm,equals,empanados y elaborados / empanados y rebozados congelados,,160
+453,subcategory,"Carne, Pescado, Pollo",category_norm,equals,carne,,160
+453,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,empanados y elaborados / empanados y rebozados congelados,,160
+454,category,Platos Listos,category_norm,equals,carnes,,160
+454,category,Platos Listos,subcategory_norm,equals,empanados y elaborados,,160
+455,subcategory,Patatas y Precocinados,category_norm,equals,carnes,,160
+455,subcategory,Patatas y Precocinados,subcategory_norm,equals,empanados y elaborados,,160
+456,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+456,category,Carnes y Pescados,subcategory_norm,equals,aves y jamon cocido / jamon cocido,,160
+457,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+457,subcategory,Charcutería y Fiambres,subcategory_norm,equals,aves y jamon cocido / jamon cocido,,160
+458,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+458,category,Carnes y Pescados,subcategory_norm,equals,aves y jamon cocido / pavo y otros,,160
+459,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+459,subcategory,Charcutería y Fiambres,subcategory_norm,equals,aves y jamon cocido / pavo y otros,,160
+460,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+460,category,Carnes y Pescados,subcategory_norm,equals,bacon y salchichas / salchichas,,160
+461,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+461,subcategory,Charcutería y Fiambres,subcategory_norm,equals,bacon y salchichas / salchichas,,160
+462,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+462,category,Carnes y Pescados,subcategory_norm,equals,chopped y mortadela,,160
+463,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+463,subcategory,Charcutería y Fiambres,subcategory_norm,equals,chopped y mortadela,,160
+464,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+464,category,Carnes y Pescados,subcategory_norm,equals,chopped y mortadela / chopped,,160
+465,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+465,subcategory,Charcutería y Fiambres,subcategory_norm,equals,chopped y mortadela / chopped,,160
+466,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+466,category,Carnes y Pescados,subcategory_norm,equals,chopped y mortadela / mortadela,,160
+467,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+467,subcategory,Charcutería y Fiambres,subcategory_norm,equals,chopped y mortadela / mortadela,,160
+468,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+468,category,Carnes y Pescados,subcategory_norm,equals,embutido curado / chorizo,,160
+469,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+469,subcategory,Charcutería y Fiambres,subcategory_norm,equals,embutido curado / chorizo,,160
+470,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+470,category,Carnes y Pescados,subcategory_norm,equals,embutido curado / lomo y otros,,160
+471,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+471,subcategory,Charcutería y Fiambres,subcategory_norm,equals,embutido curado / lomo y otros,,160
+472,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+472,category,Carnes y Pescados,subcategory_norm,equals,"jamon cocido, pavo y pollo",,160
+473,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+473,subcategory,Charcutería y Fiambres,subcategory_norm,equals,"jamon cocido, pavo y pollo",,160
+474,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+474,category,Carnes y Pescados,subcategory_norm,equals,"lomo, chorizo, fuet y salchichon",,160
+475,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+475,subcategory,Charcutería y Fiambres,subcategory_norm,equals,"lomo, chorizo, fuet y salchichon",,160
+476,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+476,category,Carnes y Pescados,subcategory_norm,equals,pate y sobrasada / pate,,160
+477,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+477,subcategory,Charcutería y Fiambres,subcategory_norm,equals,pate y sobrasada / pate,,160
+478,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+478,category,Carnes y Pescados,subcategory_norm,equals,"pate, foie y sobrasada",,160
+479,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+479,subcategory,Charcutería y Fiambres,subcategory_norm,equals,"pate, foie y sobrasada",,160
+480,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+480,category,Lácteos y Huevos,subcategory_norm,equals,"queso azul, roquefort y cabra",,160
+481,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+481,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso azul, roquefort y cabra",,160
+482,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+482,category,Lácteos y Huevos,subcategory_norm,equals,"queso curado, semi y tierno",,160
+483,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+483,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso curado, semi y tierno",,160
+484,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+484,category,Lácteos y Huevos,subcategory_norm,equals,"queso curado, semicurado y tierno / queso curado",,160
+485,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+485,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso curado, semicurado y tierno / queso curado",,160
+486,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+486,category,Lácteos y Huevos,subcategory_norm,equals,"queso curado, semicurado y tierno / queso tierno",,160
+487,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+487,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso curado, semicurado y tierno / queso tierno",,160
+488,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+488,category,Lácteos y Huevos,subcategory_norm,equals,queso fresco,,160
+489,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+489,subcategory,Quesos y Cremas,subcategory_norm,equals,queso fresco,,160
+490,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+490,category,Lácteos y Huevos,subcategory_norm,equals,"queso lonchas, rallado y en porciones / queso en porciones",,160
+491,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+491,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso lonchas, rallado y en porciones / queso en porciones",,160
+492,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+492,category,Lácteos y Huevos,subcategory_norm,equals,"queso lonchas, rallado y en porciones / queso lonchas",,160
+493,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+493,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso lonchas, rallado y en porciones / queso lonchas",,160
+494,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+494,category,Lácteos y Huevos,subcategory_norm,equals,"queso lonchas, rallado y en porciones / queso rallado",,160
+495,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+495,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso lonchas, rallado y en porciones / queso rallado",,160
+496,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+496,category,Lácteos y Huevos,subcategory_norm,equals,"queso untable, fresco y especialidades / queso especialidades",,160
+497,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+497,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso untable, fresco y especialidades / queso especialidades",,160
+498,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+498,category,Lácteos y Huevos,subcategory_norm,equals,"queso untable, fresco y especialidades / queso fresco",,160
+499,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+499,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso untable, fresco y especialidades / queso fresco",,160
+500,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+500,category,Lácteos y Huevos,subcategory_norm,equals,"queso untable, fresco y especialidades / queso untable",,160
+501,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+501,subcategory,Quesos y Cremas,subcategory_norm,equals,"queso untable, fresco y especialidades / queso untable",,160
+502,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+502,category,Lácteos y Huevos,subcategory_norm,equals,quesos en lonchas y rallado,,160
+503,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+503,subcategory,Quesos y Cremas,subcategory_norm,equals,quesos en lonchas y rallado,,160
+504,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos,,160
+504,category,Lácteos y Huevos,subcategory_norm,equals,quesos untables y fundidos,,160
+505,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos,,160
+505,subcategory,Quesos y Cremas,subcategory_norm,equals,quesos untables y fundidos,,160
+506,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos,,160
+506,category,Carnes y Pescados,subcategory_norm,equals,salchichas y bacon,,160
+507,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos,,160
+507,subcategory,Charcutería y Fiambres,subcategory_norm,equals,salchichas y bacon,,160
+508,category,Carnes y Pescados,category_norm,equals,charcuteria y quesos al corte,,160
+508,category,Carnes y Pescados,subcategory_norm,equals,fiambres y cocidos,,160
+509,subcategory,Charcutería y Fiambres,category_norm,equals,charcuteria y quesos al corte,,160
+509,subcategory,Charcutería y Fiambres,subcategory_norm,equals,fiambres y cocidos,,160
+510,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos al corte,,160
+510,category,Lácteos y Huevos,subcategory_norm,equals,quesos barra y frescos,,160
+511,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos al corte,,160
+511,subcategory,Quesos y Cremas,subcategory_norm,equals,quesos barra y frescos,,160
+512,category,Lácteos y Huevos,category_norm,equals,charcuteria y quesos al corte,,160
+512,category,Lácteos y Huevos,subcategory_norm,equals,quesos internacionales,,160
+513,subcategory,Quesos y Cremas,category_norm,equals,charcuteria y quesos al corte,,160
+513,subcategory,Quesos y Cremas,subcategory_norm,equals,quesos internacionales,,160
+514,category,Conservas,category_norm,equals,comida preparada,,160
+514,category,Conservas,subcategory_norm,equals,platos preparados en conserva,,160
+515,subcategory,Platos Preparados en Conserva,category_norm,equals,comida preparada,,160
+515,subcategory,Platos Preparados en Conserva,subcategory_norm,equals,platos preparados en conserva,,160
+516,category,Comidas preparadas,category_norm,equals,comidas del mundo,,160
+516,category,Comidas preparadas,subcategory_norm,equals,asiatico,,160
+517,subcategory,Comidas preparadas,category_norm,equals,comidas del mundo,,160
+517,subcategory,Comidas preparadas,subcategory_norm,equals,asiatico,,160
+518,category,Comidas preparadas,category_norm,equals,comidas del mundo,,160
+518,category,Comidas preparadas,subcategory_norm,equals,latino,,160
+519,subcategory,Comidas preparadas,category_norm,equals,comidas del mundo,,160
+519,subcategory,Comidas preparadas,subcategory_norm,equals,latino,,160
+520,category,Platos Listos,category_norm,equals,congelados,,160
+520,category,Platos Listos,subcategory_norm,equals,arroz y pasta / arroz,,160
+521,subcategory,Comida preparada,category_norm,equals,congelados,,160
+521,subcategory,Comida preparada,subcategory_norm,equals,arroz y pasta / arroz,,160
+522,category,Platos Listos,category_norm,equals,congelados,,160
+522,category,Platos Listos,subcategory_norm,equals,arroz y pasta / pasta,,160
+523,subcategory,Comida preparada,category_norm,equals,congelados,,160
+523,subcategory,Comida preparada,subcategory_norm,equals,arroz y pasta / pasta,,160
+524,category,Ingredientes,category_norm,equals,congelados,,160
+524,category,Ingredientes,subcategory_norm,equals,carne,,160
+525,subcategory,"Carne, Pescado, Pollo",category_norm,equals,congelados,,160
+525,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,carne,,160
+526,category,Postres,category_norm,equals,congelados,,160
+526,category,Postres,subcategory_norm,equals,helados y hielo,,160
+527,subcategory,Helados y Postres fríos,category_norm,equals,congelados,,160
+527,subcategory,Helados y Postres fríos,subcategory_norm,equals,helados y hielo,,160
+528,category,Platos Listos,category_norm,equals,congelados,,160
+528,category,Platos Listos,subcategory_norm,equals,occonfreiaire,,160
+529,subcategory,Patatas y Precocinados,category_norm,equals,congelados,,160
+529,subcategory,Patatas y Precocinados,subcategory_norm,equals,occonfreiaire,,160
+530,category,Platos Listos,category_norm,equals,congelados,,160
+530,category,Platos Listos,subcategory_norm,equals,pizzas,,160
+531,subcategory,Pizzas y Lasañas,category_norm,equals,congelados,,160
+531,subcategory,Pizzas y Lasañas,subcategory_norm,equals,pizzas,,160
+532,category,Ingredientes,category_norm,equals,congelados,,160
+532,category,Ingredientes,subcategory_norm,equals,rebozados / carne rebozada,,160
+533,subcategory,"Carne, Pescado, Pollo",category_norm,equals,congelados,,160
+533,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,rebozados / carne rebozada,,160
+534,category,Postres,category_norm,equals,congelados,,160
+534,category,Postres,subcategory_norm,equals,"tartas, postres",,160
+535,subcategory,Helados y Postres fríos,category_norm,equals,congelados,,160
+535,subcategory,Helados y Postres fríos,subcategory_norm,equals,"tartas, postres",,160
+536,category,Ingredientes,category_norm,equals,congelados,,160
+536,category,Ingredientes,subcategory_norm,equals,verdura,,160
+537,subcategory,Verduras y Frutas congeladas,category_norm,equals,congelados,,160
+537,subcategory,Verduras y Frutas congeladas,subcategory_norm,equals,verdura,,160
+538,category,Limpieza y Hogar,category_norm,equals,conservacion de alimentos,,160
+538,category,Limpieza y Hogar,subcategory_norm,equals,film transparente,,160
+539,subcategory,Hogar,category_norm,equals,conservacion de alimentos,,160
+539,subcategory,Hogar,subcategory_norm,equals,film transparente,,160
+540,category,Limpieza y Hogar,category_norm,equals,conservacion de alimentos,,160
+540,category,Limpieza y Hogar,subcategory_norm,equals,papel aluminio,,160
+541,subcategory,Hogar,category_norm,equals,conservacion de alimentos,,160
+541,subcategory,Hogar,subcategory_norm,equals,papel aluminio,,160
+542,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+542,category,Conservas,subcategory_norm,equals,conservas de verdura y frutas / conservas fruta,,160
+543,subcategory,Vegetales y Frutas en lata,category_norm,equals,"conservas, caldos y cremas",,160
+543,subcategory,Vegetales y Frutas en lata,subcategory_norm,equals,conservas de verdura y frutas / conservas fruta,,160
+544,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+544,category,Conservas,subcategory_norm,equals,conservas de verdura y frutas / conservas verdura,,160
+545,subcategory,Vegetales y Frutas en lata,category_norm,equals,"conservas, caldos y cremas",,160
+545,subcategory,Vegetales y Frutas en lata,subcategory_norm,equals,conservas de verdura y frutas / conservas verdura,,160
+546,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+546,category,Conservas,subcategory_norm,equals,cremas y caldos liquidos,,160
+547,subcategory,Sopas,category_norm,equals,"conservas, caldos y cremas",,160
+547,subcategory,Sopas,subcategory_norm,equals,cremas y caldos liquidos,,160
+548,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+548,category,Conservas,subcategory_norm,equals,gazpacho y cremas / cremas y pure,,160
+549,subcategory,Sopas,category_norm,equals,"conservas, caldos y cremas",,160
+549,subcategory,Sopas,subcategory_norm,equals,gazpacho y cremas / cremas y pure,,160
+550,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+550,category,Conservas,subcategory_norm,equals,sopa y caldo / caldo en pastillas,,160
+551,subcategory,Sopas,category_norm,equals,"conservas, caldos y cremas",,160
+551,subcategory,Sopas,subcategory_norm,equals,sopa y caldo / caldo en pastillas,,160
+552,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+552,category,Conservas,subcategory_norm,equals,sopa y caldo / caldo liquido,,160
+553,subcategory,Sopas,category_norm,equals,"conservas, caldos y cremas",,160
+553,subcategory,Sopas,subcategory_norm,equals,sopa y caldo / caldo liquido,,160
+554,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+554,category,Conservas,subcategory_norm,equals,sopa y caldo / sopa,,160
+555,subcategory,Sopas,category_norm,equals,"conservas, caldos y cremas",,160
+555,subcategory,Sopas,subcategory_norm,equals,sopa y caldo / sopa,,160
+556,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+556,category,Conservas,subcategory_norm,equals,"sopas, caldos y pures deshidratados",,160
+557,subcategory,Sopas,category_norm,equals,"conservas, caldos y cremas",,160
+557,subcategory,Sopas,subcategory_norm,equals,"sopas, caldos y pures deshidratados",,160
+558,category,Conservas,category_norm,equals,"conservas, caldos y cremas",,160
+558,category,Conservas,subcategory_norm,equals,tomate,,160
+559,subcategory,Vegetales y Frutas en lata,category_norm,equals,"conservas, caldos y cremas",,160
+559,subcategory,Vegetales y Frutas en lata,subcategory_norm,equals,tomate,,160
+560,category,Conservas,category_norm,equals,"conservas, sopas y precocinados",,160
+560,category,Conservas,subcategory_norm,equals,"caldos, sopas y pure",,160
+561,subcategory,Sopas,category_norm,equals,"conservas, sopas y precocinados",,160
+561,subcategory,Sopas,subcategory_norm,equals,"caldos, sopas y pure",,160
+562,category,Conservas,category_norm,equals,"conservas, sopas y precocinados",,160
+562,category,Conservas,subcategory_norm,equals,conservas de carne,,160
+563,subcategory,Platos Preparados en Conserva,category_norm,equals,"conservas, sopas y precocinados",,160
+563,subcategory,Platos Preparados en Conserva,subcategory_norm,equals,conservas de carne,,160
+564,category,Conservas,category_norm,equals,"conservas, sopas y precocinados",,160
+564,category,Conservas,subcategory_norm,equals,conservas de frutas,,160
+565,subcategory,Vegetales y Frutas en lata,category_norm,equals,"conservas, sopas y precocinados",,160
+565,subcategory,Vegetales y Frutas en lata,subcategory_norm,equals,conservas de frutas,,160
+566,category,Conservas,category_norm,equals,"conservas, sopas y precocinados",,160
+566,category,Conservas,subcategory_norm,equals,conservas de pescado y marisco,,160
+567,subcategory,Atún y Pescados en lata,category_norm,equals,"conservas, sopas y precocinados",,160
+567,subcategory,Atún y Pescados en lata,subcategory_norm,equals,conservas de pescado y marisco,,160
+568,category,Conservas,category_norm,equals,"conservas, sopas y precocinados",,160
+568,category,Conservas,subcategory_norm,equals,conservas de tomate,,160
+569,subcategory,Vegetales y Frutas en lata,category_norm,equals,"conservas, sopas y precocinados",,160
+569,subcategory,Vegetales y Frutas en lata,subcategory_norm,equals,conservas de tomate,,160
+570,category,Conservas,category_norm,equals,"conservas, sopas y precocinados",,160
+570,category,Conservas,subcategory_norm,equals,pizzas,,160
+571,subcategory,Platos Preparados en Conserva,category_norm,equals,"conservas, sopas y precocinados",,160
+571,subcategory,Platos Preparados en Conserva,subcategory_norm,equals,pizzas,,160
+572,category,Cuidado Personal,category_norm,equals,cosmetica,,160
+572,category,Cuidado Personal,subcategory_norm,equals,estuches de bano y cosmetica,,160
+573,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cosmetica,,160
+573,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,estuches de bano y cosmetica,,160
+574,category,Cuidado Personal,category_norm,equals,cosmetica,,160
+574,category,Cuidado Personal,subcategory_norm,equals,labios,,160
+575,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cosmetica,,160
+575,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,labios,,160
+576,category,Cuidado Personal,category_norm,equals,cuidado corporal,,160
+576,category,Cuidado Personal,subcategory_norm,equals,desodorantes,,160
+577,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado corporal,,160
+577,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,desodorantes,,160
+578,category,Limpieza y Hogar,category_norm,equals,cuidado de la ropa,,160
+578,category,Limpieza y Hogar,subcategory_norm,equals,detergentes,,160
+579,subcategory,Detergentes y Suavizantes,category_norm,equals,cuidado de la ropa,,160
+579,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergentes,,160
+580,category,Limpieza y Hogar,category_norm,equals,cuidado de la ropa,,160
+580,category,Limpieza y Hogar,subcategory_norm,equals,lejias lavadora,,160
+581,subcategory,Detergentes y Suavizantes,category_norm,equals,cuidado de la ropa,,160
+581,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,lejias lavadora,,160
+582,category,Limpieza y Hogar,category_norm,equals,cuidado de la ropa,,160
+582,category,Limpieza y Hogar,subcategory_norm,equals,limpiadores y antical para lavadora,,160
+583,subcategory,Detergentes y Suavizantes,category_norm,equals,cuidado de la ropa,,160
+583,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,limpiadores y antical para lavadora,,160
+584,category,Limpieza y Hogar,category_norm,equals,cuidado de la ropa,,160
+584,category,Limpieza y Hogar,subcategory_norm,equals,suavizantes,,160
+585,subcategory,Detergentes y Suavizantes,category_norm,equals,cuidado de la ropa,,160
+585,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,suavizantes,,160
+586,category,Limpieza y Hogar,category_norm,equals,cuidado de la ropa,,160
+586,category,Limpieza y Hogar,subcategory_norm,equals,tendido y planchado,,160
+587,subcategory,Detergentes y Suavizantes,category_norm,equals,cuidado de la ropa,,160
+587,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,tendido y planchado,,160
+588,category,Cuidado Personal,category_norm,equals,cuidado de manos y pies,,160
+588,category,Cuidado Personal,subcategory_norm,equals,cuidado de pies,,160
+589,subcategory,Salud y Bienestar,category_norm,equals,cuidado de manos y pies,,160
+589,subcategory,Salud y Bienestar,subcategory_norm,equals,cuidado de pies,,160
+590,category,Cuidado Personal,category_norm,equals,cuidado e higiene facial,,160
+590,category,Cuidado Personal,subcategory_norm,equals,cuidado acne,,160
+591,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado e higiene facial,,160
+591,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,cuidado acne,,160
+592,category,Cuidado Personal,category_norm,equals,cuidado e higiene facial,,160
+592,category,Cuidado Personal,subcategory_norm,equals,cuidado labial,,160
+593,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado e higiene facial,,160
+593,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,cuidado labial,,160
+594,category,Cuidado Personal,category_norm,equals,cuidado e higiene facial,,160
+594,category,Cuidado Personal,subcategory_norm,equals,desmaquillantes,,160
+595,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado e higiene facial,,160
+595,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,desmaquillantes,,160
+596,category,Cuidado Personal,category_norm,equals,cuidado e higiene facial,,160
+596,category,Cuidado Personal,subcategory_norm,equals,exfoliantes y mascarillas,,160
+597,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado e higiene facial,,160
+597,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,exfoliantes y mascarillas,,160
+598,category,Cuidado Personal,category_norm,equals,cuidado e higiene facial,,160
+598,category,Cuidado Personal,subcategory_norm,equals,tonicos y lociones,,160
+599,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado e higiene facial,,160
+599,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,tonicos y lociones,,160
+600,category,Bebés y Mascotas,category_norm,equals,cuidado e higiene infantil,,160
+600,category,Bebés y Mascotas,subcategory_norm,equals,"bastoncillos, algodon y sueros",,160
+601,subcategory,Bebés,category_norm,equals,cuidado e higiene infantil,,160
+601,subcategory,Bebés,subcategory_norm,equals,"bastoncillos, algodon y sueros",,160
+602,category,Bebés y Mascotas,category_norm,equals,cuidado e higiene infantil,,160
+602,category,Bebés y Mascotas,subcategory_norm,equals,canastillas,,160
+603,subcategory,Bebés,category_norm,equals,cuidado e higiene infantil,,160
+603,subcategory,Bebés,subcategory_norm,equals,canastillas,,160
+604,category,Cuidado Personal,category_norm,equals,cuidado facial y corporal,,160
+604,category,Cuidado Personal,subcategory_norm,equals,desodorante / desodorante roll on y stick,,160
+605,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado facial y corporal,,160
+605,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,desodorante / desodorante roll on y stick,,160
+606,category,Cuidado Personal,category_norm,equals,cuidado facial y corporal,,160
+606,category,Cuidado Personal,subcategory_norm,equals,desodorante / desodorante spray,,160
+607,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado facial y corporal,,160
+607,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,desodorante / desodorante spray,,160
+608,category,Cuidado Personal,category_norm,equals,cuidado facial y corporal,,160
+608,category,Cuidado Personal,subcategory_norm,equals,desodorante / otros desodorantes,,160
+609,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado facial y corporal,,160
+609,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,desodorante / otros desodorantes,,160
+610,category,Cuidado Personal,category_norm,equals,cuidado facial y corporal,,160
+610,category,Cuidado Personal,subcategory_norm,equals,protector solar y aftersun,,160
+611,subcategory,Salud y Bienestar,category_norm,equals,cuidado facial y corporal,,160
+611,subcategory,Salud y Bienestar,subcategory_norm,equals,protector solar y aftersun,,160
+612,category,Cuidado Personal,category_norm,equals,cuidado y proteccion corporal,,160
+612,category,Cuidado Personal,subcategory_norm,equals,pies,,160
+613,subcategory,Salud y Bienestar,category_norm,equals,cuidado y proteccion corporal,,160
+613,subcategory,Salud y Bienestar,subcategory_norm,equals,pies,,160
+614,category,Cuidado Personal,category_norm,equals,cuidado y proteccion corporal,,160
+614,category,Cuidado Personal,subcategory_norm,equals,productos para viaje,,160
+615,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado y proteccion corporal,,160
+615,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,productos para viaje,,160
+616,category,Cuidado Personal,category_norm,equals,cuidado y proteccion corporal,,160
+616,category,Cuidado Personal,subcategory_norm,equals,protectores solares y after sun,,160
+617,subcategory,Salud y Bienestar,category_norm,equals,cuidado y proteccion corporal,,160
+617,subcategory,Salud y Bienestar,subcategory_norm,equals,protectores solares y after sun,,160
+618,category,Panadería,category_norm,equals,desayuno y merienda,,160
+618,category,Panadería,subcategory_norm,equals,bolleria y pasteleria,,160
+619,subcategory,Bollería y Pastelería,category_norm,equals,desayuno y merienda,,160
+619,subcategory,Bollería y Pastelería,subcategory_norm,equals,bolleria y pasteleria,,160
+620,category,Dulces,category_norm,equals,desayuno y merienda,,160
+620,category,Dulces,subcategory_norm,equals,"chocolates, cremas untar y bombones",,160
+621,subcategory,Chocolates y Bombones,category_norm,equals,desayuno y merienda,,160
+621,subcategory,Chocolates y Bombones,subcategory_norm,equals,"chocolates, cremas untar y bombones",,160
+622,category,Dulces,category_norm,equals,desayuno y merienda,,160
+622,category,Dulces,subcategory_norm,equals,golosinas,,160
+623,subcategory,Caramelos y Golosinas,category_norm,equals,desayuno y merienda,,160
+623,subcategory,Caramelos y Golosinas,subcategory_norm,equals,golosinas,,160
+624,category,Repostería y Masas,category_norm,equals,desayuno y merienda,,160
+624,category,Repostería y Masas,subcategory_norm,equals,preparacion postres,,160
+625,subcategory,Harinas y Levaduras,category_norm,equals,desayuno y merienda,,160
+625,subcategory,Harinas y Levaduras,subcategory_norm,equals,preparacion postres,,160
+626,category,Dulces,category_norm,equals,dulce,,160
+626,category,Dulces,subcategory_norm,equals,"cremas de cacao, avellana y cacahuete",,160
+627,subcategory,Chocolates y Bombones,category_norm,equals,dulce,,160
+627,subcategory,Chocolates y Bombones,subcategory_norm,equals,"cremas de cacao, avellana y cacahuete",,160
+628,category,Bebés y Mascotas,category_norm,equals,embarazo y lactancia,,160
+628,category,Bebés y Mascotas,subcategory_norm,equals,cremas y aceites,,160
+629,subcategory,Bebés,category_norm,equals,embarazo y lactancia,,160
+629,subcategory,Bebés,subcategory_norm,equals,cremas y aceites,,160
+630,category,Lácteos y Huevos,category_norm,equals,frescos,,160
+630,category,Lácteos y Huevos,subcategory_norm,equals,quesos,,160
+631,subcategory,Quesos y Cremas,category_norm,equals,frescos,,160
+631,subcategory,Quesos y Cremas,subcategory_norm,equals,quesos,,160
+632,category,Frutas y Verduras,category_norm,equals,fruta y verdura,,160
+632,category,Frutas y Verduras,subcategory_norm,equals,lechuga y ensalada preparada / ensalada preparada,,160
+633,subcategory,Hortalizas,category_norm,equals,fruta y verdura,,160
+633,subcategory,Hortalizas,subcategory_norm,equals,lechuga y ensalada preparada / ensalada preparada,,160
+634,category,Bebés y Mascotas,category_norm,equals,gatos,,160
+634,category,Bebés y Mascotas,subcategory_norm,equals,arena,,160
+635,subcategory,Mascotas,category_norm,equals,gatos,,160
+635,subcategory,Mascotas,subcategory_norm,equals,arena,,160
+636,category,Bebés y Mascotas,category_norm,equals,gatos,,160
+636,category,Bebés y Mascotas,subcategory_norm,equals,pienso para gatos,,160
+637,subcategory,Mascotas,category_norm,equals,gatos,,160
+637,subcategory,Mascotas,subcategory_norm,equals,pienso para gatos,,160
+638,category,Bebés y Mascotas,category_norm,equals,gatos,,160
+638,category,Bebés y Mascotas,subcategory_norm,equals,premios y snacks,,160
+639,subcategory,Mascotas,category_norm,equals,gatos,,160
+639,subcategory,Mascotas,subcategory_norm,equals,premios y snacks,,160
+640,category,Postres,category_norm,equals,helados,,160
+640,category,Postres,subcategory_norm,equals,barquillos,,160
+641,subcategory,Helados y Postres fríos,category_norm,equals,helados,,160
+641,subcategory,Helados y Postres fríos,subcategory_norm,equals,barquillos,,160
+642,category,Postres,category_norm,equals,helados,,160
+642,category,Postres,subcategory_norm,equals,bloques,,160
+643,subcategory,Helados y Postres fríos,category_norm,equals,helados,,160
+643,subcategory,Helados y Postres fríos,subcategory_norm,equals,bloques,,160
+644,category,Ingredientes,category_norm,equals,helados,,160
+644,category,Ingredientes,subcategory_norm,equals,frutas heladas,,160
+645,subcategory,Verduras y Frutas congeladas,category_norm,equals,helados,,160
+645,subcategory,Verduras y Frutas congeladas,subcategory_norm,equals,frutas heladas,,160
+646,category,Postres,category_norm,equals,helados,,160
+646,category,Postres,subcategory_norm,equals,tartas heladas,,160
+647,subcategory,Helados y Postres fríos,category_norm,equals,helados,,160
+647,subcategory,Helados y Postres fríos,subcategory_norm,equals,tartas heladas,,160
+648,category,Platos Listos,category_norm,equals,hielo,,160
+648,category,Platos Listos,subcategory_norm,equals,air fryer,,160
+649,subcategory,Patatas y Precocinados,category_norm,equals,hielo,,160
+649,subcategory,Patatas y Precocinados,subcategory_norm,equals,air fryer,,160
+650,category,Platos Listos,category_norm,equals,hielo,,160
+650,category,Platos Listos,subcategory_norm,equals,masas,,160
+651,subcategory,Comida preparada,category_norm,equals,hielo,,160
+651,subcategory,Comida preparada,subcategory_norm,equals,masas,,160
+652,category,Platos Listos,category_norm,equals,hielo,,160
+652,category,Platos Listos,subcategory_norm,equals,pizzas congeladas,,160
+653,subcategory,Pizzas y Lasañas,category_norm,equals,hielo,,160
+653,subcategory,Pizzas y Lasañas,subcategory_norm,equals,pizzas congeladas,,160
+654,category,Ingredientes,category_norm,equals,hielo,,160
+654,category,Ingredientes,subcategory_norm,equals,"pulpo, calamar y sepia congelados",,160
+655,subcategory,"Carne, Pescado, Pollo",category_norm,equals,hielo,,160
+655,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,"pulpo, calamar y sepia congelados",,160
+656,category,Ingredientes,category_norm,equals,hielo,,160
+656,category,Ingredientes,subcategory_norm,equals,salteados congelados,,160
+657,subcategory,Verduras y Frutas congeladas,category_norm,equals,hielo,,160
+657,subcategory,Verduras y Frutas congeladas,subcategory_norm,equals,salteados congelados,,160
+658,category,Ingredientes,category_norm,equals,hielo,,160
+658,category,Ingredientes,subcategory_norm,equals,verduras congeladas,,160
+659,subcategory,Verduras y Frutas congeladas,category_norm,equals,hielo,,160
+659,subcategory,Verduras y Frutas congeladas,subcategory_norm,equals,verduras congeladas,,160
+660,category,Cuidado Personal,category_norm,equals,higiene bucal,,160
+660,category,Cuidado Personal,subcategory_norm,equals,cepillos de dientes,,160
+661,subcategory,Higiene Bucal,category_norm,equals,higiene bucal,,160
+661,subcategory,Higiene Bucal,subcategory_norm,equals,cepillos de dientes,,160
+662,category,Cuidado Personal,category_norm,equals,higiene bucal,,160
+662,category,Cuidado Personal,subcategory_norm,equals,cuidado y fijacion protesis dentales,,160
+663,subcategory,Higiene Bucal,category_norm,equals,higiene bucal,,160
+663,subcategory,Higiene Bucal,subcategory_norm,equals,cuidado y fijacion protesis dentales,,160
+664,category,Cuidado Personal,category_norm,equals,higiene bucal,,160
+664,category,Cuidado Personal,subcategory_norm,equals,ortodoncia,,160
+665,subcategory,Higiene Bucal,category_norm,equals,higiene bucal,,160
+665,subcategory,Higiene Bucal,subcategory_norm,equals,ortodoncia,,160
+666,category,Cuidado Personal,category_norm,equals,higiene bucal,,160
+666,category,Cuidado Personal,subcategory_norm,equals,pasta de dientes,,160
+667,subcategory,Higiene Bucal,category_norm,equals,higiene bucal,,160
+667,subcategory,Higiene Bucal,subcategory_norm,equals,pasta de dientes,,160
+668,category,Cuidado Personal,category_norm,equals,higiene intima,,160
+668,category,Cuidado Personal,subcategory_norm,equals,protege slip,,160
+669,subcategory,Salud y Bienestar,category_norm,equals,higiene intima,,160
+669,subcategory,Salud y Bienestar,subcategory_norm,equals,protege slip,,160
+670,category,Limpieza y Hogar,category_norm,equals,insecticidas,,160
+670,category,Limpieza y Hogar,subcategory_norm,equals,calzado,,160
+671,subcategory,Hogar,category_norm,equals,insecticidas,,160
+671,subcategory,Hogar,subcategory_norm,equals,calzado,,160
+672,category,Limpieza y Hogar,category_norm,equals,insecticidas,,160
+672,category,Limpieza y Hogar,subcategory_norm,equals,utensilios de limpieza,,160
+673,subcategory,Hogar,category_norm,equals,insecticidas,,160
+673,subcategory,Hogar,subcategory_norm,equals,utensilios de limpieza,,160
+674,category,Lácteos y Huevos,category_norm,equals,lacteos,,160
+674,category,Lácteos y Huevos,subcategory_norm,equals,mantequillas y margarinas,,160
+675,subcategory,Quesos y Cremas,category_norm,equals,lacteos,,160
+675,subcategory,Quesos y Cremas,subcategory_norm,equals,mantequillas y margarinas,,160
+676,category,Lácteos y Huevos,category_norm,equals,"leche, huevos y lacteos",,160
+676,category,Lácteos y Huevos,subcategory_norm,equals,leche,,160
+677,subcategory,Leches y Bebidas lácteas,category_norm,equals,"leche, huevos y lacteos",,160
+677,subcategory,Leches y Bebidas lácteas,subcategory_norm,equals,leche,,160
+678,category,Lácteos y Huevos,category_norm,equals,"leche, huevos y lacteos",,160
+678,category,Lácteos y Huevos,subcategory_norm,equals,postres,,160
+679,subcategory,Yogures,category_norm,equals,"leche, huevos y lacteos",,160
+679,subcategory,Yogures,subcategory_norm,equals,postres,,160
+680,category,Lácteos y Huevos,category_norm,equals,"leche, huevos y lacteos",,160
+680,category,Lácteos y Huevos,subcategory_norm,equals,"yogures, bifidus, l-casei",,160
+681,subcategory,Yogures,category_norm,equals,"leche, huevos y lacteos",,160
+681,subcategory,Yogures,subcategory_norm,equals,"yogures, bifidus, l-casei",,160
+682,category,Limpieza y Hogar,category_norm,equals,limpieza bano y wc,,160
+682,category,Limpieza y Hogar,subcategory_norm,equals,antical,,160
+683,subcategory,Hogar,category_norm,equals,limpieza bano y wc,,160
+683,subcategory,Hogar,subcategory_norm,equals,antical,,160
+684,category,Limpieza y Hogar,category_norm,equals,limpieza bano y wc,,160
+684,category,Limpieza y Hogar,subcategory_norm,equals,desatascadores y limpia tuberias,,160
+685,subcategory,Hogar,category_norm,equals,limpieza bano y wc,,160
+685,subcategory,Hogar,subcategory_norm,equals,desatascadores y limpia tuberias,,160
+686,category,Limpieza y Hogar,category_norm,equals,limpieza bano y wc,,160
+686,category,Limpieza y Hogar,subcategory_norm,equals,limpiadores bano,,160
+687,subcategory,Hogar,category_norm,equals,limpieza bano y wc,,160
+687,subcategory,Hogar,subcategory_norm,equals,limpiadores bano,,160
+688,category,Limpieza y Hogar,category_norm,equals,limpieza bano y wc,,160
+688,category,Limpieza y Hogar,subcategory_norm,equals,limpiajuntas,,160
+689,subcategory,Hogar,category_norm,equals,limpieza bano y wc,,160
+689,subcategory,Hogar,subcategory_norm,equals,limpiajuntas,,160
+690,category,Limpieza y Hogar,category_norm,equals,limpieza cocina,,160
+690,category,Limpieza y Hogar,subcategory_norm,equals,aditivos y limpiamaquinas,,160
+691,subcategory,Hogar,category_norm,equals,limpieza cocina,,160
+691,subcategory,Hogar,subcategory_norm,equals,aditivos y limpiamaquinas,,160
+692,category,Limpieza y Hogar,category_norm,equals,limpieza cocina,,160
+692,category,Limpieza y Hogar,subcategory_norm,equals,lavavajillas mano,,160
+693,subcategory,Hogar,category_norm,equals,limpieza cocina,,160
+693,subcategory,Hogar,subcategory_norm,equals,lavavajillas mano,,160
+694,category,Limpieza y Hogar,category_norm,equals,limpieza cocina,,160
+694,category,Limpieza y Hogar,subcategory_norm,equals,limpiadores electrodomesticos,,160
+695,subcategory,Hogar,category_norm,equals,limpieza cocina,,160
+695,subcategory,Hogar,subcategory_norm,equals,limpiadores electrodomesticos,,160
+696,category,Limpieza y Hogar,category_norm,equals,limpieza cocina,,160
+696,category,Limpieza y Hogar,subcategory_norm,equals,vitroceramicas e induccion,,160
+697,subcategory,Hogar,category_norm,equals,limpieza cocina,,160
+697,subcategory,Hogar,subcategory_norm,equals,vitroceramicas e induccion,,160
+698,category,Limpieza y Hogar,category_norm,equals,limpieza del hogar,,160
+698,category,Limpieza y Hogar,subcategory_norm,equals,lejias y amoniacos,,160
+699,subcategory,Hogar,category_norm,equals,limpieza del hogar,,160
+699,subcategory,Hogar,subcategory_norm,equals,lejias y amoniacos,,160
+700,category,Limpieza y Hogar,category_norm,equals,limpieza del hogar,,160
+700,category,Limpieza y Hogar,subcategory_norm,equals,limpia muebles,,160
+701,subcategory,Hogar,category_norm,equals,limpieza del hogar,,160
+701,subcategory,Hogar,subcategory_norm,equals,limpia muebles,,160
+702,category,Limpieza y Hogar,category_norm,equals,limpieza del hogar,,160
+702,category,Limpieza y Hogar,subcategory_norm,equals,limpiador de alfombras y tapicerias,,160
+703,subcategory,Hogar,category_norm,equals,limpieza del hogar,,160
+703,subcategory,Hogar,subcategory_norm,equals,limpiador de alfombras y tapicerias,,160
+704,category,Limpieza y Hogar,category_norm,equals,limpieza del hogar,,160
+704,category,Limpieza y Hogar,subcategory_norm,equals,limpiametales,,160
+705,subcategory,Hogar,category_norm,equals,limpieza del hogar,,160
+705,subcategory,Hogar,subcategory_norm,equals,limpiametales,,160
+706,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+706,category,Limpieza y Hogar,subcategory_norm,equals,detergente y suavizante ropa / activador y antical lavadora,,160
+707,subcategory,Detergentes y Suavizantes,category_norm,equals,limpieza y hogar,,160
+707,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergente y suavizante ropa / activador y antical lavadora,,160
+708,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+708,category,Limpieza y Hogar,subcategory_norm,equals,detergente y suavizante ropa / detergente en polvo y monodosis,,160
+709,subcategory,Detergentes y Suavizantes,category_norm,equals,limpieza y hogar,,160
+709,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergente y suavizante ropa / detergente en polvo y monodosis,,160
+710,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+710,category,Limpieza y Hogar,subcategory_norm,equals,detergente y suavizante ropa / detergente lavado a mano,,160
+711,subcategory,Detergentes y Suavizantes,category_norm,equals,limpieza y hogar,,160
+711,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergente y suavizante ropa / detergente lavado a mano,,160
+712,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+712,category,Limpieza y Hogar,subcategory_norm,equals,detergente y suavizante ropa / detergente liquido y gel,,160
+713,subcategory,Detergentes y Suavizantes,category_norm,equals,limpieza y hogar,,160
+713,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergente y suavizante ropa / detergente liquido y gel,,160
+714,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+714,category,Limpieza y Hogar,subcategory_norm,equals,detergente y suavizante ropa / planchado,,160
+715,subcategory,Detergentes y Suavizantes,category_norm,equals,limpieza y hogar,,160
+715,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergente y suavizante ropa / planchado,,160
+716,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+716,category,Limpieza y Hogar,subcategory_norm,equals,detergente y suavizante ropa / quitamanchas,,160
+717,subcategory,Detergentes y Suavizantes,category_norm,equals,limpieza y hogar,,160
+717,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergente y suavizante ropa / quitamanchas,,160
+718,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+718,category,Limpieza y Hogar,subcategory_norm,equals,detergente y suavizante ropa / suavizante,,160
+719,subcategory,Detergentes y Suavizantes,category_norm,equals,limpieza y hogar,,160
+719,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergente y suavizante ropa / suavizante,,160
+720,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+720,category,Limpieza y Hogar,subcategory_norm,equals,"estropajo, bayeta y guantes / bayeta",,160
+721,subcategory,Hogar,category_norm,equals,limpieza y hogar,,160
+721,subcategory,Hogar,subcategory_norm,equals,"estropajo, bayeta y guantes / bayeta",,160
+722,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+722,category,Limpieza y Hogar,subcategory_norm,equals,"estropajo, bayeta y guantes / estropajo",,160
+723,subcategory,Hogar,category_norm,equals,limpieza y hogar,,160
+723,subcategory,Hogar,subcategory_norm,equals,"estropajo, bayeta y guantes / estropajo",,160
+724,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+724,category,Limpieza y Hogar,subcategory_norm,equals,"estropajo, bayeta y guantes / guantes",,160
+725,subcategory,Hogar,category_norm,equals,limpieza y hogar,,160
+725,subcategory,Hogar,subcategory_norm,equals,"estropajo, bayeta y guantes / guantes",,160
+726,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+726,category,Limpieza y Hogar,subcategory_norm,equals,lejia y liquidos fuertes / amoniaco y salfuman,,160
+727,subcategory,Hogar,category_norm,equals,limpieza y hogar,,160
+727,subcategory,Hogar,subcategory_norm,equals,lejia y liquidos fuertes / amoniaco y salfuman,,160
+728,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+728,category,Limpieza y Hogar,subcategory_norm,equals,lejia y liquidos fuertes / lejia,,160
+729,subcategory,Hogar,category_norm,equals,limpieza y hogar,,160
+729,subcategory,Hogar,subcategory_norm,equals,lejia y liquidos fuertes / lejia,,160
+730,category,Limpieza y Hogar,category_norm,equals,limpieza y hogar,,160
+730,category,Limpieza y Hogar,subcategory_norm,equals,lejia y liquidos fuertes / tratamiento piscina,,160
+731,subcategory,Hogar,category_norm,equals,limpieza y hogar,,160
+731,subcategory,Hogar,subcategory_norm,equals,lejia y liquidos fuertes / tratamiento piscina,,160
+732,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+732,category,Ingredientes,subcategory_norm,equals,almejas,,160
+733,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+733,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,almejas,,160
+734,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+734,category,Ingredientes,subcategory_norm,equals,bueyes y necoras,,160
+735,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+735,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,bueyes y necoras,,160
+736,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+736,category,Ingredientes,subcategory_norm,equals,cigalas,,160
+737,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+737,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,cigalas,,160
+738,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+738,category,Ingredientes,subcategory_norm,equals,gamba,,160
+739,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+739,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,gamba,,160
+740,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+740,category,Ingredientes,subcategory_norm,equals,gambon,,160
+741,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+741,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,gambon,,160
+742,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+742,category,Ingredientes,subcategory_norm,equals,langostino,,160
+743,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+743,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,langostino,,160
+744,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+744,category,Ingredientes,subcategory_norm,equals,mejillon,,160
+745,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+745,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,mejillon,,160
+746,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+746,category,Ingredientes,subcategory_norm,equals,navajas,,160
+747,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+747,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,navajas,,160
+748,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+748,category,Ingredientes,subcategory_norm,equals,preparado de paella,,160
+749,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+749,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,preparado de paella,,160
+750,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+750,category,Ingredientes,subcategory_norm,equals,surimi,,160
+751,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+751,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,surimi,,160
+752,category,Ingredientes,category_norm,equals,mariscos congelados,,160
+752,category,Ingredientes,subcategory_norm,equals,vieiras,,160
+753,subcategory,"Carne, Pescado, Pollo",category_norm,equals,mariscos congelados,,160
+753,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,vieiras,,160
+754,category,Limpieza y Hogar,category_norm,equals,menaje,,160
+754,category,Limpieza y Hogar,subcategory_norm,equals,accesorios para vino,,160
+755,subcategory,Hogar,category_norm,equals,menaje,,160
+755,subcategory,Hogar,subcategory_norm,equals,accesorios para vino,,160
+756,category,Limpieza y Hogar,category_norm,equals,menaje,,160
+756,category,Limpieza y Hogar,subcategory_norm,equals,cafeteras y accesorios,,160
+757,subcategory,Hogar,category_norm,equals,menaje,,160
+757,subcategory,Hogar,subcategory_norm,equals,cafeteras y accesorios,,160
+758,category,Limpieza y Hogar,category_norm,equals,menaje,,160
+758,category,Limpieza y Hogar,subcategory_norm,equals,cuberteria,,160
+759,subcategory,Hogar,category_norm,equals,menaje,,160
+759,subcategory,Hogar,subcategory_norm,equals,cuberteria,,160
+760,category,Limpieza y Hogar,category_norm,equals,menaje,,160
+760,category,Limpieza y Hogar,subcategory_norm,equals,hermeticos,,160
+761,subcategory,Hogar,category_norm,equals,menaje,,160
+761,subcategory,Hogar,subcategory_norm,equals,hermeticos,,160
+762,category,Limpieza y Hogar,category_norm,equals,menaje,,160
+762,category,Limpieza y Hogar,subcategory_norm,equals,jarras y filtros de agua,,160
+763,subcategory,Hogar,category_norm,equals,menaje,,160
+763,subcategory,Hogar,subcategory_norm,equals,jarras y filtros de agua,,160
+764,category,Limpieza y Hogar,category_norm,equals,menaje,,160
+764,category,Limpieza y Hogar,subcategory_norm,equals,ordenacion,,160
+765,subcategory,Hogar,category_norm,equals,menaje,,160
+765,subcategory,Hogar,subcategory_norm,equals,ordenacion,,160
+766,category,Limpieza y Hogar,category_norm,equals,menaje,,160
+766,category,Limpieza y Hogar,subcategory_norm,equals,sartenes,,160
+767,subcategory,Hogar,category_norm,equals,menaje,,160
+767,subcategory,Hogar,subcategory_norm,equals,sartenes,,160
+768,category,Limpieza y Hogar,category_norm,equals,menaje,,160
+768,category,Limpieza y Hogar,subcategory_norm,equals,utensilios de cocina,,160
+769,subcategory,Hogar,category_norm,equals,menaje,,160
+769,subcategory,Hogar,subcategory_norm,equals,utensilios de cocina,,160
+770,category,Repostería y Masas,category_norm,equals,panaderia,,160
+770,category,Repostería y Masas,subcategory_norm,equals,harinas y levaduras,,160
+771,subcategory,Harinas y Levaduras,category_norm,equals,panaderia,,160
+771,subcategory,Harinas y Levaduras,subcategory_norm,equals,harinas y levaduras,,160
+772,category,Repostería y Masas,category_norm,equals,panaderia,,160
+772,category,Repostería y Masas,subcategory_norm,equals,masas y hojaldres,,160
+773,subcategory,Harinas y Levaduras,category_norm,equals,panaderia,,160
+773,subcategory,Harinas y Levaduras,subcategory_norm,equals,masas y hojaldres,,160
+774,category,Panadería y Sustitutos,category_norm,equals,panaderia,,160
+774,category,Panadería y Sustitutos,subcategory_norm,equals,pan de molde y especiales,,160
+775,subcategory,Pan de Molde y Tortillas,category_norm,equals,panaderia,,160
+775,subcategory,Pan de Molde y Tortillas,subcategory_norm,equals,pan de molde y especiales,,160
+776,category,Panadería y Sustitutos,category_norm,equals,panaderia,,160
+776,category,Panadería y Sustitutos,subcategory_norm,equals,pan para hamburguesas y perritos,,160
+777,subcategory,Pan de Molde y Tortillas,category_norm,equals,panaderia,,160
+777,subcategory,Pan de Molde y Tortillas,subcategory_norm,equals,pan para hamburguesas y perritos,,160
+778,category,Panadería,category_norm,equals,panaderia,,160
+778,category,Panadería,subcategory_norm,equals,pan recien horneado,,160
+779,subcategory,Pan artesanal,category_norm,equals,panaderia,,160
+779,subcategory,Pan artesanal,subcategory_norm,equals,pan recien horneado,,160
+780,category,Panadería y Sustitutos,category_norm,equals,panaderia,,160
+780,category,Panadería y Sustitutos,subcategory_norm,equals,pan sin gluten,,160
+781,subcategory,Pan de Molde y Tortillas,category_norm,equals,panaderia,,160
+781,subcategory,Pan de Molde y Tortillas,subcategory_norm,equals,pan sin gluten,,160
+782,category,Panadería y Sustitutos,category_norm,equals,panaderia,,160
+782,category,Panadería y Sustitutos,subcategory_norm,equals,"pan tostado, rallado y picatostes",,160
+783,subcategory,Pan de Molde y Tortillas,category_norm,equals,panaderia,,160
+783,subcategory,Pan de Molde y Tortillas,subcategory_norm,equals,"pan tostado, rallado y picatostes",,160
+784,category,Aperitivos,category_norm,equals,panaderia,,160
+784,category,Aperitivos,subcategory_norm,equals,picos y crackers,,160
+785,subcategory,Papas y Snacks salados,category_norm,equals,panaderia,,160
+785,subcategory,Papas y Snacks salados,subcategory_norm,equals,picos y crackers,,160
+786,category,Panadería y Sustitutos,category_norm,equals,panaderia,,160
+786,category,Panadería y Sustitutos,subcategory_norm,equals,tortillas de trigo y pitas,,160
+787,subcategory,Pan de Molde y Tortillas,category_norm,equals,panaderia,,160
+787,subcategory,Pan de Molde y Tortillas,subcategory_norm,equals,tortillas de trigo y pitas,,160
+788,category,Bebés y Mascotas,category_norm,equals,panales,,160
+788,category,Bebés y Mascotas,subcategory_norm,equals,alimentacion infantil,,160
+789,subcategory,Bebés,category_norm,equals,panales,,160
+789,subcategory,Bebés,subcategory_norm,equals,alimentacion infantil,,160
+790,category,Bebés y Mascotas,category_norm,equals,panales,,160
+790,category,Bebés y Mascotas,subcategory_norm,equals,cuidado e higiene infantil,,160
+791,subcategory,Bebés,category_norm,equals,panales,,160
+791,subcategory,Bebés,subcategory_norm,equals,cuidado e higiene infantil,,160
+792,category,Bebés y Mascotas,category_norm,equals,panales,,160
+792,category,Bebés y Mascotas,subcategory_norm,equals,embarazo y lactancia,,160
+793,subcategory,Bebés,category_norm,equals,panales,,160
+793,subcategory,Bebés,subcategory_norm,equals,embarazo y lactancia,,160
+794,category,Limpieza y Hogar,category_norm,equals,papel y celulosa,,160
+794,category,Limpieza y Hogar,subcategory_norm,equals,panuelos,,160
+795,subcategory,Papel Higiénico y Servilletas,category_norm,equals,papel y celulosa,,160
+795,subcategory,Papel Higiénico y Servilletas,subcategory_norm,equals,panuelos,,160
+796,category,Limpieza y Hogar,category_norm,equals,papel y celulosa,,160
+796,category,Limpieza y Hogar,subcategory_norm,equals,papel cocina,,160
+797,subcategory,Papel Higiénico y Servilletas,category_norm,equals,papel y celulosa,,160
+797,subcategory,Papel Higiénico y Servilletas,subcategory_norm,equals,papel cocina,,160
+798,category,Limpieza y Hogar,category_norm,equals,papeleria,,160
+798,category,Limpieza y Hogar,subcategory_norm,equals,archivadores,,160
+799,subcategory,Hogar,category_norm,equals,papeleria,,160
+799,subcategory,Hogar,subcategory_norm,equals,archivadores,,160
+800,category,Limpieza y Hogar,category_norm,equals,papeleria,,160
+800,category,Limpieza y Hogar,subcategory_norm,equals,boligrafos y correctores,,160
+801,subcategory,Hogar,category_norm,equals,papeleria,,160
+801,subcategory,Hogar,subcategory_norm,equals,boligrafos y correctores,,160
+802,category,Limpieza y Hogar,category_norm,equals,papeleria,,160
+802,category,Limpieza y Hogar,subcategory_norm,equals,cartuchos de tinta,,160
+803,subcategory,Hogar,category_norm,equals,papeleria,,160
+803,subcategory,Hogar,subcategory_norm,equals,cartuchos de tinta,,160
+804,category,Limpieza y Hogar,category_norm,equals,papeleria,,160
+804,category,Limpieza y Hogar,subcategory_norm,equals,colorear,,160
+805,subcategory,Hogar,category_norm,equals,papeleria,,160
+805,subcategory,Hogar,subcategory_norm,equals,colorear,,160
+806,category,Limpieza y Hogar,category_norm,equals,papeleria,,160
+806,category,Limpieza y Hogar,subcategory_norm,equals,lapices y accesorios,,160
+807,subcategory,Hogar,category_norm,equals,papeleria,,160
+807,subcategory,Hogar,subcategory_norm,equals,lapices y accesorios,,160
+808,category,Limpieza y Hogar,category_norm,equals,papeleria,,160
+808,category,Limpieza y Hogar,subcategory_norm,equals,pequeno accesorio,,160
+809,subcategory,Hogar,category_norm,equals,papeleria,,160
+809,subcategory,Hogar,subcategory_norm,equals,pequeno accesorio,,160
+810,category,Bebés y Mascotas,category_norm,equals,parafarmacia para el bebe,,160
+810,category,Bebés y Mascotas,subcategory_norm,equals,cereales infantiles,,160
+811,subcategory,Bebés,category_norm,equals,parafarmacia para el bebe,,160
+811,subcategory,Bebés,subcategory_norm,equals,cereales infantiles,,160
+812,category,Bebés y Mascotas,category_norm,equals,parafarmacia para el bebe,,160
+812,category,Bebés y Mascotas,subcategory_norm,equals,cuidado de la madre,,160
+813,subcategory,Bebés,category_norm,equals,parafarmacia para el bebe,,160
+813,subcategory,Bebés,subcategory_norm,equals,cuidado de la madre,,160
+814,category,Bebés y Mascotas,category_norm,equals,parafarmacia para el bebe,,160
+814,category,Bebés y Mascotas,subcategory_norm,equals,puericultura,,160
+815,subcategory,Bebés,category_norm,equals,parafarmacia para el bebe,,160
+815,subcategory,Bebés,subcategory_norm,equals,puericultura,,160
+816,category,Bebés y Mascotas,category_norm,equals,peces y tortugas,,160
+816,category,Bebés y Mascotas,subcategory_norm,equals,accesorios peces y tortugas,,160
+817,subcategory,Mascotas,category_norm,equals,peces y tortugas,,160
+817,subcategory,Mascotas,subcategory_norm,equals,accesorios peces y tortugas,,160
+818,category,Bebés y Mascotas,category_norm,equals,peces y tortugas,,160
+818,category,Bebés y Mascotas,subcategory_norm,equals,peces,,160
+819,subcategory,Mascotas,category_norm,equals,peces y tortugas,,160
+819,subcategory,Mascotas,subcategory_norm,equals,peces,,160
+820,category,Bebés y Mascotas,category_norm,equals,peces y tortugas,,160
+820,category,Bebés y Mascotas,subcategory_norm,equals,tortugas,,160
+821,subcategory,Mascotas,category_norm,equals,peces y tortugas,,160
+821,subcategory,Mascotas,subcategory_norm,equals,tortugas,,160
+822,category,Cuidado Personal,category_norm,equals,"perfumeria, higiene, salud",,160
+822,category,Cuidado Personal,subcategory_norm,equals,cuidado bucal,,160
+823,subcategory,Higiene Bucal,category_norm,equals,"perfumeria, higiene, salud",,160
+823,subcategory,Higiene Bucal,subcategory_norm,equals,cuidado bucal,,160
+824,category,Bebés y Mascotas,category_norm,equals,perros,,160
+824,category,Bebés y Mascotas,subcategory_norm,equals,comederos,,160
+825,subcategory,Mascotas,category_norm,equals,perros,,160
+825,subcategory,Mascotas,subcategory_norm,equals,comederos,,160
+826,category,Bebés y Mascotas,category_norm,equals,perros,,160
+826,category,Bebés y Mascotas,subcategory_norm,equals,higiene,,160
+827,subcategory,Mascotas,category_norm,equals,perros,,160
+827,subcategory,Mascotas,subcategory_norm,equals,higiene,,160
+828,category,Bebés y Mascotas,category_norm,equals,perros,,160
+828,category,Bebés y Mascotas,subcategory_norm,equals,juguetes,,160
+829,subcategory,Mascotas,category_norm,equals,perros,,160
+829,subcategory,Mascotas,subcategory_norm,equals,juguetes,,160
+830,category,Bebés y Mascotas,category_norm,equals,perros,,160
+830,category,Bebés y Mascotas,subcategory_norm,equals,pienso para perros,,160
+831,subcategory,Mascotas,category_norm,equals,perros,,160
+831,subcategory,Mascotas,subcategory_norm,equals,pienso para perros,,160
+832,category,Bebés y Mascotas,category_norm,equals,perros,,160
+832,category,Bebés y Mascotas,subcategory_norm,equals,"premios, snacks y huesos",,160
+833,subcategory,Mascotas,category_norm,equals,perros,,160
+833,subcategory,Mascotas,subcategory_norm,equals,"premios, snacks y huesos",,160
+834,category,Carnes y Pescados,category_norm,equals,pescado y marisco,,160
+834,category,Carnes y Pescados,subcategory_norm,equals,preparados y elaborados de pescado y marisco,,160
+835,subcategory,Pescados y Mariscos,category_norm,equals,pescado y marisco,,160
+835,subcategory,Pescados y Mariscos,subcategory_norm,equals,preparados y elaborados de pescado y marisco,,160
+836,category,Carnes y Pescados,category_norm,equals,pescado y marisco,,160
+836,category,Carnes y Pescados,subcategory_norm,equals,surimi y elaborados,,160
+837,subcategory,Pescados y Mariscos,category_norm,equals,pescado y marisco,,160
+837,subcategory,Pescados y Mariscos,subcategory_norm,equals,surimi y elaborados,,160
+838,category,Ingredientes,category_norm,equals,pescados congelados,,160
+838,category,Ingredientes,subcategory_norm,equals,atun,,160
+839,subcategory,"Carne, Pescado, Pollo",category_norm,equals,pescados congelados,,160
+839,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,atun,,160
+840,category,Carnes y Pescados,category_norm,equals,pescados y mariscos,,160
+840,category,Carnes y Pescados,subcategory_norm,equals,surimi y otros elaborados,,160
+841,subcategory,Pescados y Mariscos,category_norm,equals,pescados y mariscos,,160
+841,subcategory,Pescados y Mariscos,subcategory_norm,equals,surimi y otros elaborados,,160
+842,category,Platos Listos,category_norm,equals,pizzas congeladas,,160
+842,category,Platos Listos,subcategory_norm,equals,baguette,,160
+843,subcategory,Pizzas y Lasañas,category_norm,equals,pizzas congeladas,,160
+843,subcategory,Pizzas y Lasañas,subcategory_norm,equals,baguette,,160
+844,category,Platos Listos,category_norm,equals,pizzas congeladas,,160
+844,category,Platos Listos,subcategory_norm,equals,masa fina,,160
+845,subcategory,Pizzas y Lasañas,category_norm,equals,pizzas congeladas,,160
+845,subcategory,Pizzas y Lasañas,subcategory_norm,equals,masa fina,,160
+846,category,Platos Listos,category_norm,equals,pizzas congeladas,,160
+846,category,Platos Listos,subcategory_norm,equals,masa gruesa,,160
+847,subcategory,Pizzas y Lasañas,category_norm,equals,pizzas congeladas,,160
+847,subcategory,Pizzas y Lasañas,subcategory_norm,equals,masa gruesa,,160
+848,category,Platos Listos,category_norm,equals,pizzas congeladas,,160
+848,category,Platos Listos,subcategory_norm,equals,mini pizza,,160
+849,subcategory,Pizzas y Lasañas,category_norm,equals,pizzas congeladas,,160
+849,subcategory,Pizzas y Lasañas,subcategory_norm,equals,mini pizza,,160
+850,category,Cuidado Personal,category_norm,equals,proteccion solar,,160
+850,category,Cuidado Personal,subcategory_norm,equals,bebe,,160
+851,subcategory,Salud y Bienestar,category_norm,equals,proteccion solar,,160
+851,subcategory,Salud y Bienestar,subcategory_norm,equals,bebe,,160
+852,category,Cuidado Personal,category_norm,equals,proteccion solar,,160
+852,category,Cuidado Personal,subcategory_norm,equals,proteccion solar,,160
+853,subcategory,Salud y Bienestar,category_norm,equals,proteccion solar,,160
+853,subcategory,Salud y Bienestar,subcategory_norm,equals,proteccion solar,,160
+854,category,Bebés y Mascotas,category_norm,equals,puericultura,,160
+854,category,Bebés y Mascotas,subcategory_norm,equals,accesorios,,160
+855,subcategory,Bebés,category_norm,equals,puericultura,,160
+855,subcategory,Bebés,subcategory_norm,equals,accesorios,,160
+856,category,Ingredientes,category_norm,equals,"pulpo, calamar y sepia congelados",,160
+856,category,Ingredientes,subcategory_norm,equals,calamar,,160
+857,subcategory,"Carne, Pescado, Pollo",category_norm,equals,"pulpo, calamar y sepia congelados",,160
+857,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,calamar,,160
+858,category,Ingredientes,category_norm,equals,"pulpo, calamar y sepia congelados",,160
+858,category,Ingredientes,subcategory_norm,equals,pulpo,,160
+859,subcategory,"Carne, Pescado, Pollo",category_norm,equals,"pulpo, calamar y sepia congelados",,160
+859,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,pulpo,,160
+860,category,Lácteos y Huevos,category_norm,equals,quesos,,160
+860,category,Lácteos y Huevos,subcategory_norm,equals,azules y roquefort,,160
+861,subcategory,Quesos y Cremas,category_norm,equals,quesos,,160
+861,subcategory,Quesos y Cremas,subcategory_norm,equals,azules y roquefort,,160
+862,category,Lácteos y Huevos,category_norm,equals,quesos,,160
+862,category,Lácteos y Huevos,subcategory_norm,equals,crema de queso,,160
+863,subcategory,Quesos y Cremas,category_norm,equals,quesos,,160
+863,subcategory,Quesos y Cremas,subcategory_norm,equals,crema de queso,,160
+864,category,Lácteos y Huevos,category_norm,equals,quesos,,160
+864,category,Lácteos y Huevos,subcategory_norm,equals,fundidos,,160
+865,subcategory,Quesos y Cremas,category_norm,equals,quesos,,160
+865,subcategory,Quesos y Cremas,subcategory_norm,equals,fundidos,,160
+866,category,Lácteos y Huevos,category_norm,equals,quesos,,160
+866,category,Lácteos y Huevos,subcategory_norm,equals,semicurado,,160
+867,subcategory,Quesos y Cremas,category_norm,equals,quesos,,160
+867,subcategory,Quesos y Cremas,subcategory_norm,equals,semicurado,,160
+868,category,Lácteos y Huevos,category_norm,equals,quesos,,160
+868,category,Lácteos y Huevos,subcategory_norm,equals,tierno,,160
+869,subcategory,Quesos y Cremas,category_norm,equals,quesos,,160
+869,subcategory,Quesos y Cremas,subcategory_norm,equals,tierno,,160
+870,category,Lácteos y Huevos,category_norm,equals,quesos,,160
+870,category,Lácteos y Huevos,subcategory_norm,equals,todos los quesos,,160
+871,subcategory,Quesos y Cremas,category_norm,equals,quesos,,160
+871,subcategory,Quesos y Cremas,subcategory_norm,equals,todos los quesos,,160
+872,category,Cuidado Personal,category_norm,equals,suplementos alimenticios,,160
+872,category,Cuidado Personal,subcategory_norm,equals,control de peso,,160
+873,subcategory,Salud y Bienestar,category_norm,equals,suplementos alimenticios,,160
+873,subcategory,Salud y Bienestar,subcategory_norm,equals,control de peso,,160
+874,category,Cuidado Personal,category_norm,equals,suplementos alimenticios,,160
+874,category,Cuidado Personal,subcategory_norm,equals,control de peso y detox,,160
+875,subcategory,Salud y Bienestar,category_norm,equals,suplementos alimenticios,,160
+875,subcategory,Salud y Bienestar,subcategory_norm,equals,control de peso y detox,,160
+876,category,Cuidado Personal,category_norm,equals,suplementos alimenticios,,160
+876,category,Cuidado Personal,subcategory_norm,equals,digestivo,,160
+877,subcategory,Salud y Bienestar,category_norm,equals,suplementos alimenticios,,160
+877,subcategory,Salud y Bienestar,subcategory_norm,equals,digestivo,,160
+878,category,Cuidado Personal,category_norm,equals,suplementos alimenticios,,160
+878,category,Cuidado Personal,subcategory_norm,equals,nutricosmetica,,160
+879,subcategory,Salud y Bienestar,category_norm,equals,suplementos alimenticios,,160
+879,subcategory,Salud y Bienestar,subcategory_norm,equals,nutricosmetica,,160
+880,category,Cuidado Personal,category_norm,equals,suplementos alimenticios,,160
+880,category,Cuidado Personal,subcategory_norm,equals,tratamientos naturales,,160
+881,subcategory,Salud y Bienestar,category_norm,equals,suplementos alimenticios,,160
+881,subcategory,Salud y Bienestar,subcategory_norm,equals,tratamientos naturales,,160
+882,category,Comidas preparadas,category_norm,equals,sushi del dia,,160
+882,category,Comidas preparadas,subcategory_norm,equals,comida preparada,,160
+883,subcategory,Comidas preparadas,category_norm,equals,sushi del dia,,160
+883,subcategory,Comidas preparadas,subcategory_norm,equals,comida preparada,,160
+884,category,Frutas y Verduras,category_norm,equals,sushi del dia,,160
+884,category,Frutas y Verduras,subcategory_norm,equals,frutas,,160
+885,subcategory,Frutas,category_norm,equals,sushi del dia,,160
+885,subcategory,Frutas,subcategory_norm,equals,frutas,,160
+886,category,Limpieza y Hogar,category_norm,equals,utensilios de limpieza,,160
+886,category,Limpieza y Hogar,subcategory_norm,equals,bolsa y cubos de basura,,160
+887,subcategory,Hogar,category_norm,equals,utensilios de limpieza,,160
+887,subcategory,Hogar,subcategory_norm,equals,bolsa y cubos de basura,,160
+888,category,Limpieza y Hogar,category_norm,equals,utensilios de limpieza,,160
+888,category,Limpieza y Hogar,subcategory_norm,equals,cubos de fregar y barrenos,,160
+889,subcategory,Hogar,category_norm,equals,utensilios de limpieza,,160
+889,subcategory,Hogar,subcategory_norm,equals,cubos de fregar y barrenos,,160
+890,category,Limpieza y Hogar,category_norm,equals,utensilios de limpieza,,160
+890,category,Limpieza y Hogar,subcategory_norm,equals,fregonas,,160
+891,subcategory,Hogar,category_norm,equals,utensilios de limpieza,,160
+891,subcategory,Hogar,subcategory_norm,equals,fregonas,,160
+892,category,Limpieza y Hogar,category_norm,equals,utensilios de limpieza,,160
+892,category,Limpieza y Hogar,subcategory_norm,equals,guantes,,160
+893,subcategory,Hogar,category_norm,equals,utensilios de limpieza,,160
+893,subcategory,Hogar,subcategory_norm,equals,guantes,,160
+894,category,Limpieza y Hogar,category_norm,equals,utensilios de limpieza,,160
+894,category,Limpieza y Hogar,subcategory_norm,equals,"plumeros, rodillos y otros utiles",,160
+895,subcategory,Hogar,category_norm,equals,utensilios de limpieza,,160
+895,subcategory,Hogar,subcategory_norm,equals,"plumeros, rodillos y otros utiles",,160
+896,category,Frutas y Verduras,category_norm,equals,verduras,,160
+896,category,Frutas y Verduras,subcategory_norm,equals,ensaladas y verduras preparadas,,160
+897,subcategory,Hortalizas,category_norm,equals,verduras,,160
+897,subcategory,Hortalizas,subcategory_norm,equals,ensaladas y verduras preparadas,,160
+898,category,Ingredientes,category_norm,equals,verduras congeladas,,160
+898,category,Ingredientes,subcategory_norm,equals,guarniciones,,160
+899,subcategory,Verduras y Frutas congeladas,category_norm,equals,verduras congeladas,,160
+899,subcategory,Verduras y Frutas congeladas,subcategory_norm,equals,guarniciones,,160
+900,category,Frutas y Verduras,category_norm,equals,verduras y hortalizas,,160
+900,category,Frutas y Verduras,subcategory_norm,equals,ensaladas y verduras preparadas,,160
+901,subcategory,Hortalizas,category_norm,equals,verduras y hortalizas,,160
+901,subcategory,Hortalizas,subcategory_norm,equals,ensaladas y verduras preparadas,,160
+902,category,Lácteos y Huevos,category_norm,equals,yogures y postres,,160
+902,category,Lácteos y Huevos,subcategory_norm,equals,kefir,,160
+903,subcategory,Yogures,category_norm,equals,yogures y postres,,160
+903,subcategory,Yogures,subcategory_norm,equals,kefir,,160
+904,category,Lácteos y Huevos,category_norm,equals,yogures y postres,,160
+904,category,Lácteos y Huevos,subcategory_norm,equals,otros postres,,160
+905,subcategory,Yogures,category_norm,equals,yogures y postres,,160
+905,subcategory,Yogures,subcategory_norm,equals,otros postres,,160
+906,category,Lácteos y Huevos,category_norm,equals,yogures y postres,,160
+906,category,Lácteos y Huevos,subcategory_norm,equals,yogur natural y sabores,,160
+907,subcategory,Yogures,category_norm,equals,yogures y postres,,160
+907,subcategory,Yogures,subcategory_norm,equals,yogur natural y sabores,,160
+908,category,Sin Alcohol,category_norm,equals,bebidas,,170
+908,category,Sin Alcohol,subcategory_norm,equals,aguas y zumos,,170
+908,category,Sin Alcohol,product_norm,regex,\b(agua mineral|agua natural|agua con gas|agua sin gas|aquabona|lanjaron|cabreiroa|font natura|font del regas|solan de cabras)\b,,170
+909,subcategory,Agua mineral,category_norm,equals,bebidas,,170
+909,subcategory,Agua mineral,subcategory_norm,equals,aguas y zumos,,170
+909,subcategory,Agua mineral,product_norm,regex,\b(agua mineral|agua natural|agua con gas|agua sin gas|aquabona|lanjaron|cabreiroa|font natura|font del regas|solan de cabras)\b,,170
+910,category,Sin Alcohol,category_norm,equals,bebidas,,170
+910,category,Sin Alcohol,subcategory_norm,equals,aguas y zumos,,170
+910,category,Sin Alcohol,product_norm,regex,\b(zumo|nectar|bebida de fruta|bebida de frutas|bebidas de fruta|bebida de pina|bebida tropical|mosto|agua de coco)\b,,170
+911,subcategory,Jugos y Zumos,category_norm,equals,bebidas,,170
+911,subcategory,Jugos y Zumos,subcategory_norm,equals,aguas y zumos,,170
+911,subcategory,Jugos y Zumos,product_norm,regex,\b(zumo|nectar|bebida de fruta|bebida de frutas|bebidas de fruta|bebida de pina|bebida tropical|mosto|agua de coco)\b,,170
+912,category,Sin Alcohol,category_norm,equals,bebidas,,170
+912,category,Sin Alcohol,subcategory_norm,equals,aguas y zumos,,170
+912,category,Sin Alcohol,product_norm,regex,\b(limonada|bebida refrescante|agua vitaminada)\b,,170
+913,subcategory,Refrescos y Gaseosas,category_norm,equals,bebidas,,170
+913,subcategory,Refrescos y Gaseosas,subcategory_norm,equals,aguas y zumos,,170
+913,subcategory,Refrescos y Gaseosas,product_norm,regex,\b(limonada|bebida refrescante|agua vitaminada)\b,,170
+914,category,Platos Listos,category_norm,equals,hielo,,170
+914,category,Platos Listos,subcategory_norm,equals,comidas del mundo,,170
+914,category,Platos Listos,product_norm,regex,\b(tequenos?|dumplings?|yuca)\b,,170
+915,subcategory,Comida preparada,category_norm,equals,hielo,,170
+915,subcategory,Comida preparada,subcategory_norm,equals,comidas del mundo,,170
+915,subcategory,Comida preparada,product_norm,regex,\b(tequenos?|dumplings?|yuca)\b,,170
+916,category,Panadería y Sustitutos,category_norm,equals,hielo,,170
+916,category,Panadería y Sustitutos,subcategory_norm,equals,comidas del mundo,,170
+916,category,Panadería y Sustitutos,product_norm,regex,\bpan de molde\b,,170
+917,subcategory,Pan de Molde y Tortillas,category_norm,equals,hielo,,170
+917,subcategory,Pan de Molde y Tortillas,subcategory_norm,equals,comidas del mundo,,170
+917,subcategory,Pan de Molde y Tortillas,product_norm,regex,\bpan de molde\b,,170
+918,category,Panadería,category_norm,equals,hielo,,170
+918,category,Panadería,subcategory_norm,equals,comidas del mundo,,170
+918,category,Panadería,product_norm,regex,\bbollos?\b,,170
+919,subcategory,Bollería y Pastelería,category_norm,equals,hielo,,170
+919,subcategory,Bollería y Pastelería,subcategory_norm,equals,comidas del mundo,,170
+919,subcategory,Bollería y Pastelería,product_norm,regex,\bbollos?\b,,170
+920,category,Ingredientes,category_norm,equals,hielo,,170
+920,category,Ingredientes,subcategory_norm,equals,comidas del mundo,,170
+920,category,Ingredientes,product_norm,regex,\b(haddock|filetes?)\b,,170
+921,subcategory,"Carne, Pescado, Pollo",category_norm,equals,hielo,,170
+921,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,comidas del mundo,,170
+921,subcategory,"Carne, Pescado, Pollo",product_norm,regex,\b(haddock|filetes?)\b,,170

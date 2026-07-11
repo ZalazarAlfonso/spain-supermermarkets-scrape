@@ -1,6 +1,6 @@
 with base as (
     select *
-    from {{ref('silver_product_snapshots')}}
+    from {{ref('silver_product_standardized')}}
 ),
 filtered as (
     select *

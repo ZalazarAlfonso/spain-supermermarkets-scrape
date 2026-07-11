@@ -11,9 +11,12 @@ __pycache__/
 *key*.json
 files/
 *.csv
+!dbt/**/*.csv
 *.parquet
 converter.py
 tests/
+!dbt/**/tests/
+!dbt/**/tests/**
 cleansing/
 convert/
 CLAUDE.md

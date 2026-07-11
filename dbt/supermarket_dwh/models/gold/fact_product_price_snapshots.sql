@@ -1,13 +1,15 @@
 with base as (
     select *
-    from {{ ref('silver_product_current') }}
+    from {{ ref('silver_product_standardized') }}
 
 )
 select
+    product_snapshot_id, 
     source_product_id,
     supermarket,
     product_url,
     product_name,
+    scrape_date,
     group_std,
     category_std,
     subcategory_std,

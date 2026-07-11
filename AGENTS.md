@@ -2,6 +2,10 @@
 
 This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
+## Change control
+
+Before editing files, explain the proposed change and ask for confirmation. Do not modify files until the user approves.
+
 ## Setup
 
 ```bash

@@ -47,3 +47,46 @@ seeds:
         description: "Rule priority. Higher priority wins when multiple rules match."
         data_tests:
           - not_null
+
+  - name: standard_taxonomy_v1
+    description: "Authoritative standardized product taxonomy from the groups and categorization workbook."
+    columns:
+      - name: group_order
+        description: "Display order for the top-level standardized group."
+        data_tests:
+          - not_null
+
+      - name: category_order
+        description: "Display order for the standardized category within its group."
+        data_tests:
+          - not_null
+
+      - name: subcategory_order
+        description: "Display order for the standardized subcategory within its category."
+        data_tests:
+          - not_null
+
+      - name: group_std
+        description: "Standardized top-level group."
+        data_tests:
+          - not_null
+
+      - name: category_std
+        description: "Standardized category."
+        data_tests:
+          - not_null
+
+      - name: subcategory_std
+        description: "Standardized subcategory."
+        data_tests:
+          - not_null
+
+      - name: category_norm
+        description: "Normalized standardized category label used for exact raw-label rules."
+        data_tests:
+          - not_null
+
+      - name: subcategory_norm
+        description: "Normalized standardized subcategory label used for exact raw-label rules."
+        data_tests:
+          - not_null
