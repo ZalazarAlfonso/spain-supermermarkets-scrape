@@ -378,6 +378,127 @@ rule_id,level,target,field,match_type,pattern,supermarket,priority
 327,subcategory,Verduras y Frutas congeladas,subcategory_norm,equals,verduras y frutas congeladas,,120
 328,subcategory,Vinos y Espumosos,subcategory_norm,equals,vinos y espumosos,,120
 329,subcategory,Yogures,subcategory_norm,equals,yogures,,120
+1001,subcategory,Leches y Bebidas lácteas,category_norm,equals,aceites y vinagres,carrefour,200
+1001,subcategory,Leches y Bebidas lácteas,subcategory_norm,equals,lacteos,carrefour,200
+1002,subcategory,Vegetales y Frutas en lata,category_norm,equals,"conservas, caldos y cremas",dia,200
+1002,subcategory,Vegetales y Frutas en lata,subcategory_norm,equals,conservas de verdura,dia,200
+1003,subcategory,Vegetales y Frutas en lata,category_norm,equals,"conservas, caldos y cremas",dia,200
+1003,subcategory,Vegetales y Frutas en lata,subcategory_norm,equals,conservas de fruta,dia,200
+1004,subcategory,Sopas,category_norm,equals,"conservas, caldos y cremas",dia,200
+1004,subcategory,Sopas,subcategory_norm,regex,\b(caldos y sopas|cremas y pures)\b,dia,200
+1005,subcategory,Afeitado y Depilación,category_norm,equals,depilacion y afeitado,carrefour,200
+1005,subcategory,Afeitado y Depilación,subcategory_norm,equals,maquinillas y recambios,carrefour,200
+1006,subcategory,"Champú, Jabón y Cremas",category_norm,equals,cuidado y proteccion corporal,carrefour,200
+1006,subcategory,"Champú, Jabón y Cremas",subcategory_norm,equals,crema y cuidado del cuerpo,carrefour,200
+1007,subcategory,Detergentes y Suavizantes,category_norm,equals,limpieza y hogar,dia,200
+1007,subcategory,Detergentes y Suavizantes,subcategory_norm,equals,detergentes,dia,200
+1008,subcategory,Hogar,category_norm,equals,limpieza y hogar,dia,200
+1008,subcategory,Hogar,subcategory_norm,regex,"\b(estropajos, bayetas y guantes|lejia y desinfectantes)\b",dia,200
+1009,subcategory,Jugos y Zumos,category_norm,equals,bebidas,carrefour,200
+1009,subcategory,Jugos y Zumos,subcategory_norm,equals,aguas y zumos,carrefour,200
+1010,subcategory,Bebés,category_norm,equals,parafarmacia para el bebe,carrefour,200
+1010,subcategory,Bebés,subcategory_norm,equals,chupetes y biberones,carrefour,200
+1011,subcategory,Comidas preparadas,category_norm,equals,panaderia,dia,200
+1011,subcategory,Comidas preparadas,subcategory_norm,equals,horno,dia,200
+1012,subcategory,Comida preparada,subcategory_norm,equals,comidas del mundo,carrefour,190
+1013,subcategory,Higiene Bucal,category_norm,equals,higiene bucal,carrefour,200
+1013,subcategory,Higiene Bucal,subcategory_norm,regex,\b(dentifricos|enjuagues bucales)\b,carrefour,200
+1014,subcategory,Escritura y Marcadores,category_norm,equals,papeleria,carrefour,200
+1014,subcategory,Escritura y Marcadores,subcategory_norm,equals,marcadores,carrefour,200
+1015,subcategory,Papel y Cuadernos,category_norm,equals,papeleria,carrefour,200
+1015,subcategory,Papel y Cuadernos,subcategory_norm,equals,folios y papeles especiales,carrefour,200
+1016,subcategory,Bebés,category_norm,equals,toallitas,carrefour,200
+1016,subcategory,Bebés,subcategory_norm,equals,alimentacion infantil,carrefour,200
+1017,subcategory,Papas y Snacks salados,category_norm,equals,aceites y vinagres,carrefour,200
+1017,subcategory,Papas y Snacks salados,subcategory_norm,equals,aperitivos,carrefour,200
+1018,subcategory,Hogar,category_norm,equals,insecticidas,carrefour,200
+1018,subcategory,Hogar,subcategory_norm,equals,limpieza del hogar,carrefour,200
+1019,subcategory,Chocolates y Bombones,category_norm,equals,dulce,carrefour,200
+1019,subcategory,Chocolates y Bombones,subcategory_norm,equals,bombones y chocolates,carrefour,200
+1020,subcategory,Pizzas y Lasañas,category_norm,equals,masas,carrefour,200
+1020,subcategory,Pizzas y Lasañas,subcategory_norm,equals,air fryer,carrefour,200
+1021,subcategory,Quesos y Cremas,category_norm,equals,quesos,carrefour,200
+1021,subcategory,Quesos y Cremas,subcategory_norm,equals,curado,carrefour,200
+1022,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,mariscos congelados,carrefour,200
+1023,subcategory,Pasta seca,category_norm,equals,aceites y vinagres,carrefour,200
+1023,subcategory,Pasta seca,subcategory_norm,equals,alimentacion,carrefour,200
+1023,subcategory,Pasta seca,product_norm,contains,canelones,carrefour,200
+1024,subcategory,Salsas y Aderezos,category_norm,equals,aceites y vinagres,carrefour,200
+1024,subcategory,Salsas y Aderezos,subcategory_norm,equals,alimentacion,carrefour,200
+1024,subcategory,Salsas y Aderezos,product_norm,contains,salsa,carrefour,200
+1025,subcategory,Especias y Sal,category_norm,equals,aceites y vinagres,carrefour,200
+1025,subcategory,Especias y Sal,subcategory_norm,equals,alimentacion,carrefour,200
+1025,subcategory,Especias y Sal,product_norm,contains,sazonador,carrefour,200
+1026,subcategory,Sopas,subcategory_norm,equals,"conservas, sopas y precocinados",carrefour,220
+1026,subcategory,Sopas,product_norm,regex,\b(caldo|sopa|crema)\b,carrefour,220
+1027,subcategory,Platos Preparados en Conserva,subcategory_norm,equals,"conservas, sopas y precocinados",carrefour,180
+1028,subcategory,Chocolates y Bombones,category_norm,equals,descubrimientos,dia,210
+1028,subcategory,Chocolates y Bombones,product_norm,contains,chocolate,dia,210
+1029,subcategory,Frutas,category_norm,equals,descubrimientos,dia,210
+1029,subcategory,Frutas,product_norm,regex,\b(pina|aguacate|arandanos?)\b,dia,210
+1030,subcategory,Leches y Bebidas lácteas,category_norm,equals,descubrimientos,dia,210
+1030,subcategory,Leches y Bebidas lácteas,product_norm,regex,\b(bebida de avena|leche)\b,dia,210
+1031,subcategory,Papel Higiénico y Servilletas,category_norm,equals,descubrimientos,dia,210
+1031,subcategory,Papel Higiénico y Servilletas,product_norm,regex,\b(papel higienico|panuelos)\b,dia,210
+1032,subcategory,Hogar,category_norm,equals,descubrimientos,dia,210
+1032,subcategory,Hogar,product_norm,regex,\b(bolsa de basura|estropajo|film transparente)\b,dia,210
+1033,subcategory,Pan de Molde y Tortillas,category_norm,equals,descubrimientos,dia,210
+1033,subcategory,Pan de Molde y Tortillas,product_norm,contains,pan de molde,dia,210
+1034,subcategory,Pescados y Mariscos,category_norm,equals,descubrimientos,dia,210
+1034,subcategory,Pescados y Mariscos,product_norm,contains,salmon,dia,210
+1035,subcategory,Comidas preparadas,category_norm,equals,descubrimientos,dia,210
+1035,subcategory,Comidas preparadas,product_norm,regex,\b(hummus|tortilla de patata|ensaladilla)\b,dia,210
+1036,subcategory,Yogures,category_norm,equals,descubrimientos,dia,210
+1036,subcategory,Yogures,product_norm,regex,\b(kefir|postre lacteo|yogur)\b,dia,210
+1037,subcategory,Leches y Bebidas lácteas,category_norm,equals,descubrimientos,dia,205
+1037,subcategory,Leches y Bebidas lácteas,product_norm,contains,batido,dia,205
+1038,subcategory,Jugos y Zumos,category_norm,equals,descubrimientos,dia,210
+1038,subcategory,Jugos y Zumos,product_norm,contains,smoothie,dia,210
+1039,subcategory,Bollería y Pastelería,category_norm,equals,descubrimientos,dia,210
+1039,subcategory,Bollería y Pastelería,product_norm,regex,\b(muffin|croissant)\b,dia,210
+1040,subcategory,Caramelos y Golosinas,category_norm,equals,descubrimientos,dia,210
+1040,subcategory,Caramelos y Golosinas,product_norm,contains,chicles,dia,210
+1041,subcategory,Cereales y Galletas,category_norm,equals,descubrimientos,dia,210
+1041,subcategory,Cereales y Galletas,product_norm,contains,galletas,dia,210
+1042,subcategory,"Champú, Jabón y Cremas",category_norm,equals,descubrimientos,dia,210
+1042,subcategory,"Champú, Jabón y Cremas",product_norm,regex,\b(gel de ducha|crema de manos|jabon de manos)\b,dia,210
+1043,subcategory,Detergentes y Suavizantes,category_norm,equals,descubrimientos,dia,210
+1043,subcategory,Detergentes y Suavizantes,product_norm,contains,detergente,dia,210
+1044,subcategory,Frutas,category_norm,equals,frescos,alcampo,180
+1044,subcategory,Frutas,subcategory_norm,equals,oc1701,alcampo,180
+1045,subcategory,Hortalizas,category_norm,equals,frescos,alcampo,230
+1045,subcategory,Hortalizas,subcategory_norm,equals,oc1701,alcampo,230
+1045,subcategory,Hortalizas,product_norm,regex,\b(ajo|alcachofa|batata|berenjena|calabacin|calabaza|cebolla|esparrago|pepino|pimiento|puerro|tomate|zanahoria|patata|boniato|brocoli|coliflor|judia verde|lechuga|ensalada|apio|remolacha|repollo|col|nabos?|chirivia|acelga|espinaca)\b,alcampo,230
+1046,subcategory,Pescados y Mariscos,category_norm,equals,frescos,alcampo,220
+1046,subcategory,Pescados y Mariscos,subcategory_norm,equals,mariscos,alcampo,220
+1047,subcategory,Pan artesanal,category_norm,equals,frescos,alcampo,220
+1047,subcategory,Pan artesanal,subcategory_norm,equals,panaderia,alcampo,220
+1048,subcategory,Bebés,category_norm,equals,toallitas,carrefour,220
+1048,subcategory,Bebés,subcategory_norm,regex,\b(panales|puericultura|parafarmacia para el bebe|toallitas|cuidado e higiene infantil)\b,carrefour,220
+1049,subcategory,Papel y Cuadernos,category_norm,equals,papeleria,carrefour,220
+1049,subcategory,Papel y Cuadernos,subcategory_norm,equals,cuadernos y carpetas,carrefour,220
+1050,subcategory,Escritura y Marcadores,category_norm,equals,papeleria,carrefour,220
+1050,subcategory,Escritura y Marcadores,subcategory_norm,equals,accesorios manualidades,carrefour,220
+1051,subcategory,Pizzas y Lasañas,category_norm,equals,patatas,carrefour,220
+1051,subcategory,Pizzas y Lasañas,subcategory_norm,equals,pizzas congeladas,carrefour,220
+1052,subcategory,Patatas y Precocinados,category_norm,equals,masas,carrefour,220
+1052,subcategory,Patatas y Precocinados,subcategory_norm,equals,patatas,carrefour,220
+1053,subcategory,Comida preparada,category_norm,equals,salteados congelados,carrefour,220
+1053,subcategory,Comida preparada,subcategory_norm,equals,arroces,carrefour,220
+1054,subcategory,Pan artesanal,category_norm,equals,descubrimientos,dia,230
+1054,subcategory,Pan artesanal,product_norm,regex,\b(barra de pan|medias noches)\b,dia,230
+1055,subcategory,Higiene Bucal,category_norm,equals,descubrimientos,dia,230
+1055,subcategory,Higiene Bucal,product_norm,regex,\b(pasta de dientes|dentifrico)\b,dia,230
+1056,subcategory,Hogar,category_norm,equals,descubrimientos,dia,230
+1056,subcategory,Hogar,product_norm,regex,\b(ambientador|friegasuelos|guantes de nitrilo|vela perfumada)\b,dia,230
+1057,subcategory,Cereales y Galletas,category_norm,equals,descubrimientos,dia,230
+1057,subcategory,Cereales y Galletas,product_norm,contains,barrita energetica,dia,230
+1058,subcategory,Jugos y Zumos,category_norm,equals,descubrimientos,dia,230
+1058,subcategory,Jugos y Zumos,product_norm,regex,\b(bebida de zumo|limonada|zumo)\b,dia,230
+1059,subcategory,Yogures,category_norm,equals,descubrimientos,dia,230
+1059,subcategory,Yogures,product_norm,regex,\b(natillas|postre gelificado)\b,dia,230
+1060,subcategory,Pescados y Mariscos,category_norm,equals,descubrimientos,dia,230
+1060,subcategory,Pescados y Mariscos,product_norm,contains,rabas,dia,230
 330,subcategory,Hierbas frescas,subcategory_norm,regex,\b(hierbas frescas?|aromaticas?|cilantro|perejil|albahaca|hierbabuena|menta)\b,,130
 331,category,Frutas y Verduras,subcategory_norm,regex,\b(hierbas frescas?|aromaticas?|cilantro|perejil|albahaca|hierbabuena|menta)\b,,130
 332,category,Aceites y Condimentos,category_norm,equals,"aceite, especias y salsas",,160
@@ -1574,3 +1695,39 @@ rule_id,level,target,field,match_type,pattern,supermarket,priority
 921,subcategory,"Carne, Pescado, Pollo",category_norm,equals,hielo,,170
 921,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,comidas del mundo,,170
 921,subcategory,"Carne, Pescado, Pollo",product_norm,regex,\b(haddock|filetes?)\b,,170
+1061,subcategory,Comidas preparadas,category_norm,equals,descubrimientos,dia,210
+1061,subcategory,Comidas preparadas,product_norm,regex,\b(ensalada|tequenos)\b,dia,210
+1062,subcategory,Quesos y Cremas,category_norm,equals,descubrimientos,dia,210
+1062,subcategory,Quesos y Cremas,product_norm,regex,\b(queso)\b,dia,210
+1063,subcategory,Pescados y Mariscos,category_norm,equals,descubrimientos,dia,210
+1063,subcategory,Pescados y Mariscos,product_norm,regex,\b(solomillo de atun|bacalao|filetes de gallo|boqueron)\b,dia,210
+1064,subcategory,Charcutería y Fiambres,category_norm,equals,descubrimientos,dia,210
+1064,subcategory,Charcutería y Fiambres,product_norm,regex,\b(salchichon|lomo embuchado|chorizo)\b,dia,210
+1065,subcategory,Pan de Molde y Tortillas,category_norm,equals,descubrimientos,dia,210
+1065,subcategory,Pan de Molde y Tortillas,product_norm,regex,\b(tostas?)\b,dia,210
+1066,subcategory,Leches y Bebidas lácteas,category_norm,equals,descubrimientos,dia,210
+1066,subcategory,Leches y Bebidas lácteas,product_norm,regex,\b(horchata)\b,dia,210
+1067,subcategory,Papas y Snacks salados,category_norm,equals,descubrimientos,dia,210
+1067,subcategory,Papas y Snacks salados,product_norm,regex,\b(snack de patata)\b,dia,210
+1068,subcategory,Helados y Postres fríos,category_norm,equals,descubrimientos,dia,210
+1068,subcategory,Helados y Postres fríos,product_norm,regex,\b(helado|polos|conos)\b,dia,210
+1069,subcategory,Bollería y Pastelería,category_norm,equals,descubrimientos,dia,210
+1069,subcategory,Bollería y Pastelería,product_norm,regex,\b(berlina)\b,dia,210
+1070,subcategory,Hogar,category_norm,equals,descubrimientos,dia,210
+1070,subcategory,Hogar,product_norm,regex,\b(vela|neceser)\b,dia,210
+1071,subcategory,Refrescos y Gaseosas,category_norm,equals,descubrimientos,dia,210
+1071,subcategory,Refrescos y Gaseosas,product_norm,regex,\b(bebida energetica|refresco|tonica)\b,dia,210
+1072,subcategory,Cervezas,category_norm,equals,descubrimientos,dia,210
+1072,subcategory,Cervezas,product_norm,regex,\b(cerveza)\b,dia,210
+1073,subcategory,Patatas y Precocinados,category_norm,equals,descubrimientos,dia,210
+1073,subcategory,Patatas y Precocinados,product_norm,regex,\b(patatas corte)\b,dia,210
+1074,subcategory,Frutos secos y Semillas,category_norm,equals,descubrimientos,dia,210
+1074,subcategory,Frutos secos y Semillas,product_norm,regex,\b(nueces|frutos secos|pistachos)\b,dia,210
+1075,subcategory,Salsas y Aderezos,category_norm,equals,descubrimientos,dia,210
+1075,subcategory,Salsas y Aderezos,product_norm,regex,\b(salsa)\b,dia,210
+1076,subcategory,Pizzas y Lasañas,category_norm,equals,masas,carrefour,200
+1076,subcategory,Pizzas y Lasañas,subcategory_norm,equals,masas,carrefour,200
+1077,subcategory,Comida preparada,category_norm,equals,congelados,dia,200
+1077,subcategory,Comida preparada,subcategory_norm,equals,arroces y pasta,dia,200
+1078,subcategory,Pescados y Mariscos,category_norm,equals,frescos,alcampo,200
+1078,subcategory,Pescados y Mariscos,subcategory_norm,regex,\bmejillones\b,alcampo,200

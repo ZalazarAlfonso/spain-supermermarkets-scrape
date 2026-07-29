@@ -12,8 +12,7 @@ models:
         data_tests:
           - not_null
           - accepted_values:
-              arguments: 
-                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+              values: ['alcampo', 'carrefour', 'dia', 'mercadona']
       - name: product_url
         data_tests:
           - not_null
@@ -30,6 +29,18 @@ models:
         data_tests:
           - not_null
       - name: price_value
+        data_tests:
+          - not_null
+      - name: case_type
+        data_tests:
+          - not_null
+      - name: case_parse_status
+        data_tests:
+          - not_null
+      - name: is_private_label
+        data_tests:
+          - not_null
+      - name: brand_parse_status
         data_tests:
           - not_null
   - name: fact_product_price_snapshots
@@ -46,8 +57,7 @@ models:
         data_tests:
           - not_null
           - accepted_values:
-              arguments: 
-                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+              values: ['alcampo', 'carrefour', 'dia', 'mercadona']
       - name: product_url
         data_tests:
           - not_null
@@ -66,6 +76,18 @@ models:
       - name: price_value
         data_tests:
           - not_null
+      - name: case_type
+        data_tests:
+          - not_null
+      - name: case_parse_status
+        data_tests:
+          - not_null
+      - name: is_private_label
+        data_tests:
+          - not_null
+      - name: brand_parse_status
+        data_tests:
+          - not_null
   - name: dim_products
     description: "Dimension table with product data."
     columns:
@@ -77,8 +99,7 @@ models:
         data_tests:
           - not_null
           - accepted_values:
-              arguments: 
-                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+              values: ['alcampo', 'carrefour', 'dia', 'mercadona']
       - name: product_url
         data_tests:
           - not_null
@@ -92,6 +113,18 @@ models:
         data_tests:
           - not_null
       - name: subcategory_std
+        data_tests:
+          - not_null
+      - name: case_type
+        data_tests:
+          - not_null
+      - name: case_parse_status
+        data_tests:
+          - not_null
+      - name: is_private_label
+        data_tests:
+          - not_null
+      - name: brand_parse_status
         data_tests:
           - not_null
 

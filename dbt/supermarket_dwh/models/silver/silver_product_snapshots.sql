@@ -1,3 +1,11 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='insert_overwrite',
+    partition_by={"field": "scrape_date", "data_type": "date"},
+    cluster_by=["supermarket"],
+    on_schema_change='sync_all_columns'
+) }}
+
 with base as (
     select *
     from {{ref('int_products_quality_audit')}}
@@ -37,6 +45,20 @@ final as (
         unit_price_std_value,
         unit_price_std_unit,
 
+        case_size_raw,
+        case_pack_count,
+        case_unit_quantity,
+        case_unit_measure,
+        case_count_measure,
+        case_count_quantity,
+        case_total_quantity,
+        case_total_unit,
+        case_unit_family,
+        case_type,
+        case_parse_status,
+        case_parse_method,
+        case_validation_status,
+
         offer_flag,
         quality_status
     from
@@ -45,3 +67,4 @@ final as (
 
 select *
 from final
+{{ incremental_scrape_date_filter() }}

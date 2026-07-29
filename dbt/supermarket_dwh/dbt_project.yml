@@ -56,3 +56,34 @@ seeds:
         subcategory_std: string
         category_norm: string
         subcategory_norm: string
+    brand_aliases_v1:
+      +column_types:
+        brand_alias_norm: string
+        brand_std: string
+        brand_group: string
+        supermarket: string
+        is_private_label: boolean
+        priority: int64
+    brand_product_overrides_v1:
+      +column_types:
+        source_product_id: string
+        supermarket: string
+        brand_std: string
+        is_no_brand: boolean
+        override_source: string
+    brand_reviewed_products_v1:
+      +column_types:
+        product_snapshot_id: string
+        source_product_id: string
+        supermarket: string
+        scrape_date: date
+        product_url: string
+        product_name: string
+        brand_raw: string
+        brand_inferred: string
+        brand_inference_confidence: string
+        brand_inference_method: string
+        brand_previous_inferred: string
+        brand_link_review_status: string
+        brand_evidence: string
+        brand_review_notes: string

@@ -1,7 +1,15 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='insert_overwrite',
+    partition_by={"field": "scrape_date", "data_type": "date"},
+    cluster_by=["supermarket"],
+    on_schema_change='sync_all_columns'
+) }}
+
 with base as (
 
     select *
-    from {{ ref('silver_product_snapshots') }}
+    from {{ ref('int_product_brand_standardized') }}
 
 ),
 -- Normalize the product, category and subcategory columns using the macro
@@ -9,8 +17,8 @@ normalized_products as (
 
     select
         *,
-        {{ normalize_text('category_raw') }} as category_norm,
-        {{ normalize_text('subcategory_raw') }} as subcategory_norm,
+        {{ strip_nav_noise(normalize_text('category_raw')) }} as category_norm,
+        {{ strip_nav_noise(normalize_text('subcategory_raw')) }} as subcategory_norm,
         {{ normalize_text('product_name') }} as product_norm
     from base
 
@@ -50,11 +58,12 @@ taxonomy_categories as (
     from standard_taxonomy
 ),
 taxonomy_subcategories as (
-    select distinct
-        group_std,
-        category_std,
-        subcategory_std
+    select
+        subcategory_std,
+        min(group_std) as group_std,
+        min(category_std) as category_std
     from standard_taxonomy
+    group by subcategory_std
 ),
 -- Join products and rule to get fields, and obtain the field value to evaluate.
 rule_conditions as (
@@ -157,35 +166,17 @@ resolved_matches as (
     select
         m.product_snapshot_id,
 
-        case
-            when pair.category_std is not null then pair.category_std
-            when category_only.category_std is not null then category_only.category_std
-            when subcategory_only.category_std is not null then subcategory_only.category_std
-            else 'Other'
-        end as category_std,
-
-        case
-            when pair.subcategory_std is not null then pair.subcategory_std
-            when subcategory_only.subcategory_std is not null then subcategory_only.subcategory_std
-            else 'Other'
-        end as subcategory_std,
-
-        coalesce(
-            pair.group_std,
-            category_only.group_std,
-            subcategory_only.group_std,
-            'Other'
-        ) as group_std
+        -- A specific subcategory is the strongest signal. Resolve its canonical
+        -- parent from the taxonomy instead of discarding both matches when a
+        -- noisy source category points at a different parent.
+        coalesce(subcategory_match.category_std, category_match.category_std, 'Other') as category_std,
+        coalesce(subcategory_match.subcategory_std, 'Other') as subcategory_std,
+        coalesce(subcategory_match.group_std, category_match.group_std, 'Other') as group_std
     from best_matches m
-    left join standard_taxonomy pair
-        on m.category_std = pair.category_std
-        and m.subcategory_std = pair.subcategory_std
-    left join taxonomy_categories category_only
-        on m.category_std = category_only.category_std
-        and m.subcategory_std is null
-    left join taxonomy_subcategories subcategory_only
-        on m.subcategory_std = subcategory_only.subcategory_std
-        and m.category_std is null
+    left join taxonomy_subcategories subcategory_match
+        on m.subcategory_std = subcategory_match.subcategory_std
+    left join taxonomy_categories category_match
+        on m.category_std = category_match.category_std
 ),
 -- Final join with the normalized products to get standardized taxonomy values.
 final as (
@@ -202,3 +193,4 @@ final as (
 
 select *
 from final
+{{ incremental_scrape_date_filter() }}

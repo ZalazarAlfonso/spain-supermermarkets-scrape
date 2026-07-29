@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: int_brand_dictionary
+    description: "Canonical brand candidates built from reliable raw brands and curated aliases."
+    columns:
+      - name: brand_match_norm
+        data_tests:
+          - not_null
+      - name: brand_std
+        data_tests:
+          - not_null
+      - name: is_private_label
+        data_tests:
+          - not_null
+
+  - name: int_product_brand_standardized
+    description: "Standardized and inferred product brands with an auditable resolution method."
+    columns:
+      - name: product_snapshot_id
+        data_tests:
+          - not_null
+          - unique
+      - name: is_private_label
+        data_tests:
+          - not_null
+      - name: brand_parse_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['product_override', 'confirmed_no_brand', 'mapped', 'normalized_only', 'inferred_from_product_name', 'missing']
+
+  - name: int_product_case_size_parsed
+    description: "Product-name case-size parsing, normalized totals, and unit-price validation. Count and weight/volume are tracked as independent axes: `case_count_quantity` holds the number of items, `case_total_quantity` the measurable size."
+    columns:
+      - name: product_snapshot_id
+        data_tests:
+          - unique
+      - name: case_count_quantity
+        description: "Number of items in the pack, from the product name or from price / per-unit price. Independent of the weight/volume axis."
+      - name: case_unit_measure
+        data_tests:
+          - accepted_values:
+              values: ['kg', 'g', 'l', 'cl', 'ml']
+      - name: case_total_unit
+        data_tests:
+          - accepted_values:
+              values: ['kg', 'l', 'ud']
+      - name: case_unit_family
+        data_tests:
+          - accepted_values:
+              values: ['weight', 'volume', 'count']
+      - name: case_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['single', 'multipack', 'count', 'variable_weight', 'derived', 'unknown']
+      - name: case_parse_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['parsed', 'ambiguous', 'missing']
+      - name: case_parse_method
+        data_tests:
+          - accepted_values:
+              values: ['product_name_regex', 'product_name_indicator', 'unit_price_ratio']
+      - name: case_validation_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['matched_unit_price', 'unit_price_mismatch', 'incompatible_units', 'derived_from_unit_price', 'unavailable']

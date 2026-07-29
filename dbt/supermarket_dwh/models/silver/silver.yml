@@ -39,8 +39,7 @@ models:
         data_tests:
           - not_null
           - accepted_values:
-              arguments: 
-                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+              values: ['alcampo', 'carrefour', 'dia', 'mercadona']
 
       - name: scrape_date
         data_tests:
@@ -55,6 +54,25 @@ models:
           - not_null
 
       - name: price_value
+        data_tests:
+          - not_null
+
+      - name: case_type
+        description: "Packaging form parsed from the product name."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['single', 'multipack', 'count', 'variable_weight', 'derived', 'unknown']
+
+      - name: case_parse_status
+        description: "Whether a trustworthy case quantity was parsed."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['parsed', 'ambiguous', 'missing']
+
+      - name: case_validation_status
+        description: "Comparison between the derived case quantity and source unit price."
         data_tests:
           - not_null
 
@@ -76,8 +94,7 @@ models:
         data_tests:
           - not_null
           - accepted_values:
-              arguments:
-                values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+              values: ['alcampo', 'carrefour', 'dia', 'mercadona']
 
       - name: product_url
         description: "Latest known product URL."
@@ -112,3 +129,15 @@ models:
         description: "Standardized subcategory assigned from the rules seed."
         data_tests:
           - not_null
+
+      - name: is_private_label
+        description: "Whether the resolved brand belongs to the source supermarket."
+        data_tests:
+          - not_null
+
+      - name: brand_parse_status
+        description: "How completely the product brand was resolved."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['product_override', 'confirmed_no_brand', 'mapped', 'normalized_only', 'inferred_from_product_name', 'missing']

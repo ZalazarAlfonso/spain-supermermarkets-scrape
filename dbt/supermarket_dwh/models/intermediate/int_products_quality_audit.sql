@@ -1,6 +1,14 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='insert_overwrite',
+    partition_by={"field": "scrape_date", "data_type": "date"},
+    cluster_by=["supermarket"],
+    on_schema_change='sync_all_columns'
+) }}
+
 with base as (
     select *
-    from {{ref('int_products_prices_parsed')}}
+    from {{ref('int_product_case_size_parsed')}}
 ),
 final as (
     select
@@ -20,3 +28,4 @@ final as (
 
 select *
 from final
+{{ incremental_scrape_date_filter() }}

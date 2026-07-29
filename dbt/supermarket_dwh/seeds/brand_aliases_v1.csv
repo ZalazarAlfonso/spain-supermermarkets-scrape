@@ -1,0 +1,190 @@
+brand_alias_norm,brand_std,brand_group,supermarket,is_private_label,priority
+alcampo,Alcampo,Auchan Retail,alcampo,true,200
+auchan,Auchan,Auchan Retail,alcampo,true,200
+producto alcampo,Alcampo,Auchan Retail,alcampo,true,220
+carrefour,Carrefour,Carrefour,carrefour,true,180
+carrefour classic,Carrefour Classic,Carrefour,carrefour,true,220
+classic carrefour,Carrefour Classic,Carrefour,carrefour,true,220
+my carrefour,My Carrefour,Carrefour,carrefour,true,220
+carrefour bio,Carrefour Bio,Carrefour,carrefour,true,220
+carrefour baby,Carrefour Baby,Carrefour,carrefour,true,220
+carrefour extra,Carrefour Extra,Carrefour,carrefour,true,220
+sensation carrefour,Sensation,Carrefour,carrefour,true,220
+dia,DIA,DIA,dia,true,150
+dia lactea,DIA Láctea,DIA,dia,true,230
+vegecampo,Vegecampo,DIA,dia,true,220
+fruticampo,Fruticampo,DIA,dia,true,220
+vegedia,Vegedia,DIA,dia,true,220
+imaqe,Imaqe,DIA,dia,true,220
+super paco,Super Paco,DIA,dia,true,220
+el molino de dia,El Molino de DIA,DIA,dia,true,240
+molino de dia,El Molino de DIA,DIA,dia,true,230
+al punto,DIA Al Punto,DIA,dia,true,210
+temptation,DIA Temptation,DIA,dia,true,210
+seleccion de dia,DIA Selección,DIA,dia,true,230
+hacendado,Hacendado,Mercadona,mercadona,true,220
+deliplus,Deliplus,Mercadona,mercadona,true,220
+bosque verde,Bosque Verde,Mercadona,mercadona,true,220
+compy,Compy,Mercadona,mercadona,true,220
+coca,Coca-Cola,The Coca-Cola Company,,false,160
+coca cola,Coca-Cola,The Coca-Cola Company,,false,220
+coca-cola,Coca-Cola,The Coca-Cola Company,,false,220
+nestle,Nestlé,Nestlé,,false,200
+nescafe,Nescafé,Nestlé,,false,200
+kellogg s,Kellogg's,Kellanova,,false,200
+kellogg's,Kellogg's,Kellanova,,false,200
+l or,L'Or,L'Oréal,,false,200
+l'or,L'Or,L'Oréal,,false,200
+haagen dazs,Häagen-Dazs,General Mills,,false,200
+häagen-dazs,Häagen-Dazs,General Mills,,false,200
+colacao,ColaCao,Idilia Foods,,false,200
+cola cao,ColaCao,Idilia Foods,,false,200
+asturiana,Central Lechera Asturiana,Central Lechera Asturiana,,false,210
+central lechera asturiana,Central Lechera Asturiana,Central Lechera Asturiana,,false,230
+el pozo,ElPozo,Grupo Fuertes,,false,210
+elpozo,ElPozo,Grupo Fuertes,,false,220
+dr oetker,Dr. Oetker,Dr. Oetker,,false,220
+dr.oetker,Dr. Oetker,Dr. Oetker,,false,220
+garcia baquero,García Baquero,Lácteas García Baquero,,false,220
+gallina blanca,Gallina Blanca,,,false,200
+hero,Hero,,,false,200
+gallo,Gallo,,,false,200
+campofrio,Campofrío,,,false,200
+danone,Danone,,,false,200
+puleva,Puleva,,,false,200
+mahou,Mahou,,,false,200
+findus,Findus,,,false,200
+dolce gusto,Dolce Gusto,Nestlé,,false,210
+activia,Activia,Danone,,false,210
+milka,Milka,Mondelez International,,false,200
+pescanova,Pescanova,,,false,200
+carmencita,Carmencita,,,false,200
+gullon,Gullón,,,false,200
+buitoni,Buitoni,Nestlé,,false,200
+alpro,Alpro,Danone,,false,200
+carretilla,Carretilla,,,false,200
+kaiku,Kaiku,,,false,200
+haribo,Haribo,,,false,200
+nivea,Nivea,Beiersdorf,,false,200
+marcilla,Marcilla,JDE Peet's,,false,200
+magnum,Magnum,Unilever,,false,200
+royal,Royal,Mondelez International,,false,200
+schar,Schär,,,false,200
+colgate,Colgate,Colgate-Palmolive,,false,200
+hornimans,Hornimans,,,false,200
+bicentury,Bicentury,,,false,200
+pascual,Pascual,,,false,200
+bonduelle,Bonduelle,,,false,200
+fini,Fini,,,false,200
+pompadour,Pompadour,,,false,200
+florette,Florette,,,false,200
+ecocesta,Ecocesta,,,false,200
+schweppes,Schweppes,,,false,200
+la casera,La Casera,,,false,210
+monster,Monster,Monster Beverage,,false,200
+dodot,Dodot,Procter & Gamble,,false,200
+finish,Finish,Reckitt,,false,200
+smileat,Smileat,,,false,200
+lindt,Lindt,Lindt & Sprüngli,,false,200
+calvo,Calvo,,,false,200
+nesquik,Nesquik,Nestlé,,false,200
+bimbo,Bimbo,Grupo Bimbo,,false,200
+dove,Dove,Unilever,,false,200
+navidul,Navidul,Campofrío Food Group,,false,200
+kinder,Kinder,Ferrero,,false,200
+starbucks,Starbucks,,,false,200
+pepsi,Pepsi,PepsiCo,,false,200
+heinz,Heinz,Kraft Heinz,,false,200
+aquarius,Aquarius,The Coca-Cola Company,,false,200
+granini,Granini,Eckes-Granini,,false,200
+red bull,Red Bull,Red Bull GmbH,,false,210
+president,Président,Lactalis,,false,200
+fanta,Fanta,The Coca-Cola Company,,false,200
+helios,Helios,,,false,200
+azucarera,Azucarera,AB Sugar,,false,200
+durex,Durex,Reckitt,,false,200
+oreo,Oreo,Mondelez International,,false,200
+philadelphia,Philadelphia,Mondelez International,,false,200
+dulcesol,Dulcesol,Vicky Foods,,false,200
+luengo,Luengo,,,false,200
+evax,Evax,Procter & Gamble,,false,200
+fontaneda,Fontaneda,Mondelez International,,false,200
+pringles,Pringles,Kellanova,,false,200
+nenuco,Nenuco,AC Marca,,false,200
+amstel,Amstel,Heineken,,false,200
+santiveri,Santiveri,,,false,200
+alhambra,Alhambra,Mahou San Miguel,,false,200
+pastoret,Pastoret,,,false,200
+huesitos,Huesitos,Chocolates Valor,,false,200
+palacios,Palacios,Grupo Palacios,,false,200
+saimaza,Saimaza,JDE Peet's,,false,200
+fripozo,Fripozo,Grupo Fuertes,,false,200
+ausonia,Ausonia,Procter & Gamble,,false,200
+litoral,Litoral,Nestlé,,false,200
+cacaolat,Cacaolat,Damm,,false,200
+vivesoy,Vivesoy,Pascual,,false,200
+danacol,Danacol,Danone,,false,200
+recondo,Recondo,,,false,200
+ta tung,Ta-Tung,,,false,200
+hida,Hida,,,false,200
+estrella galicia,Estrella Galicia,Hijos de Rivera,,false,210
+alvalle,Alvalle,PepsiCo,,false,200
+de nuestra tierra,De Nuestra Tierra,Carrefour,carrefour,true,230
+circulo de calidad,Círculo de Calidad,Carrefour,carrefour,true,230
+el mercado,El Mercado,Carrefour,carrefour,true,220
+la vaca que rie,La Vaca que Ríe,Bel Group,,false,210
+la bella easo,La Bella Easo,Grupo Bimbo,,false,210
+1906,1906,Hijos de Rivera,,false,210
+la espanola,La Española,Acesur,,false,210
+la piara,La Piara,Adam Foods,,false,210
+la lechera,La Lechera,Nestlé,,false,210
+ben jerry s,Ben & Jerry's,Unilever,,false,210
+la sagra,La Sagra,Molson Coors,,false,210
+1880,1880,Confectionary Holding,,false,210
+nakd,Nākd,Lotus Bakeries,,false,210
+8 6,8.6,Swinkels Family Brewers,,false,210
+7up,7UP,PepsiCo,,false,210
+la fallera,La Fallera,Ebro Foods,,false,210
+el pavo,El Pavo,Adam Foods,,false,210
+18 70 la rubia,18/70 La Rubia,,,false,210
+del monte,Del Monte,,,false,210
+1897,1897,,,false,210
+l oreal elvive,L'Oréal-Elvive,L'Oréal,,false,210
+la gergalena,La Gergaleña,,,false,210
+don simon,Don Simón,J. García Carrión,,false,210
+casa tarradellas,Casa Tarradellas,Casa Tarradellas,,false,210
+font vella,Font Vella,Danone,,false,210
+la cocinera,La Cocinera,Findus,,false,210
+ultima,Ultima,Affinity Petcare,,false,210
+santa teresa,Santa Teresa,,,false,210
+la vieja fabrica,La Vieja Fábrica,Helios,,false,210
+el ventero,El Ventero,Lactalis,,false,210
+la colmenarena,La Colmenareña,,,false,210
+pantene,Pantene,Procter & Gamble,,false,210
+albo,Albo,Bolton Group,,false,210
+sanex,Sanex,Colgate-Palmolive,,false,210
+el caserio,El Caserío,Mondelez International,,false,210
+brillante,Brillante,Ebro Foods,,false,210
+casa mas,Casa Mas,,,false,210
+la menorquina,La Menorquina,Lacrem,,false,210
+sanytol,Sanytol,AC Marca,,false,210
+orlando,Orlando,Kraft Heinz,,false,210
+knorr,Knorr,Unilever,,false,210
+aldelis,Aldelís,Aves Nobles y Derivados,,false,210
+barilla,Barilla,Barilla Group,,false,210
+isabel,Isabel,Bolton Group,,false,210
+ybarra,Ybarra,Grupo Ybarra Alimentación,,false,210
+aneto,Aneto,Adam Foods,,false,210
+vitis,Vitis,Dentaid,,false,210
+fairy,Fairy,Procter & Gamble,,false,210
+rexona,Rexona,Unilever,,false,210
+carbonell,Carbonell,Deoleo,,false,210
+maggi,Maggi,Nestlé,,false,210
+bo de debo,Bo De Debó,,,false,210
+delikuit,Delikuit,,,false,210
+pato,Pato,SC Johnson,,false,210
+la gula del norte,La Gula del Norte,Angulas Aguinaga,,false,210
+suavinex,Suavinex,,,false,210
+elvive,Elvive,L'Oréal,,false,210
+hellmanns,Hellmann's,Unilever,,false,210
+air wick,Air Wick,Reckitt,,false,210

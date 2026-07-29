@@ -51,5 +51,8 @@ group_order,category_order,subcategory_order,group_std,category_std,subcategory_
 6,2,1,Hogar y Personal,Cuidado Personal,Higiene Bucal,cuidado personal,higiene bucal
 6,2,2,Hogar y Personal,Cuidado Personal,"Champú, Jabón y Cremas",cuidado personal,"champu, jabon y cremas"
 6,2,3,Hogar y Personal,Cuidado Personal,Salud y Bienestar,cuidado personal,salud y bienestar
+6,2,4,Hogar y Personal,Cuidado Personal,Afeitado y Depilación,cuidado personal,afeitado y depilacion
 6,3,1,Hogar y Personal,Bebés y Mascotas,Mascotas,bebes y mascotas,mascotas
 6,3,2,Hogar y Personal,Bebés y Mascotas,Bebés,bebes y mascotas,bebes
+6,4,1,Hogar y Personal,Papelería,Escritura y Marcadores,papeleria,escritura y marcadores
+6,4,2,Hogar y Personal,Papelería,Papel y Cuadernos,papeleria,papel y cuadernos

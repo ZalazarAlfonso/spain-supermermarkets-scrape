@@ -1,6 +1,65 @@
 version: 2
 
 seeds:
+  - name: brand_product_overrides_v1
+    description: "User-confirmed product-level brand corrections imported from the reviewed missing-brand file."
+    columns:
+      - name: source_product_id
+        data_tests:
+          - not_null
+          - unique
+      - name: supermarket
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+      - name: is_no_brand
+        data_tests:
+          - not_null
+      - name: override_source
+        data_tests:
+          - not_null
+
+  - name: brand_reviewed_products_v1
+    description: "Reviewed product-level brand decisions and link evidence; only reviewed statuses are consumed as overrides."
+    columns:
+      - name: source_product_id
+        data_tests:
+          - not_null
+          - unique
+      - name: supermarket
+        data_tests:
+          - not_null
+      - name: brand_inferred
+        data_tests:
+          - not_null
+      - name: brand_inference_confidence
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['high', 'medium']
+      - name: brand_link_review_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['not_in_low_medium_scope', 'name_and_url_slug_match', 'no_brand_visible', 'name_match_url_not_independent', 'name_match', 'name_match_url_id_only', 'name_and_retailer_rule', 'page_brand_field_verified_on_sample', 'confirmed_rule_applied']
+
+  - name: brand_aliases_v1
+    description: "Curated brand aliases, canonical labels, ownership groups, and private-label flags."
+    columns:
+      - name: brand_alias_norm
+        data_tests:
+          - not_null
+      - name: brand_std
+        data_tests:
+          - not_null
+      - name: is_private_label
+        data_tests:
+          - not_null
+      - name: priority
+        data_tests:
+          - not_null
+
   - name: standard_rules_v1
     description: "Rule table used to map raw product category fields into standardized category and subcategory values."
     columns:
@@ -14,8 +73,7 @@ seeds:
         data_tests:
           - not_null
           - accepted_values:
-              arguments:
-                values: ['category', 'subcategory','brand', 'product_name']
+              values: ['category', 'subcategory','brand', 'product_name']
 
       - name: target
         description: "Standardized value assigned when the rule matches."
@@ -27,16 +85,14 @@ seeds:
         data_tests:
           - not_null
           - accepted_values:
-              arguments:
-                values: ['category_norm', 'subcategory_norm', 'product_norm']
+              values: ['category_norm', 'subcategory_norm', 'product_norm']
 
       - name: match_type
         description: "Matching strategy used against the normalized field."
         data_tests:
           - not_null
           - accepted_values:
-              arguments:
-                values: ['contains', 'equals', 'regex']
+              values: ['contains', 'equals', 'regex']
 
       - name: pattern
         description: "Literal or regex pattern to match."
