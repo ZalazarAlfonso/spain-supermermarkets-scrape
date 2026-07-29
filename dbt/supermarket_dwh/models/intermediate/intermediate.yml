@@ -45,11 +45,11 @@ models:
       - name: case_total_unit
         data_tests:
           - accepted_values:
-              values: ['kg', 'l', 'ud']
+              values: ['kg', 'l', 'ud', 'm']
       - name: case_unit_family
         data_tests:
           - accepted_values:
-              values: ['weight', 'volume', 'count']
+              values: ['weight', 'volume', 'count', 'length']
       - name: case_type
         data_tests:
           - not_null
