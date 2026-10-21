@@ -10,8 +10,10 @@ from .config import BASE_URL, OFFER_KEYWORDS
 
 
 PRICE_RE = re.compile(r"(\d{1,3}(?:[.,]\d{3})*[.,]\d{2})\s*€")
+# The optional number before the unit keeps reference quantities such as
+# "7,30 € / 100 g"; without it the match stopped at "100" and dropped the unit.
 PPU_RE = re.compile(
-    r"(\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\s*€\s*(?:/|por)\s*[\wáéíóúñ%]+)",
+    r"(\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\s*€\s*(?:/|por)\s*(?:\d+(?:[.,]\d+)?\s*)?[\wáéíóúñ%]+)",
     flags=re.IGNORECASE,
 )
 
