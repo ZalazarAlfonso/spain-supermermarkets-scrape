@@ -66,6 +66,15 @@ def _strip_query(url: str) -> str:
     return urlunparse(parsed._replace(query="", fragment=""))
 
 
+# Alcampo's nav links carry screen-reader text such as
+# "Mejillones (se abre en una ventana nueva)"; keep only the visible label.
+_SCREEN_READER_RE = re.compile(r"\(\s*se abre en una ventana nueva\s*\)", flags=re.IGNORECASE)
+
+
+def _strip_screen_reader_text(text: str) -> str:
+    return re.sub(r"\s+", " ", _SCREEN_READER_RE.sub(" ", text)).strip()
+
+
 def extract_category_links(soup: BeautifulSoup, group_slug: str) -> List[Tuple[str, str]]:
     """Return [(subcategory_name, absolute_url), ...] for navigation links under group_slug.
 
@@ -98,7 +107,7 @@ def extract_category_links(soup: BeautifulSoup, group_slug: str) -> List[Tuple[s
             continue
         seen_urls.add(clean_href)
 
-        name = a.get_text(" ", strip=True)
+        name = _strip_screen_reader_text(a.get_text(" ", strip=True))
         if not name:
             name = path_segs[-1].replace("-", " ").title()
 
