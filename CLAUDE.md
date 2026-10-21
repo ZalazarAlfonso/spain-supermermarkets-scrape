@@ -2,99 +2,64 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Setup
+## Change control
+
+Before editing files, explain the proposed change and ask for confirmation (see AGENTS.md).
+
+## Pipeline
+
+```
+scrapers/{supermarket}/targets_weekly  ->  targets JSON (GCS)
+scrapers/{supermarket}/scrape_daily    ->  {supermarket}/{YYYY-MM-DD}/*.parquet (GCS)
+ingestion/bq_event_loader              ->  dwh_bronze_dev.bronze_{supermarket}_products_p
+dbt/supermarket_dwh                    ->  dwh_silver_dev (staging, intermediate, silver), dwh_gold_dev (gold)
+```
+
+Supermarkets: `al_campo` (warehouse name `alcampo`), `carrefour`, `dia`, `mercadona`. `lidl` exists but is not loaded.
+
+Bronze columns for every supermarket: `date`, `product`, `brand`, `price`, `price_per_unit`, `offer`, `category`, `subcategory`, `product_url`.
+
+## Where things run (GCP project `lab-spanish-smarkts-scraper`)
+
+Always pass `--project`: the gcloud default project is a different one.
+
+| Piece | Runs on |
+|-------|---------|
+| Mercadona scraper | Cloud Run job `daily-supermarket-mercadona-scraper-dev` (europe-southwest1), scheduler `daily-supermarket-scraper-trigger-dev` 06:00 |
+| Alcampo, Carrefour, Dia scrapers | Compute VMs `vm-instance-alcampo-daily`, `vm-instance-daily-carrefour`, `vm-instance-dia-daily` (europe-west9); a startup script pulls `...-scraper:latest` from Artifact Registry, runs it, shuts down |
+| Bronze loader | Eventarc on GCS uploads -> `ingestion/bq_event_loader`; starts dbt once all four supermarkets have rows for the day |
+| dbt | Cloud Run job `dbt-runner-dev`, scheduler `dbt-runner-daily-dev` 12:00 Europe/Madrid (europe-west1). Runbook: `docs/deploy_dbt_runner.md` |
+
+Carrefour and Alcampo answer the VMs with 403 / blocked pages for most categories (since 2026-09-13 and 2026-07-30), so their daily scrapes are partial.
+
+## Running a scraper locally
+
+Run as a module from the repo root:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r jobs/carrefour/scrape_daily/requirements.txt
-
-# Optional — only needed if Playwright fallback is required
-playwright install
+python -m scrapers.carrefour.targets_weekly.main
+python -m scrapers.carrefour.scrape_daily.main --max-categories 2 --max-pages 1 --max-products 50
 ```
 
-## Running the scrapers
+Docker build context is the repo root, e.g. `docker build -f scrapers/carrefour/scrape_daily/Dockerfile .` (Cloud Build: `cloudbuild.{supermarket}.scrape_daily.yaml`, needs `$_IMAGE_URI`).
 
-Scripts must be run as modules from the repo root (so that `jobs/` is on the Python path):
+## dbt
 
-**Step 1 — Discover category targets (run weekly):**
-```bash
-python -m jobs.carrefour.targets_weekly.main
-# Options: --out, --sleep, --timeout, --max-categories, --upload-to-gcs
-```
+Use dbt-core, not the `dbt` on PATH (that is dbt Fusion and cannot parse this project; the yml uses the flat generic-test argument form on purpose). Versions are pinned in `dbt/supermarket_dwh/requirements.txt`.
 
-**Step 2 — Scrape daily products:**
-```bash
-python -m jobs.carrefour.scrape_daily.main
-# Options: --out-dir, --sleep, --max-pages, --max-products, --max-categories, --upload-to-gcs
-# --targets-source [local|gcs], --targets-local-path, --targets-gcs-bucket, --targets-gcs-object-name
-```
+Models in the `scrape_date` lineage are incremental (`insert_overwrite`, 3-day lookback), so a change to model logic or a seed only reaches history after `dbt build --full-refresh`.
 
-**Quick smoke-test run (limits scope):**
-```bash
-python -m jobs.carrefour.scrape_daily.main --max-categories 2 --max-pages 1 --max-products 50
-```
+Key models:
 
-## Docker
+| Model | What it is |
+|-------|-----------|
+| `silver_product_standardized` | Every snapshot with standard taxonomy (`taxonomy_method`: rules, inherited_from_product, unmapped), brand, case size, `price_is_shelf_price` |
+| `silver_supermarket_daily_completeness` | Rows per supermarket and day against usual volume; `is_complete` |
+| `fact_products_today` | Current catalogue, each supermarket from its own latest complete scrape (`as_of_date`, `is_stale`) |
+| `fact_product_price_snapshots` | Daily price history (incremental) |
+| `fact_product_price_changes` | One row per observed price change |
+| `supermarket_freshness` | Latest scrape vs latest complete scrape per supermarket |
+| `dim_products`, `dim_taxonomy` | Product lifecycle and search text; taxonomy tree including 'Other' nodes |
+| `qa_unmapped_products` | Source nodes no taxonomy rule places: add rules to `seeds/standard_rules_v1.csv` |
 
-Build context must be the repo root (the Dockerfile copies `jobs/` wholesale):
-```bash
-docker build -f jobs/carrefour/scrape_daily/Dockerfile -t carrefour-scraper .
-docker run --rm -v "$PWD/jobs/carrefour/scrape_daily/files:/app/files" carrefour-scraper
-```
-
-Cloud Build: `cloudbuild.scrape_daily.yaml` (requires `$_IMAGE_URI` substitution variable).
-
-## Architecture
-
-The project follows a **two-stage pipeline per supermarket**:
-
-```
-targets_weekly/main.py   →  carrefour_categories.json  →  scrape_daily/main.py  →  CSV / GCS
-```
-
-### Job structure (`jobs/{supermarket}/`)
-
-Each supermarket has two jobs and a shared `common/` package:
-
-| Path | Purpose |
-|------|---------|
-| `targets_weekly/main.py` | Crawls group navigation pages to build a JSON list of `CategoryTarget` objects (group, category, subcategory, url) |
-| `scrape_daily/main.py` | Reads the targets JSON, scrapes product cards from each URL, deduplicates by product URL, writes a dated CSV |
-| `common/config.py` | All constants and env-var overrides (GCS bucket, Playwright settings, group URLs) |
-| `common/http.py` | `fetch()` — tries `requests`, falls back to Playwright on 403 or blocked HTML markers |
-| `common/parsing.py` | BeautifulSoup helpers: product card parser, pagination extractor, URL normalizer |
-| `common/gcs.py` | GCS upload/download wrappers |
-| `common/models.py` | `ProductRow` and `CategoryTarget` TypedDicts |
-
-### Carrefour category logic
-
-- Groups: **Frescos**, **La Despensa**, **Bebidas**
-- Frescos / La Despensa: group page → categories → subcategory URLs (two-level nav)
-- Bebidas: group page slides are directly subcategories (`category=Bebidas`)
-- Slides whose name contains `oferta` (case-insensitive) are excluded
-- If a category has no subcategory nav, it falls back to `subcategory=""`
-
-### Env vars (via `.env` or shell)
-
-| Variable | Default | Effect |
-|----------|---------|--------|
-| `GCS_BUCKET` | `azal-smarkets-raw-eu` | Upload target bucket |
-| `GOOGLE_CLOUD_PROJECT` | `lab-spanish-smarkts-scraper` | GCP project |
-| `CARREFOUR_GROUP_URLS` | three default URLs | Override crawl targets (comma-separated) |
-| `KEEP_LOCAL_FILES` | `false` | Keep local CSV even after GCS upload |
-| `PLAYWRIGHT_ENGINES` | `chromium` | Comma-separated engine order (e.g. `firefox,chromium`) |
-| `PLAYWRIGHT_DISABLE` | `false` | Disable Playwright fallback entirely |
-| `PLAYWRIGHT_MAX_RETRIES` | `1` | Retries per engine on crash |
-| `PLAYWRIGHT_NAV_TIMEOUT_S` | `18` | Navigation timeout |
-
-### Output
-
-Daily CSV at `jobs/carrefour/scrape_daily/files/carrefour_supermercado_YYYY-MM-DD.csv`
-Columns: `date`, `product`, `brand`, `price`, `price_per_unit`, `offer`, `category`, `subcategory`, `product_url`
-
-GCS path pattern: `carrefour/{YYYY-MM-DD}/carrefour_supermercado_YYYY-MM-DD.csv`
-
-### Al Campo
-
-`jobs/al_campo/` mirrors the same layout (common/, scrape_daily/, targets_weekly/) but is not yet implemented.
+Mercadona prices scraped before the shelf-price fix are per kg/l: `price_is_shelf_price = false`. Never use them for basket totals.
