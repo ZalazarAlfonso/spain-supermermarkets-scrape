@@ -233,7 +233,17 @@ final as (
             when b.category_std != 'Other' then 'rules'
             when t.category_std is not null then 'inherited_from_product'
             else 'unmapped'
-        end as taxonomy_method
+        end as taxonomy_method,
+        -- Until the scraper fix, Mercadona's `price` was its bulk price (per kg
+        -- or litre), equal to the unit price on 84-94% of a day's rows (other
+        -- supermarkets: at most 38%).
+        -- After the fix only 1 kg / 1 l packs match. Detecting it per day
+        -- needs no deploy date.
+        not (
+            b.supermarket = 'mercadona'
+            and avg(case when abs(b.price_value - b.unit_price_std_value) < 0.01 then 1 else 0 end)
+                over (partition by b.supermarket, b.scrape_date) > 0.7
+        ) as price_is_shelf_price
     from batch b
     left join product_taxonomy_memory t
         on b.source_product_id = t.source_product_id

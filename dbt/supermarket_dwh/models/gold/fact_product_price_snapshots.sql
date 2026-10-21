@@ -46,6 +46,8 @@ select
     case_parse_status,
     case_parse_method,
     case_validation_status,
-    offer_flag
+    offer_flag,
+    coalesce(price_is_shelf_price, true) as price_is_shelf_price,
+    case_validation_status in ('matched_unit_price', 'derived_from_unit_price') as is_price_comparable
 FROM base
 {{ incremental_scrape_date_filter() }}
