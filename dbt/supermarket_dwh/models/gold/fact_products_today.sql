@@ -36,5 +36,10 @@ select
     case_parse_status,
     case_parse_method,
     case_validation_status,
-    offer_flag
+    offer_flag,
+    taxonomy_method,
+    as_of_date,
+    latest_scrape_date,
+    days_stale,
+    is_stale
 FROM base

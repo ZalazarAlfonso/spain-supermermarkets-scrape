@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: fact_products_today
-    description: "Products prices for today, latest date in the data."
+    description: "Current catalogue: one row per product, each supermarket taken from its own latest complete scrape (see supermarket_freshness)."
     columns:
       - name: source_product_id
         data_tests:
@@ -140,3 +140,22 @@ models:
       - name: subcategory
         data_tests:
           - not_null
+
+  - name: supermarket_freshness
+    description: "One row per supermarket: the latest scrape, whether it was a complete catalogue, and the date fact_products_today is taken from."
+    columns:
+      - name: supermarket
+        data_tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['alcampo', 'carrefour', 'dia', 'mercadona']
+      - name: latest_scrape_date
+        data_tests:
+          - not_null
+      - name: as_of_date
+        description: "Latest scrape date that returned a complete catalogue; fact_products_today uses this date."
+      - name: latest_volume_ratio
+        description: "Latest scrape's rows over the supermarket's usual volume (90th percentile of the preceding window)."
+      - name: is_stale
+        description: "True when as_of_date is more than stale_after_days old at build time."

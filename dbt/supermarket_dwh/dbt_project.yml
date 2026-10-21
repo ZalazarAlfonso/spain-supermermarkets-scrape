@@ -17,6 +17,14 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+vars:
+  # A scrape counts as a complete catalogue when it returns at least this share
+  # of the supermarket's usual volume (90th percentile of the preceding window).
+  completeness_min_share: 0.8
+  completeness_baseline_days: 120
+  # fact_products_today rows older than this many days are flagged is_stale.
+  stale_after_days: 2
+
 models:
   supermarket_dwh:
     +materialized: table
