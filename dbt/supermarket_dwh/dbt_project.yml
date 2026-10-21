@@ -24,6 +24,9 @@ vars:
   completeness_baseline_days: 120
   # fact_products_today rows older than this many days are flagged is_stale.
   stale_after_days: 2
+  # A product ID first seen within this many days of another ID with the same
+  # name and pack size disappearing is linked to it (silver_product_identity_links).
+  identity_max_gap_days: 3
 
 models:
   supermarket_dwh:

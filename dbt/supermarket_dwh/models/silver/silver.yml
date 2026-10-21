@@ -160,3 +160,24 @@ models:
       - name: is_complete
         data_tests:
           - not_null
+  - name: silver_product_identity_links
+    description: "One-to-one links from a product ID that disappeared to the ID that replaced it within identity_max_gap_days, matched on supermarket, normalized name and pack size."
+    columns:
+      - name: previous_product_id
+        data_tests:
+          - not_null
+          - unique
+      - name: next_product_id
+        data_tests:
+          - not_null
+          - unique
+  - name: silver_product_identity
+    description: "Canonical product ID per source_product_id across URL changes: the earliest ID of its chain of links. Not yet used by gold: check qa_product_identity_links_sample first."
+    columns:
+      - name: source_product_id
+        data_tests:
+          - not_null
+          - unique
+      - name: canonical_product_id
+        data_tests:
+          - not_null
