@@ -6,6 +6,7 @@ from datetime import datetime
 
 import google.auth
 from flask import Flask, request
+from google.api_core.exceptions import BadRequest
 from google.auth.transport.requests import AuthorizedSession
 from google.cloud import bigquery
 
@@ -118,6 +119,38 @@ def maybe_trigger_dbt(day):
         return "dbt trigger failed"
 
 
+def _insert_by_name_sql(final_table_id, stg_table_id, staged):
+    """INSERT that matches staged columns to the final table by name.
+
+    Parquet column types follow the data: a column that is entirely null in one
+    file arrives as FLOAT64 or INT64, so `SELECT *` breaks on whichever day the
+    file disagrees with the table. Each column is cast to the final table's
+    type instead; a column missing from the file loads as NULL.
+    """
+    final = bq.get_table(final_table_id)
+    staged_types = {f.name: f.field_type for f in staged.schema}
+    columns, values = [], []
+    for field in final.schema:
+        columns.append(f"`{field.name}`")
+        if field.name not in staged_types:
+            values.append(f"cast(null as {_sql_type(field.field_type)}) as `{field.name}`")
+        elif staged_types[field.name] == field.field_type:
+            values.append(f"`{field.name}`")
+        else:
+            values.append(f"safe_cast(`{field.name}` as {_sql_type(field.field_type)}) as `{field.name}`")
+    extra = sorted(set(staged_types) - {f.name for f in final.schema})
+    if extra:
+        logging.warning("Ignoring columns not in %s: %s", final_table_id, ", ".join(extra))
+    return (
+        f"INSERT INTO `{final_table_id}` ({', '.join(columns)}) "
+        f"SELECT {', '.join(values)} FROM `{stg_table_id}`;"
+    )
+
+
+def _sql_type(field_type):
+    return {"FLOAT": "FLOAT64", "INTEGER": "INT64", "BOOLEAN": "BOOL"}.get(field_type, field_type)
+
+
 @app.post("/")
 def handle_event():
     event = request.get_json(silent=True) or {}
@@ -152,25 +185,39 @@ def handle_event():
     stg_table_id = f"{PROJECT_ID}.{DATASET}._stg_{table}_{day_str.replace('-', '')}_{suffix}"
     final_table_id = f"{PROJECT_ID}.{DATASET}.{table}"
 
-    # 1) Load parquet into staging
-    job_config = bigquery.LoadJobConfig(source_format=bigquery.SourceFormat.PARQUET, write_disposition="WRITE_TRUNCATE")
-    load_job = bq.load_table_from_uri(uri, stg_table_id, job_config=job_config)
-    load_job.result()
+    try:
+        # 1) Load parquet into staging
+        job_config = bigquery.LoadJobConfig(source_format=bigquery.SourceFormat.PARQUET, write_disposition="WRITE_TRUNCATE")
+        load_job = bq.load_table_from_uri(uri, stg_table_id, job_config=job_config)
+        load_job.result()
 
-    # 2) Overwrite that day in final (delete + insert)
-    sql = f"""
-    BEGIN TRANSACTION;
-      DELETE FROM `{final_table_id}` WHERE date = @day;
-      INSERT INTO `{final_table_id}` SELECT * FROM `{stg_table_id}`;
-    COMMIT TRANSACTION;
-    """
-    query_job = bq.query(sql, job_config=bigquery.QueryJobConfig(
-        query_parameters=[bigquery.ScalarQueryParameter("day", "DATE", day)]
-    ))
-    query_job.result()
+        staged = bq.get_table(stg_table_id)
+        if staged.num_rows == 0:
+            # A blocked or empty scrape writes an empty parquet whose columns
+            # have no usable types. Loading it would wipe the day's rows.
+            logging.warning("Skipped empty parquet %s", uri)
+            return (f"Skipped empty parquet {uri}", 200)
 
-    # 3) Drop staging
-    bq.delete_table(stg_table_id, not_found_ok=True)
+        # 2) Overwrite that day in final (delete + insert)
+        sql = f"""
+        BEGIN TRANSACTION;
+          DELETE FROM `{final_table_id}` WHERE date = @day;
+          {_insert_by_name_sql(final_table_id, stg_table_id, staged)}
+        COMMIT TRANSACTION;
+        """
+        query_job = bq.query(sql, job_config=bigquery.QueryJobConfig(
+            query_parameters=[bigquery.ScalarQueryParameter("day", "DATE", day)]
+        ))
+        query_job.result()
+    except BadRequest:
+        # Schema and type errors fail the same way on every redelivery. Retrying
+        # them only repeats the failure (and used to leave a staging table per
+        # attempt), so acknowledge the event and leave the error in the logs.
+        logging.exception("Load of %s into %s failed permanently", uri, final_table_id)
+        return (f"FAILED loading {uri}: see logs", 200)
+    finally:
+        # 3) Drop staging, also when the load failed
+        bq.delete_table(stg_table_id, not_found_ok=True)
 
     # 4) If this was the last supermarket to land, start the warehouse build.
     trigger_status = maybe_trigger_dbt(day)
