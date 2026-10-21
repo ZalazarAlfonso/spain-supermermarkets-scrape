@@ -4,6 +4,14 @@ models:
   - name: fact_products_today
     description: "Current catalogue: one row per product, each supermarket taken from its own latest complete scrape (see supermarket_freshness)."
     columns:
+      - name: price_is_shelf_price
+        description: "False for Mercadona rows scraped before the scraper fix, where price_value is the price per kg or litre rather than the shelf price. Never use those rows for basket totals."
+        data_tests:
+          - not_null
+      - name: is_price_comparable
+        description: "True when the unit price was matched against or derived from the pack size (case_validation_status matched_unit_price or derived_from_unit_price): safe to compare across supermarkets."
+        data_tests:
+          - not_null
       - name: source_product_id
         data_tests:
           - not_null
@@ -46,6 +54,14 @@ models:
   - name: fact_product_price_snapshots
     description: "Standardise products' price snapshots for historical analysis."
     columns:
+      - name: price_is_shelf_price
+        description: "False for Mercadona rows scraped before the scraper fix, where price_value is the price per kg or litre rather than the shelf price. Never use those rows for basket totals."
+        data_tests:
+          - not_null
+      - name: is_price_comparable
+        description: "True when the unit price was matched against or derived from the pack size (case_validation_status matched_unit_price or derived_from_unit_price): safe to compare across supermarkets."
+        data_tests:
+          - not_null
       - name: product_snapshot_id
         data_tests:
           - not_null
@@ -91,6 +107,16 @@ models:
   - name: dim_products
     description: "Dimension table with product data."
     columns:
+      - name: search_text
+        description: "Accent-free, lower-case product name plus standardized brand, for search and shopping-list matching."
+      - name: first_seen_date
+        data_tests:
+          - not_null
+      - name: last_seen_date
+        data_tests:
+          - not_null
+      - name: is_active
+        description: "True when the product was seen on or after its supermarket's latest complete scrape (as_of_date)."
       - name: source_product_id
         data_tests:
           - not_null
@@ -129,17 +155,40 @@ models:
           - not_null
 
   - name: dim_taxonomy
-    description: "Table with standard group, category and subcategory values."
+    description: "Standard taxonomy tree for filters, including the 'Other' nodes facts can carry. Column names match the facts."
     columns:
-      - name: product_group
+      - name: group_std
         data_tests:
           - not_null
-      - name: category
+      - name: category_std
         data_tests:
           - not_null
-      - name: subcategory
+      - name: subcategory_std
         data_tests:
           - not_null
+
+  - name: fact_product_price_changes
+    description: "One row per observed price change against the product's previous observation. Pairs across Mercadona's bulk-to-shelf price switch are excluded."
+    columns:
+      - name: source_product_id
+        data_tests:
+          - not_null
+      - name: scrape_date
+        data_tests:
+          - not_null
+      - name: previous_scrape_date
+        data_tests:
+          - not_null
+      - name: days_since_previous
+        description: "Days between the two observations; more than 1 means the product was missing from scrapes in between."
+      - name: price_change_pct
+        description: "(price_value - previous_price_value) / previous_price_value."
+      - name: direction
+        data_tests:
+          - accepted_values:
+              values: ['up', 'down']
+      - name: is_suspect_jump
+        description: "True when the price moved by more than 50%; more often a parsing or listing error than a real change."
 
   - name: supermarket_freshness
     description: "One row per supermarket: the latest scrape, whether it was a complete catalogue, and the date fact_products_today is taken from."

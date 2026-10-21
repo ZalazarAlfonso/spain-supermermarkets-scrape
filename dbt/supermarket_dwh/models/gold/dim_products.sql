@@ -8,15 +8,27 @@ latest_product_per_source_id as (
         ROW_NUMBER() OVER (
             PARTITION BY source_product_id
             ORDER BY scrape_date DESC, product_url
-        ) as rn
+        ) as rn,
+        MIN(scrape_date) OVER (PARTITION BY source_product_id) as first_seen_date,
+        COUNT(*) OVER (PARTITION BY source_product_id) as days_observed
     from base
+),
+-- The date each supermarket's current catalogue is taken from; a product seen
+-- on it is still listed.
+supermarket_as_of as (
+    select
+        supermarket,
+        max(case when is_complete then scrape_date end) as as_of_date
+    from {{ ref('silver_supermarket_daily_completeness') }}
+    group by supermarket
 )
 
 select
-    source_product_id,
-    supermarket,
+    p.source_product_id,
+    p.supermarket,
     product_url,
     product_name,
+    {{ product_search_text() }} as search_text,
     group_std,
     category_std,
     subcategory_std,
@@ -39,6 +51,12 @@ select
     case_type,
     case_parse_status,
     case_parse_method,
-    case_validation_status
-FROM latest_product_per_source_id
+    case_validation_status,
+    first_seen_date,
+    scrape_date as last_seen_date,
+    days_observed,
+    scrape_date >= a.as_of_date as is_active
+FROM latest_product_per_source_id p
+LEFT JOIN supermarket_as_of a
+    ON p.supermarket = a.supermarket
 WHERE rn = 1
