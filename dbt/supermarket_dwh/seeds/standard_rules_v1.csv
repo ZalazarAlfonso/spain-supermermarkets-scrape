@@ -1702,7 +1702,7 @@ rule_id,level,target,field,match_type,pattern,supermarket,priority
 1063,subcategory,Pescados y Mariscos,category_norm,equals,descubrimientos,dia,210
 1063,subcategory,Pescados y Mariscos,product_norm,regex,\b(solomillo de atun|bacalao|filetes de gallo|boqueron)\b,dia,210
 1064,subcategory,Charcutería y Fiambres,category_norm,equals,descubrimientos,dia,210
-1064,subcategory,Charcutería y Fiambres,product_norm,regex,\b(salchichon|lomo embuchado|chorizo)\b,dia,210
+1064,subcategory,Charcutería y Fiambres,product_norm,regex,\b(salchichon|lomo embuchado|chorizo|fuet)\b,dia,210
 1065,subcategory,Pan de Molde y Tortillas,category_norm,equals,descubrimientos,dia,210
 1065,subcategory,Pan de Molde y Tortillas,product_norm,regex,\b(tostas?)\b,dia,210
 1066,subcategory,Leches y Bebidas lácteas,category_norm,equals,descubrimientos,dia,210
@@ -1731,3 +1731,12 @@ rule_id,level,target,field,match_type,pattern,supermarket,priority
 1077,subcategory,Comida preparada,subcategory_norm,equals,arroces y pasta,dia,200
 1078,subcategory,Pescados y Mariscos,category_norm,equals,frescos,alcampo,200
 1078,subcategory,Pescados y Mariscos,subcategory_norm,regex,\bmejillones\b,alcampo,200
+1079,subcategory,Pescados y Mariscos,category_norm,equals,frescos,alcampo,200
+1079,subcategory,Pescados y Mariscos,subcategory_norm,regex,^(ahumados|bacalao)$,alcampo,200
+1080,subcategory,Atún y Pescados en lata,category_norm,equals,frescos,alcampo,200
+1080,subcategory,Atún y Pescados en lata,subcategory_norm,equals,anchoas,alcampo,200
+1081,subcategory,Pizzas y Lasañas,subcategory_norm,equals,pizzas congeladas,carrefour,210
+1082,subcategory,"Carne, Pescado, Pollo",subcategory_norm,equals,"pulpo, calamar y sepia congelados",carrefour,210
+1083,subcategory,Patatas y Precocinados,category_norm,equals,patatas,carrefour,210
+1083,subcategory,Patatas y Precocinados,subcategory_norm,regex,^(patatas|air fryer)$,carrefour,210
+1084,subcategory,Bebés,subcategory_norm,equals,embarazo y lactancia,carrefour,210
