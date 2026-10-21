@@ -148,3 +148,15 @@ models:
           - not_null
           - accepted_values:
               values: ['product_override', 'confirmed_no_brand', 'mapped', 'normalized_only', 'inferred_from_product_name', 'missing']
+  - name: silver_supermarket_daily_completeness
+    description: "Rows per supermarket and scrape date against that supermarket's usual volume; is_complete marks scrapes that returned a full catalogue."
+    columns:
+      - name: supermarket
+        data_tests:
+          - not_null
+      - name: scrape_date
+        data_tests:
+          - not_null
+      - name: is_complete
+        data_tests:
+          - not_null
