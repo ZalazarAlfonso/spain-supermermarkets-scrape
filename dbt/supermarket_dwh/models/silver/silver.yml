@@ -106,6 +106,13 @@ models:
         data_tests:
           - not_null
 
+      - name: taxonomy_method
+        description: "How the standard taxonomy was set: rules (matched this snapshot), inherited_from_product (no rule matched, so the product's latest rule-mapped taxonomy from another snapshot is reused), or unmapped."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['rules', 'inherited_from_product', 'unmapped']
+
       - name: category_norm
         description: "Normalized category text used for rule matching."
 

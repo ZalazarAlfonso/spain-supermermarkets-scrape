@@ -178,8 +178,8 @@ resolved_matches as (
     left join taxonomy_categories category_match
         on m.category_std = category_match.category_std
 ),
--- Final join with the normalized products to get standardized taxonomy values.
-final as (
+-- Join the normalized products to get the rule-based taxonomy values.
+rule_mapped as (
     select
         p.*,
         coalesce(m.group_std, 'Other') as group_std,
@@ -189,8 +189,55 @@ final as (
     left join resolved_matches m
         on p.product_snapshot_id = m.product_snapshot_id
 
+),
+batch as (
+    select *
+    from rule_mapped
+    {{ incremental_scrape_date_filter() }}
+),
+-- Every mapped observation of a product, from this batch and from partitions
+-- already built. Promotional sections (Dia "descubrimientos") and broken source
+-- navigation file a product under a node no rule can place, but the same
+-- product URL is usually mapped on other days.
+mapped_history as (
+    select source_product_id, scrape_date, group_std, category_std, subcategory_std
+    from batch
+    where category_std != 'Other'
+    {% if is_incremental() %}
+    union all
+    select source_product_id, scrape_date, group_std, category_std, subcategory_std
+    from {{ this }}
+    where category_std != 'Other'
+      and scrape_date < (select min(scrape_date) from batch)
+    {% endif %}
+),
+product_taxonomy_memory as (
+    select
+        source_product_id,
+        group_std,
+        category_std,
+        subcategory_std
+    from mapped_history
+    qualify row_number() over (
+        partition by source_product_id
+        order by scrape_date desc, category_std, subcategory_std
+    ) = 1
+),
+final as (
+    select
+        b.* except (group_std, category_std, subcategory_std),
+        case when b.category_std = 'Other' then coalesce(t.group_std, b.group_std) else b.group_std end as group_std,
+        case when b.category_std = 'Other' then coalesce(t.category_std, b.category_std) else b.category_std end as category_std,
+        case when b.category_std = 'Other' then coalesce(t.subcategory_std, b.subcategory_std) else b.subcategory_std end as subcategory_std,
+        case
+            when b.category_std != 'Other' then 'rules'
+            when t.category_std is not null then 'inherited_from_product'
+            else 'unmapped'
+        end as taxonomy_method
+    from batch b
+    left join product_taxonomy_memory t
+        on b.source_product_id = t.source_product_id
 )
 
 select *
 from final
-{{ incremental_scrape_date_filter() }}
