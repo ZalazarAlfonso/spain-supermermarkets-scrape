@@ -73,7 +73,9 @@ def extract_price_fields(product: Dict[str, Any]) -> tuple[str, str, bool]:
     if not isinstance(p, dict):
         p = {}
 
-    price = str(p.get("bulk_price") or "").strip()
+    # unit_price is the shelf price of one item; bulk_price is the price per kg
+    # or litre, which is already carried by price_per_unit below.
+    price = str(p.get("unit_price") or p.get("bulk_price") or "").strip()
 
     price_per_unit = ""
     ref_price = str(p.get("reference_price") or "").strip()
