@@ -1731,3 +1731,5 @@ rule_id,level,target,field,match_type,pattern,supermarket,priority
 1077,subcategory,Comida preparada,subcategory_norm,equals,arroces y pasta,dia,200
 1078,subcategory,Pescados y Mariscos,category_norm,equals,frescos,alcampo,200
 1078,subcategory,Pescados y Mariscos,subcategory_norm,regex,\bmejillones\b,alcampo,200
+1079,subcategory,Pescados y Mariscos,category_norm,equals,frescos,alcampo,200
+1079,subcategory,Pescados y Mariscos,subcategory_norm,regex,\bbacalao\b,alcampo,200
